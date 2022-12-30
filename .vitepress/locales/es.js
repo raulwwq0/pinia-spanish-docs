@@ -2,7 +2,7 @@ export default {
   vitepressConfig: {
     title: 'Pinia',
     lang: 'es-ES',
-    description: 'La store de Vue que disfrutarás usando',
+    description: 'La Store de Vue que te gustará usar',
   },
   themeConfig: {
     label: 'Español',

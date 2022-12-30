@@ -19,7 +19,7 @@ Pinia es una librería de stores para Vue que te permite compartir el estado ent
   - Modifica tus stores sin recargar la página
   - Mantén cualquier estado existente mientras desarrollas
 - Plugins: amplía las características de Pinia con plugins
-- Soporte apropiado para TypeScript o **auto-completado** para usuarios de JS
+- Soporte apropiado para TypeScript o **autocompletado** para usuarios de JS
 - Soporte para Renderización del Lado del Servidor (SSR)
 
 <VueMasteryLogoLink for="pinia-cheat-sheet">
@@ -27,7 +27,7 @@ Pinia es una librería de stores para Vue que te permite compartir el estado ent
 
 ## Ejemplos básicos
 
-Así es como como se ve usar Pinia en términos de API (asegurate de mirar [Como Empezar](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando una store:
+Así es como se ve usar Pinia en términos de API (asegúrate de mirar el [Cómo Empezar](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando una store:
 
 ```js
 // stores/counter.js
@@ -56,7 +56,7 @@ export default {
     const counter = useCounterStore()
 
     counter.count++
-    // con auto-completado ✨
+    // con autocompletado ✨
     counter.$patch({ count: counter.count + 1 })
     // o usando un método en su lugar
     counter.increment()
@@ -111,7 +111,7 @@ export default {
 }
 ```
 
-Encotrarás más información sobre cada _map helper_ en los conceptos básicos.
+Podrás encontrar más información sobre cada _map helper_ en los conceptos básicos.
 
 ## Por qué _Pinia_
 
@@ -135,7 +135,7 @@ export const useTodos = defineStore('todos', {
   }),
   getters: {
     finishedTodos(state) {
-      // ¡auto-completado! ✨
+      // ¡autocompletado! ✨
       return state.todos.filter((todo) => todo.isFinished)
     },
     unfinishedTodos(state) {
@@ -146,7 +146,7 @@ export const useTodos = defineStore('todos', {
      */
     filteredTodos(state) {
       if (this.filter === 'finished') {
-        // llama a otros getters con auto-completado ✨
+        // llama a otros getters con autocompletado ✨
         return this.finishedTodos
       } else if (this.filter === 'unfinished') {
         return this.unfinishedTodos
@@ -172,10 +172,9 @@ Comparado con Vuex, Pinia proporciona una API más simple con menos decoraciones
 
 ### RFCs
 
-Initially Pinia didn't go through any RFC process. I tested out ideas based on my experience developing applications, reading other people's code, working for clients who use Pinia, and answering questions on Discord.
-This allowed me to provide a solution that works and is adapted to a variety of cases and application sizes. I used to publish often and made the library evolve while keeping its core API the same.
+Inicialmente Pinia no pasó por ningún proceso de RFC. He probado ideas basadas en mi experiencia desarrollando aplicaciones, leyendo el código de otras personas, trabajando para clientes que usan Pinia y respondiendo preguntas en Discord. Esto me permitió ofrecer una solución que funciona y está adaptada a una variedad de casos y tamaños de aplicaciones. A veces solía publicar y hacía que la librería evolucionase mientras mantenía su API central a la vez.
 
-Now that Pinia has become the default state management solution, it is subject to the same RFC process as other core libraries in the Vue ecosystem and its API has entered a stable state.
+Ahora que Pinia se ha convertido en la solución para manejar el estado por defecto está sujeto a los mismos procesos RFC del resto de librerías principales del ecosistema de Vue y su API ha entrado en un estado estable.
 
 ### Comparación con Vuex 3.x/4.x
 
@@ -185,10 +184,9 @@ La API de Pinia es muy diferente a la de Vuex ≤4, concretamente:
 
 - Las _mutaciones_ ya no existen. A veces era percibidas como **_demasiado_ verbosas**. Inicialmente traían integración con las herramientas de desarrollo, pero ya no es un problema.
 - No hay necesidad de crear wrappers personalizados para soportar TypeScript, ya que todo está tipado y la API está diseñada para aprovechar la deducción de tipos de TS tanto como sea posible.
-- No más cadenas mágicas para inyectar, importar funciones o llamarlas, ¡disfruta del auto-completado!
+- No más cadenas mágicas para inyectar, importar funciones o llamarlas, ¡disfruta del autocompletado!
+- No es necesario añadir stores dinámicamente, todas son dinámicas por defecto y sin que te enteres. Cabe aclarar que puedes usar una store para registrarla cuando quieras, pero al ser automático no tienes que preocuparte por ello.
+- Se acabó el estructuramiento anidado de _módulos_. Aún puedes anidar stores implícitamente si la importas y la _usas_ dentro de otra, pero Pinia ofrece un un diseño de estructuramiento plano a la vez que permite la composición cruzada entre stores. **Incluso puedes tener dependencias circulares de stores**.
+- Sin _módulos con espacio de nombre_. Dada la arquitectura plana de las stores, las "stores con espacio de nombre" es heredado de la forma en que se definen y se podría decir que todas las stores tienen un espacio de nombre.
 
-- No need to dynamically add stores, they are all dynamic by default and you won't even notice. Note you can still manually use a store to register it whenever you want but because it is automatic you don't need to worry about it.
-- No more nested structuring of _modules_. You can still nest stores implicitly by importing and _using_ a store inside another but Pinia offers a flat structuring by design while still enabling ways of cross composition among stores. **You can even have circular dependencies of stores**.
-- No _namespaced modules_. Given the flat architecture of stores, "namespacing" stores is inherent to how they are defined and you could say all stores are namespaced.
-
-For more detailed instructions on how to convert an existing Vuex ≤4 project to use Pinia, see the [Migration from Vuex Guide](./cookbook/migration-vuex.md).
+Para más instrucciones más detallas sobre como convertir un proyecto existente con Vuex ≤4 para usar Pinia mira la [Guía de Migración desde Vuex ≤4](./cookbook/migration-vuex.md)

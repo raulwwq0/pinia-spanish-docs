@@ -11,8 +11,8 @@ export default {
     lastUpdated: 'Última actualización',
 
     nav: [
-      { text: 'Guía', link: '/es/introduction.html' },
-      { text: 'API', link: '/es/api/' },
+      { text: 'Guía', link: '/introduction.html' },
+      { text: 'API', link: '/api/' },
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },
       {
@@ -39,45 +39,45 @@ export default {
     ],
 
     sidebar: {
-      '/es/api/': [
+      '/api/': [
         {
           text: 'paquetes',
           children: [
-            { text: 'pinia', link: '/es/api/modules/pinia.html' },
-            { text: '@pinia/nuxt', link: '/es/api/modules/pinia_nuxt.html' },
+            { text: 'pinia', link: '/api/modules/pinia.html' },
+            { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },
             {
               text: '@pinia/testing',
-              link: '/es/api/modules/pinia_testing.html',
+              link: '/api/modules/pinia_testing.html',
             },
           ],
         },
       ],
       // catch-all fallback
-      '/es/': [
+      '/': [
         {
           text: 'Introducción',
           children: [
             {
               text: '¿Qué es Pinia?',
-              link: '/es/introduction.html',
+              link: '/introduction.html',
             },
             {
               text: 'Cómo empezar',
-              link: '/es/getting-started.html',
+              link: '/getting-started.html',
             },
           ],
         },
         {
           text: 'Conceptos básicos',
           children: [
-            { text: 'Definir una Store', link: '/es/core-concepts/' },
-            { text: 'Estado', link: '/es/core-concepts/state.html' },
-            { text: 'Getters', link: '/es/core-concepts/getters.html' },
-            { text: 'Acciones', link: '/es/core-concepts/actions.html' },
-            { text: 'Plugins', link: '/es/core-concepts/plugins.html' },
+            { text: 'Definir una Store', link: '/core-concepts/' },
+            { text: 'Estado', link: '/core-concepts/state.html' },
+            { text: 'Getters', link: '/core-concepts/getters.html' },
+            { text: 'Acciones', link: '/core-concepts/actions.html' },
+            { text: 'Plugins', link: '/core-concepts/plugins.html' },
             {
               text: 'Stores fuera de componentes',
-              link: '/es/core-concepts/outside-component-usage.html',
+              link: '/core-concepts/outside-component-usage.html',
             },
           ],
         },
@@ -86,45 +86,45 @@ export default {
           children: [
             {
               text: 'Vue y Vite',
-              link: '/es/ssr/',
+              link: '/ssr/',
             },
             {
               text: 'Nuxt.js',
-              link: '/es/ssr/nuxt.html',
+              link: '/ssr/nuxt.html',
             },
           ],
         },
         {
           text: 'Cookbook',
-          link: '/es/cookbook/',
+          link: '/cookbook/',
           children: [
             {
               text: 'Migración desde Vuex ≤4',
-              link: '/es/cookbook/migration-vuex.html',
+              link: '/cookbook/migration-vuex.html',
             },
             {
               text: 'Sustitución de módulos en caliente',
-              link: '/es/cookbook/hot-module-replacement.html',
+              link: '/cookbook/hot-module-replacement.html',
             },
             {
               text: 'Testing',
-              link: '/es/cookbook/testing.html',
+              link: '/cookbook/testing.html',
             },
             {
               text: 'Uso sin setup()',
-              link: '/es/cookbook/options-api.html',
+              link: '/cookbook/options-api.html',
             },
             {
               text: 'Componiendo Stores',
-              link: '/es/cookbook/composing-stores.html',
+              link: '/cookbook/composing-stores.html',
             },
             {
               text: 'Migración desde v0/v1 to v2',
-              link: '/es/cookbook/migration-v1-v2.html',
+              link: '/cookbook/migration-v1-v2.html',
             },
             {
               text: 'Tratando con composables',
-              link: '/es/cookbook/composables.html',
+              link: '/cookbook/composables.html',
             },
           ],
         },

@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 ## Installation
 
 <VueMasteryLogoLink for="pinia-cheat-sheet">

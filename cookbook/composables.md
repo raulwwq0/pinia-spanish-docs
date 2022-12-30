@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Dealing with Composables
 
 [Composables](https://vuejs.org/guide/reusability/composables.html#composables) are functions that leverage Vue Composition API to encapsulate and reuse stateful logic. Whether you write your own, you use [external libraries](https://vueuse.org/) or do both, you can fully use the power of Composables in your pinia stores.

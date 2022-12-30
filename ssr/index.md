@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Server Side Rendering (SSR)
 
 :::tip

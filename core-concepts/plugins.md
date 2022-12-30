@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Plugins
 
 Pinia stores can be fully extended thanks to a low level API. Here is a list of things you can do:

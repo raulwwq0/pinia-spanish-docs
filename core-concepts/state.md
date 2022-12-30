@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # State
 
 <VueSchoolLink

@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Migrating from 0.0.7
 
 The versions after `0.0.7`: `0.1.0`, and `0.2.0`, came with a few big breaking changes. This guide helps you migrate whether you use Vue 2 or Vue 3. The whole changelog can be found in the repository:

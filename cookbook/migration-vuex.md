@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Migrating from Vuex ≤4
 
 Although the structure of Vuex and Pinia stores is different, a lot of the logic can be reused. This guide serves to help you through the process and point out some common gotchas that can appear.

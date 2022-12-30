@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Using a store outside of a component
 
 Pinia stores rely on the `pinia` instance to share the same store instance across all calls. Most of the time, this works out of the box by just calling your `useStore()` function. For example, in `setup()`, you don't need to do anything else. But things are a bit different outside of a component.

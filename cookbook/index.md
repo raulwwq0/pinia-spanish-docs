@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Cookbook
 
 - [Migrating from Vuex ≤4](./migration-vuex.md): A migration guide for converting Vuex ≤4 projects.

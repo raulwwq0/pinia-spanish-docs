@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 API Documentation
 
 # API Documentation

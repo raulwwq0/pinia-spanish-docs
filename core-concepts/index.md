@@ -1,3 +1,6 @@
+# Aún no está traducido...
+---
+
 # Defining a Store
 
 <VueSchoolLink

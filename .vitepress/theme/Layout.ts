@@ -32,7 +32,7 @@ export const Layout = defineComponent({
                       target: '_blank',
                       rel: 'noopener',
                     },
-                    [h('span', 'Watch Video Introduction')]
+                    [h('span', 'Mira un video de introducción')]
                   ),
                 ]
               ),
@@ -40,7 +40,7 @@ export const Layout = defineComponent({
             ]),
           'sidebar-top': () =>
             h('div', { class: 'sponsors sponsors-top' }, [
-              h('span', 'Platinum Sponsors'),
+              h('span', 'Patrocinadores Platino'),
               ...(sponsors.platinum.length
                 ? sponsors.platinum.map(
                     ({ href, imgSrcDark, imgSrcLight, alt }) =>
@@ -69,7 +69,7 @@ export const Layout = defineComponent({
                         rel: 'noopener',
                         alt: 'Your logo here',
                       },
-                      'Become a Sponsor!'
+                      '¡Convierte en Patrocinador!'
                     ),
                   ]),
             ]),

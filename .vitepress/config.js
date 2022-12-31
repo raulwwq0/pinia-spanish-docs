@@ -3,10 +3,10 @@ import locales from './locales'
 import renderPermaLink from './render-perma-link'
 import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 
-const META_URL = 'https://pinia.vuejs.org'
+const META_URL = 'https://es-pinia.vercel.app/'
 const META_TITLE = 'Pinia 🍍'
 const META_DESCRIPTION =
-  'Intuitive, type safe, light and flexible Store for Vue'
+  'Store para Vue intuitiva, con tipado seguro, ligera y flexible'
 const META_IMAGE = 'https://pinia.vuejs.org/social.png'
 
 const isProduction = process.env.NODE_ENV

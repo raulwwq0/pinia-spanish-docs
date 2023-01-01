@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.svg
-actionText: Empezar
+actionText: Comenzar
 actionLink: /introduction.html
 
 altActionText: Demo
@@ -11,7 +11,7 @@ features:
   - title: 💡 Intuitivo
     details: Las Stores son muy similares a los componentes. La API está diseñada para que puedas escribir stores bien organizadas.
   - title: 🔑 Tipa Seguro
-    details: Los tipos se deducen, lo que significa que las stores te ayudan con auto-completado ¡incluse en JavaScript!
+    details: Los tipos se deducen, lo que significa que las stores te ayudan con auto-completado ¡incluso en JavaScript!
   - title: ⚙️ Soporte para las Herramientas de Desarrollo
     details: Pinia se conecta a las herramientas de desarrollo de Vue para ofrecerte una experiencia de desarrollo mejorada tanto en Vue 2 como en Vue 3.
   - title: 🔌 Ampliable

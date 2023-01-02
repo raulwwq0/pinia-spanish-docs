@@ -1,5 +1,6 @@
 ---
 home: true
+title: Inicio
 heroImage: /logo.svg
 actionText: Comenzar
 actionLink: /introduction.html

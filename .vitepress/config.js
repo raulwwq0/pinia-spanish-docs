@@ -29,6 +29,7 @@ const productionHead = [
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
+  lang: 'es',
   markdown: {
     attrs: {
       leftDelimiter: '%{',

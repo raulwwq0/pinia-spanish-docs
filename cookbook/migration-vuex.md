@@ -36,7 +36,7 @@ src
     └── nested.js         # 'nested' id
 ```
 
-Esto crea una estructura plana para los almacenes, pero también conserva el espacio de nombres anterior con `id`s equivalentes. Si tenía algunos estados/captadores/acciones/mutaciones en la raíz del almacén (en el archivo `store/index.js` de Vuex), es posible que desees crear otro almacén llamada algo así como `root` que contenga toda esa información.
+Esto crea una estructura plana para los almacenes, pero también conserva el espacio de nombres anterior con `id`s equivalentes. Si tenía algunos estados/getters/acciones/mutaciones en la raíz del almacén (en el archivo `store/index.js` de Vuex), es posible que desees crear otro almacén llamada algo así como `root` que contenga toda esa información.
 
 El directorio para Pinia se llama generalmente `stores` en lugar de `store`. Esto es para enfatizar que Pinia utiliza múltiples almacenes, en lugar de un único almacén en Vuex.
 
@@ -126,7 +126,7 @@ export const useAuthUserStore = defineStore('authUser', {
     userId: null
   }),
   getters: {
-    // capturador firstName eliminado, ya no es necesario
+    // firstName getter eliminado, ya no es necesario
     fullName: (state) => `${state.firstName} ${state.lastName}`,
     loggedIn: (state) => state.userId !== null,
     // debes definir el tipo de devolución debido al uso de `this`
@@ -136,7 +136,7 @@ export const useAuthUserStore = defineStore('authUser', {
       const authEmailStore = useAuthEmailStore()
       return {
         ...state,
-        // otros captadores ahora en `this`
+        // otros getters ahora en `this`
         fullName: this.fullName,
         ...authPreferencesStore.$state,
         ...authEmailStore.details
@@ -158,7 +158,7 @@ export const useAuthUserStore = defineStore('authUser', {
       const res = await api.user.load(id)
       this.updateUser(res)
     },
-    // las mutaciones ahora pueden convertirse en acciones, en lugar de `store` como primer argumento, usa `this`
+    // las mutaciones ahora pueden convertirse en acciones, en lugar de `state` como primer argumento, usa `this`
     updateUser (payload) {
       this.firstName = payload.firstName
       this.lastName = payload.lastName
@@ -276,9 +276,9 @@ En el caso de que tu almacén Vuex utiliza algunas de las características más 
 
 No es necesario registrar módulos dinámicamente en Pinia. Los almacenes son dinámicos por diseño y sólo se registran cuando se necesitan. Si un almacén nunca se utiliza, nunca será "registrado".
 
-### Reemplazo del módulo caliente
+### Sustitución de módulos en caliente
 
-HMR también es compatible, pero tendrá que ser sustituido, consulte la [Guía HMR](./hot-module-replacement.md).
+Sustitución de módulos en caliente también es compatible, pero tendrá que ser sustituido, consulte la [Guía Sustitución de módulos en caliente](./hot-module-replacement.md).
 
 ### Plugins
 

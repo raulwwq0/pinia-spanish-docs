@@ -194,7 +194,7 @@ Como puedes ver, la mayor parte de su código puede reutilizarse. La seguridad t
 
 Ahora que tu módulo Vuex se ha convertido en un almacén de Pinia, cualquier componente u otro archivo que utilice ese módulo necesita ser actualizado también.
 
-Si estabas usando asistentes `map` de Vuex, merece la pena mirar el [Utilización sin la guía setup()](./options-api.md) ya que la mayoría de esos asistentes pueden reutilizarse.
+Si estabas usando asistentes `map` de Vuex, merece la pena mirar la [Utilización sin la guía setup()](./options-api.md) ya que la mayoría de esos asistentes pueden reutilizarse.
 
 Si estabas usando `useStore` entonces importa el nuevo almacén directamente y accede al estado en él. Por ejemplo:
 

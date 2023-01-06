@@ -180,7 +180,7 @@ store.$patch({
 })
 ```
 
-Sin embargo, algunas mutaciones son muy difíciles o costosas de aplicar con esta sintaxis: cualquier modificación a una colección (por ejemplo: añadir, borrar, empalmar un elemento desde un array) requiere que crees una nueva colección. Debido a esto, el método `$patch` también acepta una función para agrupar este tipo de mutaciones que son difíciles de aplicar con un objeto de parche:
+Sin embargo, algunas mutaciones son muy difíciles o costosas de aplicar con esta sintaxis: cualquier modificación a una colección (por ejemplo: añadir, borrar, unir un elemento desde un array) requiere que crees una nueva colección. Debido a esto, el método `$patch` también acepta una función para agrupar este tipo de mutaciones que son difíciles de aplicar con un objeto de parche:
 
 ```js
 store.$patch((state) => {

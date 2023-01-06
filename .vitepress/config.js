@@ -6,7 +6,7 @@ import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 const META_URL = 'https://es-pinia.vercel.app/'
 const META_TITLE = 'Pinia 🍍'
 const META_DESCRIPTION =
-  'Store para Vue intuitiva, con tipado seguro, ligera y flexible'
+  'Almacén para Vue intuitivo, con tipado seguro, ligero y flexible'
 const META_IMAGE = 'https://pinia.vuejs.org/social.png'
 
 const isProduction = process.env.NODE_ENV

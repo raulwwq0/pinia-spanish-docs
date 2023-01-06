@@ -5,18 +5,18 @@
   title="Comienza con Pinia"
 />
 
-Pinia [comenzó](https://github.com/vuejs/pinia/commit/06aeef54e2cad66696063c62829dac74e15fd19e) como un experimento para rediseñar el como se vería una Store de Vue con [Composition API](https://github.com/vuejs/composition-api) allá por noviembre de 2019. Desde entonces, los principios básicos se han mantenido igual, pero Pinia funciona para Vue 2 y Vue 3 **y no es necesario hacer uso de Composition API**. La API es igual para ambos excepto para _instalarlo_ y _SSR_, y esta documentación se enfoca en Vue 3 **con notas sobre Vue 2** cuando sea necesario ¡para que pueda ser leído por usuarios de Vue 2 y Vue 3!
+Pinia [comenzó](https://github.com/vuejs/pinia/commit/06aeef54e2cad66696063c62829dac74e15fd19e) como un experimento para rediseñar el como se vería un almacén de Vue con la [API de composición](https://github.com/vuejs/composition-api) allá por noviembre de 2019. Desde entonces, los principios básicos se han mantenido igual, pero Pinia funciona para Vue 2 y Vue 3 **y no es necesario hacer uso de la API de composición**. La API es igual para ambos excepto para _instalarlo_ y _SSR_, y esta documentación se enfoca en Vue 3 **con notas sobre Vue 2** cuando sea necesario ¡para que pueda ser leído por usuarios de Vue 2 y Vue 3!
 
 ## ¿Por qué debería usar Pinia?
 
-Pinia es una librería de stores para Vue que te permite compartir el estado entre los distintos componentes/páginas. Si estás familiarizado con Composition API probablemente estarás pensando que ya puedes compartir un estado global con un simple `export const state = reactive({})`. Esto es cierto para aplicaciones de una sola página (SPA) pero **expone to aplicación a [vulnerabilidades de seguridad](https://vuejs.org/guide/scaling-up/ssr.html#cross-request-state-pollution)** si es renderizada en el lado del servidor. Pero incluso en aplicaciones de una sola página pequeñas obtienes mucho al usar Pinia:
+Pinia es una librería de almacenes para Vue que te permite compartir el estado entre los distintos componentes/páginas. Si estás familiarizado con la API de composición probablemente estarás pensando que ya puedes compartir un estado global con un simple `export const state = reactive({})`. Esto es cierto para aplicaciones de una sola página (SPA) pero **expone to aplicación a [vulnerabilidades de seguridad](https://vuejs.org/guide/scaling-up/ssr.html#cross-request-state-pollution)** si es renderizada en el lado del servidor. Pero incluso en aplicaciones de una sola página pequeñas obtienes mucho al usar Pinia:
 
 - Soporte para las Herramientas de Desarrollo
   - Una línea del tiempo para seguir acciones o mutaciones
-  - Las Stores aparecen en los componentes donde son usadas
+  - Los almacenes aparecen en los componentes donde son usadas
   - Permite volver a un punto anterior y depurar fácilmente
 - Sustitución de módulos en caliente
-  - Modifica tus stores sin recargar la página
+  - Modifica tus almacenes sin recargar la página
   - Mantén cualquier estado existente mientras desarrollas
 - Plugins: amplía las características de Pinia con plugins
 - Soporte apropiado para TypeScript o **autocompletado** para usuarios de JS
@@ -27,7 +27,7 @@ Pinia es una librería de stores para Vue que te permite compartir el estado ent
 
 ## Ejemplos básicos
 
-Así es como se ve usar Pinia en términos de API (asegúrate de mirar el [Cómo Empezar](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando una store:
+Así es como se ve usar Pinia en términos de API (asegúrate de mirar el [Cómo Empezar](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando un almacén:
 
 ```js
 // stores/counter.js
@@ -63,7 +63,7 @@ export default {
   },
 }
 ```
-Incluso puedes usar una función (parecida al `setup()` de un componente) para definir una Store para casos más avanzados de uso:
+Incluso puedes usar una función (parecida al `setup()` de un componente) para definir un almacén para casos más avanzados de uso:
 
 ```js
 export const useCounterStore = defineStore('counter', () => {
@@ -76,7 +76,7 @@ export const useCounterStore = defineStore('counter', () => {
 })
 ```
 
-Si aún no manejas `setup()` y Composition API no te preocupes, Pinia también soporta un set similar a [_map helpers_ como Vuex](https://vuex.vuejs.org/guide/state.html#the-mapstate-helper). Define stores como antes pero luego usa `mapStores()`, `mapState()` o `mapActions()`:
+Si aún no manejas `setup()` y la API de composición no te preocupes, Pinia también soporta un set similar a [_map helpers_ como Vuex](https://vuex.vuejs.org/guide/state.html#the-mapstate-helper). Define almacenes como antes pero luego usa `mapStores()`, `mapState()` o `mapActions()`:
 
 ```js {22,24,28}
 const useCounterStore = defineStore('counter', {
@@ -115,7 +115,7 @@ Podrás encontrar más información sobre cada _map helper_ en los conceptos bá
 
 ## Por qué _Pinia_
 
-Pinia (pronunciado `/piːnjʌ/`, como "peenya" en inglés) es la palabra más cercana a _piña_ válida para el nombre de un paquete. Una piña es en realidad un grupo de flores individuales que unen para crear una fruta. Es parecido a las stores, cada una se crea individualmente pero al final están todas conectadas. También es una deliciosa fruta tropical originaria de Sudamérica.
+Pinia (pronunciado `/piːnjʌ/`, como "peenya" en inglés) es la palabra más cercana a _piña_ válida para el nombre de un paquete. Una piña es en realidad un grupo de flores individuales que unen para crear una fruta. Es parecido a los almacenes, cada una se crea individualmente pero al final están todas conectadas. También es una deliciosa fruta tropical originaria de Sudamérica.
 
 ## Un ejemplo más realista
 
@@ -168,7 +168,7 @@ export const useTodos = defineStore('todos', {
 
 Pinia comenzó como una aproximación de como sería la próxima versión de Vuex, incorporando muchas ideas de las discusiones del equipo principal para Vuex 5. Finalmente nos dimos cuenta que Pinia ya implementaba gran parte de lo que queríamos en Vuex 5 y se decidió convertirlo en la nueva recomendación en su lugar.
 
-Comparado con Vuex, Pinia proporciona una API más simple con menos decoraciones, ofrece API siguiendo el estilo de Composition API y, lo más importante, tiene una sólida deducción de tipos cuando es usado con TypeScript.
+Comparado con Vuex, Pinia proporciona una API más simple con menos decoraciones, ofrece API siguiendo el estilo de la API de composición y, lo más importante, tiene una sólida deducción de tipos cuando es usado con TypeScript.
 
 ### RFCs
 
@@ -185,8 +185,8 @@ La API de Pinia es muy diferente a la de Vuex ≤4, concretamente:
 - Las _mutaciones_ ya no existen. A veces era percibidas como **_demasiado_ verbosas**. Inicialmente traían integración con las herramientas de desarrollo, pero ya no es un problema.
 - No hay necesidad de crear wrappers personalizados para soportar TypeScript, ya que todo está tipado y la API está diseñada para aprovechar la deducción de tipos de TS tanto como sea posible.
 - No más cadenas mágicas para inyectar, importar funciones o llamarlas, ¡disfruta del autocompletado!
-- No es necesario añadir stores dinámicamente, todas son dinámicas por defecto y sin que te enteres. Cabe aclarar que puedes usar una store para registrarla cuando quieras, pero al ser automático no tienes que preocuparte por ello.
-- Se acabó el estructuramiento anidado de _módulos_. Aún puedes anidar stores implícitamente si la importas y la _usas_ dentro de otra, pero Pinia ofrece un un diseño de estructuramiento plano a la vez que permite la composición cruzada entre stores. **Incluso puedes tener dependencias circulares de stores**.
-- Sin _módulos con espacio de nombre_. Dada la arquitectura plana de las stores, las "stores con espacio de nombre" es heredado de la forma en que se definen y se podría decir que todas las stores tienen un espacio de nombre.
+- No es necesario añadir almacenes dinámicamente, todas son dinámicas por defecto y sin que te enteres. Cabe aclarar que puedes usar un almacén para registrarla cuando quieras, pero al ser automático no tienes que preocuparte por ello.
+- Se acabó el estructuramiento anidado de _módulos_. Aún puedes anidar almacenes implícitamente si lo importas y lo _usas_ dentro de otro, pero Pinia ofrece un un diseño de estructuramiento plano a la vez que permite la composición cruzada entre almacenes. **Incluso puedes tener dependencias circulares de almacenes**.
+- Sin _módulos con espacio de nombre_. Dada la arquitectura plana de los almacenes, los "almacenes con espacio de nombre" es heredado de la forma en que se definen y se podría decir que todos los almacenes tienen un espacio de nombre.
 
 Para más instrucciones más detallas sobre como convertir un proyecto existente con Vuex ≤4 para usar Pinia mira la [Guía de Migración desde Vuex ≤4](./cookbook/migration-vuex.md)

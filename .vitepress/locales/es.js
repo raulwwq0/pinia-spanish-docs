@@ -2,7 +2,7 @@ export default {
   vitepressConfig: {
     title: 'Pinia',
     lang: 'es-ES',
-    description: 'La Store de Vue que te gustará usar',
+    description: 'El Almacén de Vue que te gustará usar',
   },
   themeConfig: {
     label: 'Español',
@@ -57,13 +57,13 @@ export default {
         {
           text: 'Conceptos básicos',
           children: [
-            { text: 'Definir una Store', link: '/core-concepts/' },
+            { text: 'Definir un Almacén', link: '/core-concepts/' },
             { text: 'Estado', link: '/core-concepts/state.html' },
             { text: 'Getters', link: '/core-concepts/getters.html' },
             { text: 'Acciones', link: '/core-concepts/actions.html' },
             { text: 'Plugins', link: '/core-concepts/plugins.html' },
             {
-              text: 'Stores fuera de componentes',
+              text: 'Almacenes fuera de componentes',
               link: '/core-concepts/outside-component-usage.html',
             },
           ],
@@ -102,7 +102,7 @@ export default {
               link: '/cookbook/options-api.html',
             },
             {
-              text: 'Componiendo Stores',
+              text: 'Componiendo Almacenes',
               link: '/cookbook/composing-stores.html',
             },
             {

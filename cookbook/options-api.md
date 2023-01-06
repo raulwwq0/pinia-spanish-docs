@@ -2,7 +2,7 @@
 
 Pinia puede usarse incluso si no estás usando la API de composición (si estás usando Vue <2.7, todavía necesitas instalar el plugin `@vue/composition-api`). Aunque te recomendamos que pruebes la API de composición y la aprendas, puede que aún no sea el momento para ti y tu equipo, puede que estés en proceso de migrar una aplicación, o cualquier otra razón. Hay algunas funciones:
 
-- [mapStores](#giving-access-to-the-whole-store)
+- [mapStores](#dando-acceso-a-todo-el-almacen)
 - [mapState](../core-concepts/state.md#usage-with-the-options-api)
 - [mapWritableState](../core-concepts/state.md#modifiable-state)
 - ⚠️ [mapGetters](../core-concepts/getters.md#without-setup) (sólo para facilitar la migración, utiliza `mapState()` en su lugar)

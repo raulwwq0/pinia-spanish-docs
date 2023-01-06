@@ -8,16 +8,16 @@ Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer q
 
 Dependiendo de qué o cómo se realicen las pruebas, debemos ocuparnos de estos tres aspectos de forma diferente:
 
-- [Almacenes de prueba](#testing-stores)
-  - [Pruebas unitarias de un almacén](#unit-testing-a-store)
-  - [Componentes de las pruebas unitarias](#unit-testing-components)
-    - [Estado inicial](#initial-state)
+- [Almacenes de prueba](#almacenes-de-prueba)
+  - [Pruebas unitarias de un almacén](#pruebas-unitarias-de-un-almacen)
+  - [Componentes de las pruebas unitarias](#componentes-de-las-pruebas-unitarias)
+    - [Estado inicial](#estado-inicial)
     - [Personalizar el comportamiento de las acciones](#customizing-behavior-of-actions)
-    - [Especificación de la función createSpy](#specifying-the-createspy-function)
-    - [Simuladores getters](#mocking-getters)
+    - [Especificación de la función createSpy](#especificacion-de-la-funcion-createSpy)
+    - [Simuladores getters](#simuladores-getters)
     - [Pinia Plugins](#pinia-plugins)
-  - [Pruebas E2E](#e2e-tests)
-  - [Componentes de pruebas unitarias (Vue 2)](#unit-test-components-vue-2)
+  - [Pruebas E2E](#pruebas-e2e)
+  - [Componentes de pruebas unitarias (Vue 2)](#componentes-de-pruebas-unitarias-vue-2)
 
 ## Pruebas unitarias de un almacén
 
@@ -109,7 +109,7 @@ expect(store.someAction).toHaveBeenCalledTimes(1)
 expect(store.someAction).toHaveBeenLastCalledWith()
 ```
 
-Ten en cuenta que si utilizas Vue 2, `@vue/test-utils` requiere una [configuración ligeramente diferente](#unit-test-components-vue-2).
+Ten en cuenta que si utilizas Vue 2, `@vue/test-utils` requiere una [configuración ligeramente diferente](#componentes-de-pruebas-unitarias-vue-2).
 
 ### Estado inicial
 
@@ -206,7 +206,7 @@ counter.double = undefined
 counter.double // 2 (=1 x 2)
 ```
 
-### Plugins Pinia
+### Pinia Plugins
 
 Si tienes algún plugin de pinia, asegúrate de pasarlo cuando llames a `createTestingPinia()` para que se apliquen correctamente. **No los añadas con `testingPinia.use(MyPlugin)`** como lo harías con una pinia normal:
 

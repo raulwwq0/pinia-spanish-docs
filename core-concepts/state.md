@@ -226,7 +226,7 @@ cartStore.$subscribe((mutation, state) => {
 })
 ```
 
-Por defecto, las _suscripciones de estado_ están vinculada con el componente donde se añaden (si el almacén está dentro del `setup()` de un componente). Esto significa que se borrará automáticamente cuando se desmonte el componente. Si también quiere mantenerlas una vez se desmonte el componente tienes que pasarle `{ detached: true }` como segundo parámetro para separar la _suscripción de estado_ del componente actual:
+Por defecto, las _suscripciones de estado_ están vinculada con el componente donde se añaden (si el almacén está dentro del `setup()` de un componente). Esto significa que se borrará automáticamente cuando se desmonte el componente. Si también quieres mantenerlas una vez se desmonte el componente tienes que pasarle `{ detached: true }` como segundo parámetro para separar la _suscripción de estado_ del componente actual:
 
 ```js
 export default {

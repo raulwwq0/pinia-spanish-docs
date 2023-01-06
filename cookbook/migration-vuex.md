@@ -8,21 +8,21 @@ Primero, siga la [Guía de introducción](../getting-started.md) para instalar P
 
 ## Reestructuración de Módulos a Almacén
 
-Vuex tiene el concepto de un único almacén con múltiples _módulos_. Opcionalmente, estos módulos pueden tener espacios de nombres e incluso anidarse entre sí.
+Vuex tiene el concepto de un único almacén con múltiples _módulos_. Opcionalmente, estos módulos pueden tener namespaced e incluso anidarse entre sí.
 
-La forma más fácil de hacer la transición de ese concepto para usar con Pinia es que cada módulo que usó anteriormente ahora es un _almacén_. Cada almacén requiere de un `id` que es similar a un espacio de nombres en Vuex. Esto significa que cada almacén tiene un espacio de nombres por diseño. Los módulos anidados también pueden convertirse cada uno en su propia almacén. Los almacenes que dependen unas de otras simplemente importarán el otro almacén.
+La forma más fácil de hacer la transición de ese concepto para usar con Pinia es que cada módulo que usó anteriormente ahora es un _almacén_. Cada almacén requiere de un `id` que es similar a un namespace en Vuex. Esto significa que cada almacén tiene un namespaced por diseño. Los módulos anidados también pueden convertirse cada uno en su propia almacén. Los almacenes que dependen unas de otras simplemente importarán el otro almacén.
 
 La forma en que elijas reestructurar tus módulos Vuex en los almacenes Pinia depende completamente de tí, pero aquí hay una sugerencia:
 
 ```bash
-# Ejemplo de Vuex (asumiendo módulos con espacio de nombres)
+# Ejemplo de Vuex (asumiendo módulos con namespaced)
 src
 └── store
     ├── index.js           # Inicializa Vuex, importa módulos
     └── modules
-        ├── module1.js     # namespace 'module1'
+        ├── module1.js     # 'module1' namespace
         └── nested
-            ├── index.js   # namespace 'nested', importa 'module2' y 'module3'
+            ├── index.js   # 'nested' namespace, importa 'module2' y 'module3'
             ├── module2.js # 'nested/module2' namespace
             └── module3.js # 'nested/module3' namespace
 
@@ -36,7 +36,7 @@ src
     └── nested.js         # 'nested' id
 ```
 
-Esto crea una estructura plana para los almacenes, pero también conserva el espacio de nombres anterior con `id`s equivalentes. Si tenía algunos estados/getters/acciones/mutaciones en la raíz del almacén (en el archivo `store/index.js` de Vuex), es posible que desees crear otro almacén llamada algo así como `root` que contenga toda esa información.
+Esto crea una estructura plana para los almacenes, pero también conserva el namespacing anterior con `id`s equivalentes. Si tenía algunos estados/getters/acciones/mutaciones en la raíz del almacén (en el archivo `store/index.js` de Vuex), es posible que desees crear otro almacén llamada algo así como `root` que contenga toda esa información.
 
 El directorio para Pinia se llama generalmente `stores` en lugar de `store`. Esto es para enfatizar que Pinia utiliza múltiples almacenes, en lugar de un único almacén en Vuex.
 
@@ -47,7 +47,7 @@ Para proyectos grandes es posible que desee hacer esta conversión módulo por m
 Aquí hay un ejemplo completo del antes y el después de convertir un módulo Vuex a un almacén Pinia, ver más abajo para una guía paso a paso. El ejemplo Pinia utiliza un almacén de opciones como la estructura es más similar a Vuex:
 
 ```ts
-// Módulo Vuex en el espacio de nombres 'auth/user'
+// Módulo Vuex en el 'auth/user' namespace
 import { Module } from 'vuex'
 import { api } from '@/api'
 import { RootState } from '@/types' // si se utiliza una definición de tipo Vuex
@@ -76,7 +76,7 @@ const storeModule: Module<State, RootState> = {
         fullName: getters.fullName,
         // leer el estado de otro módulo llamado `auth`
         ...rootState.auth.preferences,
-        // leer un captador de un módulo con espacio de nombres llamado `email` anidado bajo `auth`
+        // leer un getter de un módulo con un namespaced llamado `email` anidado bajo `auth`
         ...rootGetters['auth/email'].details
       }
     }
@@ -174,7 +174,7 @@ export const useAuthUserStore = defineStore('authUser', {
 
 Desglosemos lo anterior en pasos:
 
-1. Añade un `id` requerido para el almacén, puedes mantenerlo igual que el espacio de nombre anterior. También se recomienda asegurarse de que el `id` está en _camelCase_ ya que hace que sea más fácil de usar con `mapStores()`.
+1. Añade un `id` requerido para el almacén, puedes mantenerlo igual que el namespace anterior. También se recomienda asegurarse de que el `id` está en _camelCase_ ya que hace que sea más fácil de usar con `mapStores()`.
 2. Convertir `state` en una función si aún no lo era
 3. Convertir `getters`
     1. Elimina cualquier getter que devuelva estado con el mismo nombre (por ejemplo, `firstName: (state) => state.firstName`), no son necesarios ya que puedes acceder a cualquier estado directamente desde la instancia del almacén

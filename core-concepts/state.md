@@ -39,7 +39,7 @@ export const useUserStore = defineStore('user', {
     return {
       // para las listas inicialmente vacías
       userList: [] as UserInfo[],
-      // para datos que no está cargados aún
+      // para datos que no están cargados aún
       user: null as UserInfo | null,
     }
   },

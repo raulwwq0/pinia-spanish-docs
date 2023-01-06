@@ -144,7 +144,7 @@ export default {
 
 #### Estado modificable
 
-Si quieres se capaz de escribir en dichas propiedades del estado (por ejemplo si tienes un formulario), puedes usar `mapWritableState()` en su lugar. Cabe aclarar que no puedes pasar una función como con `mapState()`:
+Si quieres poder escribir en estas propiedades de estado (por ejemplo, si tienes un formulario), puedes utilizar `mapWritableState()` en su lugar. Ten en cuenta que no puedes pasar una función como con `mapState()`:
 
 ```js
 import { mapWritableState } from 'pinia'

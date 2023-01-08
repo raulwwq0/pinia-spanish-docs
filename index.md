@@ -14,7 +14,7 @@ features:
   - title: 🔑 Tipa Seguro
     details: Los tipos se deducen, lo que significa que los almacenes te ayudan con auto-completado ¡incluso en JavaScript!
   - title: ⚙️ Soporte para las Herramientas de Desarrollo
-    details: Pinia se conecta a las herramientas de desarrollo de Vue para ofrecerte una experiencia de desarrollo mejorada tanto en Vue 2 como en Vue 3.
+    details: Pinia se conecta a Vue Devtools para ofrecerte una experiencia de desarrollo mejorada tanto en Vue 2 como en Vue 3.
   - title: 🔌 Ampliable
     details: Reacciona a los cambios de los almacenes para ampliar Pinia con transacciones, sincronización de almacenamiento local, etc.
   - title: 🏗 Diseño Modular

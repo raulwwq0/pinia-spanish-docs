@@ -1,6 +1,6 @@
-# Almacenes de prueba
+# Probar almacenes
 
-Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer que las pruebas sean mucho más difíciles de lo que deberían. Afortunadamente, esto no tiene por qué ser así. Tenemos tener cuidado de tres cosas al probar almacenes:
+Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer que las pruebas sean mucho más difíciles de lo que deberían. Afortunadamente, esto no tiene por qué ser así. Tenemos que tener cuidado de tres cosas al probar almacenes:
 
 - La instancia `pinia`: Los almacenes no pueden funcionar sin ella
 - `actions`: La mayoría de las veces contienen la lógica más compleja del almacén. ¿No sería bueno si pudieran burlarse de ellos por defecto?
@@ -8,7 +8,7 @@ Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer q
 
 Dependiendo de qué o cómo se realicen las pruebas, debemos ocuparnos de estos tres aspectos de forma diferente:
 
-- [Almacenes de prueba](#almacenes-de-prueba)
+- [Probar almacenes](#probar-almacenes)
   - [Pruebas unitarias de un almacén](#pruebas-unitarias-de-un-almacen)
   - [Componentes de las pruebas unitarias](#componentes-de-las-pruebas-unitarias)
     - [Estado inicial](#estado-inicial)
@@ -101,7 +101,7 @@ store.name = 'my new name'
 store.$patch({ name: 'new name' })
 expect(store.name).toBe('new name')
 
-// están bloqueadas por defecto, lo que significa que no ejecutan su código por defecto.
+// las acciones están bloqueadas por defecto, lo que significa que no ejecutan su código por defecto.
 // Consulta más abajo para personalizar este comportamiento.
 store.someAction()
 
@@ -124,7 +124,7 @@ const useCounterStore = defineStore('counter', {
 })
 ```
 
-Dado que el almacén se llama _"contador"_, es necesario añadir un objeto coincidente a `initialState`:
+Dado que el almacén se llama _"counter"_, es necesario añadir un objeto coincidente a `initialState`:
 
 ```ts
 // en alguna parte de tu prueba
@@ -133,7 +133,7 @@ const wrapper = mount(Counter, {
     plugins: [
       createTestingPinia({
         initialState: {
-          counter: { n: 20 }, // iniciar el contador en 20 en lugar de 0
+          counter: { n: 20 }, // iniciar el counter en 20 en lugar de 0
         },
       }),
     ],
@@ -168,7 +168,7 @@ expect(store.someAction).toHaveBeenCalledTimes(1)
 
 ### Especificación de la función createSpy
 
-Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente stubs acciones utilizando la función espía basada en el marco de prueba existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](https://pinia.vuejs.org/api/interfaces/pinia_testing.TestingOptions.html#createspy):
+Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente las acciones stubs usan la funciones espía en base a framework de pruebas existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](https://pinia.vuejs.org/api/interfaces/pinia_testing.TestingOptions.html#createspy):
 
 ```js
 import sinon from 'sinon'

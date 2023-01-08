@@ -25,7 +25,7 @@ const useCartStore = defineStore('cart', {
 
 export default {
   computed: {
-    // ten en cuenta que no estamos pasando un array, sólo un almacén después de la otra
+    // ten en cuenta que no estamos pasando un array, sólo un almacén después de la otro
     // cada almacén será accesible como su id + 'Store'
     ...mapStores(useCartStore, useUserStore)
   },

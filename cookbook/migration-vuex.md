@@ -10,7 +10,7 @@ Primero, siga la [Guía de introducción](../getting-started.md) para instalar P
 
 Vuex tiene el concepto de un único almacén con múltiples _módulos_. Opcionalmente, estos módulos pueden tener namespaced e incluso anidarse entre sí.
 
-La forma más fácil de hacer la transición de ese concepto para usar con Pinia es que cada módulo que usó anteriormente ahora es un _almacén_. Cada almacén requiere de un `id` que es similar a un namespace en Vuex. Esto significa que cada almacén tiene un namespaced por diseño. Los módulos anidados también pueden convertirse cada uno en su propia almacén. Los almacenes que dependen unas de otras simplemente importarán el otro almacén.
+La forma más fácil de hacer la transición de ese concepto para usar con Pinia es que cada módulo que usó anteriormente ahora es un _almacén_. Cada almacén requiere de un `id` que es similar a un namespace en Vuex. Esto significa que cada almacén tiene un namespaced por diseño. Los módulos anidados también pueden convertirse cada uno en su propio almacén. Los almacenes que dependen unos de otros simplemente importarán el otro almacén.
 
 La forma en que elijas reestructurar tus módulos Vuex en los almacenes Pinia depende completamente de tí, pero aquí hay una sugerencia:
 

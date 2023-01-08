@@ -8,16 +8,16 @@ Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer q
 
 Dependiendo de qué o cómo se realicen las pruebas, debemos ocuparnos de estos tres aspectos de forma diferente:
 
-- [Probar almacenes](#probar-almacenes)
-  - [Pruebas unitarias de un almacén](#pruebas-unitarias-de-un-almacen)
-  - [Componentes de las pruebas unitarias](#componentes-de-las-pruebas-unitarias)
-    - [Estado inicial](#estado-inicial)
+- [Probar almacenes](#testing-stores)
+  - [Pruebas unitarias de un almacén](#unit-testing-a-store)
+  - [Componentes de las pruebas unitarias](#unit-testing-components)
+    - [Estado inicial](#initial-state)
     - [Personalizar el comportamiento de las acciones](#customizing-behavior-of-actions)
-    - [Especificación de la función createSpy](#especificacion-de-la-funcion-createSpy)
-    - [Simuladores getters](#simuladores-getters)
-    - [Pinia Plugins](#pinia-plugins)
-  - [Pruebas E2E](#pruebas-e2e)
-  - [Componentes de pruebas unitarias (Vue 2)](#componentes-de-pruebas-unitarias-vue-2)
+    - [Especificación de la función createSpy](#specifying-the-createspy-function)
+    - [Simular getters](#mocking-getters)
+    - [Plugins de Pinia](#pinia-plugins)
+  - [Pruebas E2E](#e2e-tests)
+  - [Componentes de pruebas unitarias (Vue 2)](#unit-test-components-vue-2)
 
 ## Pruebas unitarias de un almacén {#unit-testing-a-store}
 

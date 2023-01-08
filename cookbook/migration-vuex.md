@@ -1,4 +1,4 @@
-# Migración desde Vuex ≤4 {#migrating-from-vuex-≤4}
+# Migración desde Vuex ≤4 {#migrating-from-vuex-4}
 
 Aunque la estructura de los almacenes de Vuex y Pinia es diferente, gran parte de la lógica puede ser reutilizada. Esta guía sirve para ayudarte a través del proceso y señalar algunos líos comunes que pueden aparecer.
 

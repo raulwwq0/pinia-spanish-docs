@@ -215,7 +215,7 @@ export default {
 
 ### Sin `setup()` {#without-setup}
 
-Puedes usar la misma función `mapState()` usada en la [sección anterior del estado](./state.md##usage-with-the-options-api) para mapear los getters:
+Puedes usar la misma función `mapState()` usada en la [sección anterior del estado](./state.md#options-api) para mapear los getters:
 
 ```js
 import { mapState } from 'pinia'

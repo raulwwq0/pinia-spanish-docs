@@ -1,4 +1,4 @@
-# Manual
+# Manual {#cookbook}
 
 - [Migración desde Vuex ≤4](./migration-vuex.md): Una guía de migración para convertir proyectos Vuex ≤4.
 - [Sustitución de módulos en caliente](./hot-module-replacement.md): Cómo activar el reemplazo de módulos activos y mejorar la experiencia del desarrollador.

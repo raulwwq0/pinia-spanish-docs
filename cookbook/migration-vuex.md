@@ -1,12 +1,12 @@
-# Migración desde Vuex ≤4
+# Migración desde Vuex ≤4 {#migrating-from-vuex-≤4}
 
 Aunque la estructura de los almacenes de Vuex y Pinia es diferente, gran parte de la lógica puede ser reutilizada. Esta guía sirve para ayudarte a través del proceso y señalar algunos líos comunes que pueden aparecer.
 
-## Preparación
+## Preparación {#preparation}
 
 Primero, siga la [Guía de introducción](../getting-started.md) para instalar Pinia.
 
-## Reestructuración de Módulos a Almacén
+## Reestructuración de Módulos a Almacén {#restructuring-modules-to-stores}
 
 Vuex tiene el concepto de un único almacén con múltiples _módulos_. Opcionalmente, estos módulos pueden tener namespaced e incluso anidarse entre sí.
 
@@ -42,7 +42,7 @@ El directorio para Pinia se llama generalmente `stores` en lugar de `store`. Est
 
 Para proyectos grandes es posible que desee hacer esta conversión módulo por módulo en lugar de convertir todo a la vez. En realidad se puede mezclar Pinia y Vuex juntos durante la migración por lo que este enfoque también puede funcionar y es otra razón para nombrar el directorio Pinia `stores` en su lugar.
 
-## Conversión de un solo módulo
+## Conversión de un solo módulo {#converting-a-single-module}
 
 Aquí hay un ejemplo completo del antes y el después de convertir un módulo Vuex a un almacén Pinia, ver más abajo para una guía paso a paso. El ejemplo Pinia utiliza un almacén de opciones como la estructura es más similar a Vuex:
 
@@ -190,7 +190,7 @@ Desglosemos lo anterior en pasos:
 
 Como puedes ver, la mayor parte de su código puede reutilizarse. La seguridad tipográfica también debería ayudarte a identificar qué hay que cambiar si se te escapa algo.
 
-## Uso dentro de los componentes
+## Uso dentro de los componentes {#usage-inside-components}
 
 Ahora que tu módulo Vuex se ha convertido en un almacén de Pinia, cualquier componente u otro archivo que utilice ese módulo necesita ser actualizado también.
 
@@ -240,7 +240,7 @@ export default defineComponent({
 })
 ```
 
-## Uso fuera de los componentes
+## Uso fuera de los componentes {#usage-outside-components}
 
 Actualizar el uso fuera de los componentes debería ser sencillo siempre y cuando tengas cuidado de _no usar un almacén fuera de las funciones_. Aquí hay un ejemplo de uso del almacén en un guardia de navegación Vue Router:
 
@@ -268,19 +268,19 @@ router.beforeEach((to, from, next) => {
 
 Más información [aquí](../core-concepts/outside-component-usage.md).
 
-## Uso avanzado de Vuex
+## Uso avanzado de Vuex {#advanced-vuex-usage}
 
 En el caso de que tu almacén Vuex utiliza algunas de las características más avanzadas que ofrece, aquí tienes una guía sobre cómo lograr lo mismo en Pinia. Algunos de estos puntos ya están cubiertos en [este resumen comparativo](../introduction.md#comparison-with-vuex-3-x-4-x).
 
-### Módulos dinámicos
+### Módulos dinámicos {#dynamic-modules}
 
 No es necesario registrar módulos dinámicamente en Pinia. Los almacenes son dinámicos por diseño y sólo se registran cuando se necesitan. Si un almacén nunca se utiliza, nunca será "registrado".
 
-### Sustitución de módulos en caliente
+### Sustitución de módulos en caliente {#hot-module-replacement}
 
 Sustitución de módulos en caliente también es compatible, pero tendrá que ser sustituido, consulte la [Guía Sustitución de módulos en caliente](./hot-module-replacement.md).
 
-### Plugins
+### Plugins {#plugins}
 
 Si utilizas un plugin público de Vuex, compruebe si existe una alternativa Pinia. Si no, tendrás que escribir el tuyo propio o evaluar si el plugin sigue siendo necesario.
 

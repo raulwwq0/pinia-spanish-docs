@@ -43,7 +43,7 @@ Entonces puedes acceder al getter directamente desde la instancia del almacén:
 
 ```vue
 <template>
-  <p>El doble del contador es {{ store.doubleCount }}</p>
+  <p>Double count is {{ store.doubleCount }}</p>
 </template>
 
 <script>
@@ -113,7 +113,7 @@ export default {
 </script>
 
 <template>
-  <p>Usuario 2: {{ getUserById(2) }}</p>
+  <p>User 2: {{ getUserById(2) }}</p>
 </template>
 ```
 

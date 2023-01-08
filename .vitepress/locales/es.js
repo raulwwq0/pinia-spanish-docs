@@ -82,7 +82,7 @@ export default {
           ],
         },
         {
-          text: 'Cookbook',
+          text: 'Manual',
           link: '/cookbook/',
           children: [
             {

@@ -42,7 +42,7 @@ const useY = defineStore('y', () => {
 
 ## Almacenes anidados {#nested-stores}
 
-Ten en cuenta que si un almacén utiliza otro almacén, puedes importar directamente y llamar a la función `useStore()` dentro de _acciones_ y _getters_. Entonces puedes interactuar con el almacén como lo harías desde dentro de un componente Vue. Ver [Getters Compartidos](#getters-compartidos) y [Acciones Compartidas](#acciones-compartidas).
+Ten en cuenta que si un almacén utiliza otro almacén, puedes importar directamente y llamar a la función `useStore()` dentro de _acciones_ y _getters_. Entonces puedes interactuar con el almacén como lo harías desde dentro de un componente Vue. Ver [Getters Compartidos](#shared-getters) y [Acciones Compartidas](#shared-actions).
 
 Cuando se trata de _establecer almacenes_, simplemente puedes usar una de los almacenes **en la parte superior** de la función del almacén:
 

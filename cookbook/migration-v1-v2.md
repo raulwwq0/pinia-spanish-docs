@@ -2,9 +2,9 @@
 
 ¡A partir de la versión `2.0.0-rc.4`, pinia soporta tanto Vue 2 como Vue 3! Esto significa que todas las nuevas actualizaciones se aplicarán a esta versión 2 para que tanto los usuarios de Vue 2 como los de Vue 3 puedan beneficiarse de ella. Si estás usando Vue 3, esto no cambia nada para ti ya que ya estabas usando el rc y puedes revisar [CHANGELOG](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md) para una explicación detallada de todo lo que cambió. ¡Si no, **esta guía es para ti**!
 
-## Depreciaciones {#deprecations}
+## Características Obsoletas {#deprecations}
 
-Echemos un vistazo a todos los cambios que necesitas aplicar a tu código. En primer lugar, asegúrese de que ya está ejecutando la última versión 0.x para ver cualquier depreciacion:
+Echemos un vistazo a todos los cambios que necesitas aplicar a tu código. En primer lugar, asegúrese de que ya está ejecutando la última versión 0.x para ver cualquier característica obsoleta:
 
 ```shell
 npm i 'pinia@^0.x.x'
@@ -75,7 +75,7 @@ El tipo `PiniaStorePlugin` ha cambiado de nombre a `PiniaPlugin`.
  }
 ```
 
-**Tenga en cuenta que este cambio sólo se puede hacer después de actualizar a la última versión de Pinia sin depreciaciones**.
+**Tenga en cuenta que este cambio sólo se puede hacer después de actualizar a la última versión de Pinia sin características obsoletas**.
 
 ## Versión `@vue/composition-api` {#vue-composition-api-version}
 
@@ -87,7 +87,7 @@ npm i @vue/composition-api@latest
 yarn add @vue/composition-api@latest
 ```
 
-## soporte con webpack 4 {#webpack-4-support}
+## Soporte con webpack 4 {#webpack-4-support}
 
 Si estás usando webpack 4 (Vue CLI usa webpack 4), puedes encontrar un error como este:
 
@@ -135,7 +135,7 @@ Esto se debe a la modernización de los archivos dist para soportar módulos ESM
   }
   ```
 
-## Devtools {#devtools}
+## Herramientas de desarrollo {#devtools}
 
 Pinia v2 ya no utiliza Vue Devtools v5, se requiere Vue Devtools v6. Encuentra el enlace de descarga en la [documentación de Vue Devtools](https://devtools.vuejs.org/guide/installation.html#chrome) para el **canal beta** de la extensión.
 

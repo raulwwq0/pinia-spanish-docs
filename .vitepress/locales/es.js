@@ -106,7 +106,7 @@ export default {
               link: '/cookbook/composing-stores.html',
             },
             {
-              text: 'Migración desde v0/v1 to v2',
+              text: 'Migración desde v0/v1 a v2',
               link: '/cookbook/migration-v1-v2.html',
             },
             {

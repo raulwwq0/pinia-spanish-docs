@@ -1,21 +1,18 @@
-# Aún no está traducido...
----
+# Migración desde 0.x (v1) a v2
 
-# Migrating from 0.x (v1) to v2
+¡A partir de la versión `2.0.0-rc.4`, pinia soporta tanto Vue 2 como Vue 3! Esto significa que todas las nuevas actualizaciones se aplicarán a esta versión 2 para que tanto los usuarios de Vue 2 como los de Vue 3 puedan beneficiarse de ella. Si estás usando Vue 3, esto no cambia nada para ti ya que ya estabas usando el rc y puedes revisar [CHANGELOG](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md) para una explicación detallada de todo lo que cambió. ¡Si no, **esta guía es para ti**!
 
-Starting at version `2.0.0-rc.4`, pinia supports both Vue 2 and Vue 3! This means, all new updates will be applied to this version 2 so both Vue 2 and Vue 3 users can benefit from it. If you are using Vue 3, this doesn't change anything for you as you were already using the rc and you can check [the CHANGELOG](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md) for a detailed explanation of everything that changed. Otherwise, **this guide is for you**!
+## Depreciaciones
 
-## Deprecations
-
-Let's take a look at all the changes you need to apply to your code. First, make sure you are already running the latest 0.x version to see any deprecations:
+Echemos un vistazo a todos los cambios que necesitas aplicar a tu código. En primer lugar, asegúrese de que ya está ejecutando la última versión 0.x para ver cualquier depreciacion:
 
 ```shell
 npm i 'pinia@^0.x.x'
-# or with yarn
+# o con yarn
 yarn add 'pinia@^0.x.x'
 ```
 
-If you are using ESLint, consider using [this plugin](https://github.com/gund/eslint-plugin-deprecation) to find all deprecated usages. Otherwise, you should be able to see them as they appear crossed. These are the APIs that were deprecated that were removed:
+Si estás usando ESLint, considera usar [este plugin](https://github.com/gund/eslint-plugin-deprecation) para encontrar todos los usos obsoletos. De lo contrario, deberías poder verlos tal y como aparecen cruzados. Estas son las APIs que estaban obsoletas y que fueron eliminadas:
 
 - `createStore()` becomes `defineStore()`
 - In subscriptions, `storeName` becomes `storeId`

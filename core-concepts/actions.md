@@ -114,7 +114,7 @@ export default {
   title="Access Pinia Getters via the Options API"
 />
 
-Para los próximos ejemplos supón que el siguiente almacén fue creado:
+Para los siguientes ejemplos, puedes asumir que se ha creado el siguiente almacén:
 
 ```js
 // Ruta de ejemplo:

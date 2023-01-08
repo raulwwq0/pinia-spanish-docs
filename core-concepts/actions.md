@@ -5,7 +5,7 @@
   title="Learn all about actions in Pinia"
 />
 
-Las acciones son el equivalente de los [métodos](https://v3.vuejs.org/guide/data-methods.html#methods) en los componentes. Pueden ser definidos con la propiedad `actions`en `defineStore()` y **son perfectas para definir lógica de negocio**:
+Las acciones son el equivalente de los [métodos](https://v3.vuejs.org/guide/data-methods.html#methods) en los componentes. Pueden ser definidos con la propiedad `actions` en `defineStore()` y **son perfectas para definir lógica de negocio**:
 
 ```js
 export const useCounterStore = defineStore('counter', {

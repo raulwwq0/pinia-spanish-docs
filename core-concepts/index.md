@@ -1,4 +1,4 @@
-# Definir un Almacén
+# Definir un Almacén {#defining-a-store}
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/define-your-first-pinia-store"
@@ -24,7 +24,7 @@ Este _nombre_, también conocido como _id_, es obligatorio y es usado por Pinia 
 
 `defineStore()` acepta dos valores distintos para su segundo parámetro: una función Setup o un objeto de opciones.
 
-## Almacenes de Opciones
+## Almacenes de Opciones {#option-stores}
 
 Tal y como se hace en la API de opciones de Vue, podemos pasar un objeto de opciones con las propiedades `state`, `actions` y `getters`.
 
@@ -46,7 +46,7 @@ Puedes pensar en `state` como los `datos` del almacén, `getters` como las propi
 
 Los almacenes de opciones deberían sentirse como algo intuitivo y simple para empezar.
 
-## Almacenes con Setup
+## Almacenes con Setup {#setup-stores}
 
 También hay otra posible sintaxis para definir los almacenes. Es parecida a la [función setup](https://vuejs.org/api/composition-api-setup.html) de la API de composición de Vue, podemos pasarle una función que defina propiedades reactivas y métodos, y que devuelva un objecto con las propiedades y métodos que queremos exponer.
 
@@ -69,13 +69,13 @@ En los _almacenes con setup_:
 - `computed()` se convierte en `getters`
 - `function()` se convierte en `actions`
 
-Los almacenes con setup ofrecen mucha más flexibilidad que los [almacenes de opciones](#almacenes-de-opciones) dado que puedes crear observadores en un almacén y usar libremente cualquier [composable](https://vuejs.org/guide/reusability/composables.html#composables). Sin embargo, ten en mente que usar composables puede traer más complejidad cuando se usa [SSR](../cookbook/composables.md).
+Los almacenes con setup ofrecen mucha más flexibilidad que los [almacenes de opciones](#option-stores) dado que puedes crear observadores en un almacén y usar libremente cualquier [composable](https://vuejs.org/guide/reusability/composables.html#composables). Sin embargo, ten en mente que usar composables puede traer más complejidad cuando se usa [SSR](../cookbook/composables.md).
 
-## ¿Qué sintaxis debería usar?
+## ¿Qué sintaxis debería usar? {#what-syntax-should-i-pick}
 
-Al igual que con las [API de composición y API de opciones de Vue](https://vuejs.org/guide/introduction.html#which-to-choose), quédate con la que te sientas más cómodo. Si no estás seguro prueba primero los [almacenes de opciones](#almacenes-de-opciones).
+Al igual que con las [API de composición y API de opciones de Vue](https://vuejs.org/guide/introduction.html#which-to-choose), quédate con la que te sientas más cómodo. Si no estás seguro prueba primero los [almacenes de opciones](#option-stores).
 
-## Usando el almacén
+## Usando el almacén {#using-the-store}
 
 Estamos _definiendo_ un almacén porque hasta que no se llame a `use...Store()` dentro de `setup()` este no se creará.
 

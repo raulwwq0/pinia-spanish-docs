@@ -26,7 +26,7 @@ Estos son algunos ejemplos de composables que no se pueden usar en almacenes de 
 - [useEyeDropper](https://vueuse.org/core/useEyeDropper/): 
 expone datos y funciones de solo lectura
 
-## Configuración de almacenes {#setup-stores}
+## Almacenes de configuración {#setup-stores}
 
 Por otro lado, al definir un almacén de configuración, puede usar casi cualquier composable ya que cada propiedad se distingue en estado, acción o getter:
 
@@ -81,7 +81,7 @@ export const useAuthStore = defineStore('auth', {
 })
 ```
 
-En la [Configuración de almacenes](#setup-stores), necesitas usar un helper llamado `skipHydrate()` en cualquier propiedad de estado que no deba tomarse del estado inicial. A diferencia de los almacenes de opciones, los almacenes de configuración no pueden simplemente _saltarse llamando a `state()`_, por lo que marcamos las propiedades que no se pueden hidratar con `skipHydrate()`. Ten en cuenta que esto solo se aplica a las propiedades reactivas modificables:
+En los [Almacenes de configuración](#setup-stores), necesitas usar un helper llamado `skipHydrate()` en cualquier propiedad de estado que no deba tomarse del estado inicial. A diferencia de los almacenes de opciones, los almacenes de configuración no pueden simplemente _saltarse llamando a `state()`_, por lo que marcamos las propiedades que no se pueden hidratar con `skipHydrate()`. Ten en cuenta que esto solo se aplica a las propiedades reactivas modificables:
 
 ```ts
 import { defineStore, skipHydrate } from 'pinia'

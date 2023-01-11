@@ -12,7 +12,7 @@ export default {
 
     nav: [
       { text: 'Guía', link: '/introduction.html' },
-      { text: 'API', link: 'https://pinia.vuejs.org/api/' },
+      { text: 'API', link: '/api/' },
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },
       {
@@ -39,7 +39,19 @@ export default {
     ],
 
     sidebar: {
-      // catch-all fallback
+      '/api/': [
+        {
+          text: 'packages',
+          children: [
+            { text: 'pinia', link: '/api/modules/pinia.html' },
+            { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },
+            {
+              text: '@pinia/testing',
+              link: '/api/modules/pinia_testing.html',
+            },
+          ],
+        },
+      ],
       '/': [
         {
           text: 'Introducción',

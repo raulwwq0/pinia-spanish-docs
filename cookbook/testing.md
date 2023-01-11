@@ -168,7 +168,7 @@ expect(store.someAction).toHaveBeenCalledTimes(1)
 
 ### Especificación de la función createSpy {#specifying-the-createspy-function}
 
-Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente las acciones stubs usan la funciones espía en base a framework de pruebas existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](https://pinia.vuejs.org/api/interfaces/pinia_testing.TestingOptions.html#createspy):
+Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente las acciones stubs usan la funciones espía en base a framework de pruebas existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy):
 
 ```js
 import sinon from 'sinon'

@@ -11,7 +11,7 @@ Si tienes preguntas o problemas relacionados con la migración, no dudes en [abr
 
 Ya no se accede al estado del almacén a través de una propiedad `state`, se puede acceder directamente a cualquier propiedad state.
 
-Teniendo en cuenta un almacén definio con:
+Teniendo en cuenta un almacén definido con:
 
 ```js
 const useStore({

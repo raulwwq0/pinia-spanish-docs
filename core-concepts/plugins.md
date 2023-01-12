@@ -193,7 +193,7 @@ pinia.use(({ store }) => {
 })
 ```
 
-## Adding new options {##adding-new-options}
+## Añadir nuevas opciones {##adding-new-options}
 
 Es posible crear nuevas opciones cuando definas almacenes para luego consumirlas desde los plugins. Por ejemplo, puedes crear una opción `debounce` que te permita retrasar cualquier acción:
 

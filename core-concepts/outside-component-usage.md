@@ -1,35 +1,34 @@
-# Aún no está traducido...
----
+# Uso de almacenes fuera de componentes {#using-a-store-outside-of-a-component}
 
-# Using a store outside of a component
+Los almacenes de Pinia dependen de la instancia de `pinia` para compartir la misma instancia del almacén a través de todas las llamadas de la misma. La mayoría del tiempo esto funciona por defecto solo con llamar a tu función `useStore()`. Por ejemplo, en `setup()`, no necesitas hacer nada más. Pero las cosas son un poco diferentes fuera de un componente. 
 
-Pinia stores rely on the `pinia` instance to share the same store instance across all calls. Most of the time, this works out of the box by just calling your `useStore()` function. For example, in `setup()`, you don't need to do anything else. But things are a bit different outside of a component.
-Behind the scenes, `useStore()` _injects_ the `pinia` instance you gave to your `app`. This means that if the `pinia` instance cannot be automatically injected, you have to manually provide it to the `useStore()` function.
-You can solve this differently depending on the kind of application you are writing.
+Detrás de cámaras, `useStore()` _inyecta_ la instancia de `pinia` para dársela a tu `app`. Esto significa que si la instancia de `pinia` no se puede inyectar automáticamente, tendrás que proveerlo manualmente a la función `useStore()`.
 
-## Single Page Applications
+Puedes solucionar esto de varias formas según el tipo de aplicación que estás escribiendo.
 
-If you are not doing any SSR (Server Side Rendering), any call of `useStore()` after installing the pinia plugin with `app.use(pinia)` will work:
+## Aplicaciones de una sola página (SPA) {#single-page-applications}
+
+Si no estás haciendo nada de SSR (Renderizado del Lado del Servidor), cualquier llamada de `useStore()` tras instalar el plugin de pinia con `app.use(pinia)` funcionará:
 
 ```js
 import { useUserStore } from '@/stores/user'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-// ❌  fails because it's called before the pinia is created
+// ❌  falla porque es llamada antes de que la pinia esté creada
 const userStore = useUserStore()
 
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
 
-// ✅ works because the pinia instance is now active
+// ✅ funciona porque la instancia de pinia está activa
 const userStore = useUserStore()
 ```
 
-The easiest way to ensure this is always applied is to _defer_ calls of `useStore()` by placing them inside functions that will always run after pinia is installed.
+La forma más fácil para asegurar esto es aplicarlo siempre para _posponer_ las llamadas de `useStore()` mediante la colocación de esto dentro de funciones que siempre se ejecutarán después de la instalación de pinia.
 
-Let's take a look at this example of using a store inside of a navigation guard with Vue Router:
+Vamos a echar un vistazo a este ejemplo del uso de un almacén dentro de una guardia de navegación con Vue Router:
 
 ```js
 import { createRouter } from 'vue-router'
@@ -37,26 +36,26 @@ const router = createRouter({
   // ...
 })
 
-// ❌ Depending on the order of imports this will fail
+// ❌ Dependiendo del orden de los imports esto fallará
 const store = useStore()
 
 router.beforeEach((to, from, next) => {
-  // we wanted to use the store here
+  // queremos usar el almacén aquí
   if (store.isLoggedIn) next()
   else next('/login')
 })
 
 router.beforeEach((to) => {
-  // ✅ This will work because the router starts its navigation after
-  // the router is installed and pinia will be installed too
+  // ✅ Esto funcionará porque el router comienza su navegación después
+  // de que el router esté instalado y pinia también lo estará
   const store = useStore()
 
   if (to.meta.requiresAuth && !store.isLoggedIn) return '/login'
 })
 ```
 
-## SSR Apps
+## Aplicaciones SSR {#single-page-applications}
 
-When dealing with Server Side Rendering, you will have to pass the `pinia` instance to `useStore()`. This prevents pinia from sharing global state between different application instances.
+Cuando tratas con Renderizado del Lado del Servidor, tendrás que pasar la instancia de `pinia` a `useStore()`. Esto previene que pinia comparta el estado global entre las distintas instancias de la aplicación.
 
-There is a whole section dedicated to it in the [SSR guide](/ssr/index.md), this is just a short explanation:
+Hay una sección entera dedicada a esto en la [guía de SSR](/ssr/index.md), esto es solo una pequeña explicación.

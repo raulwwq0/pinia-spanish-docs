@@ -57,7 +57,7 @@ Los plugins son solo aplicadas a almacenes creados **después de los propios plu
 
 ## Aumentar un Almacén {#augmenting-a-store}
 
-Puedes añadir propiedades a cualquier almacén solo retornando un objecto de estos mismo en un plugin:
+Puedes añadir propiedades a cualquier almacén solo retornando un objeto de estas mismas en un plugin:
 
 ```js
 pinia.use(() => ({ hello: 'world' }))
@@ -101,7 +101,7 @@ pinia.use(({ store }) => {
 })
 ```
 
-Esto es el porque puedes acceder a todas las propiedades computadas sin `.value` y porque son reactivas.
+Por eso se puede acceder a todas las propiedades computadas sin .value y por eso son reactivas.
 
 ### Añadir nuevo estado {#adding-new-state}
 
@@ -348,7 +348,7 @@ declare module 'pinia' {
 
 ### Tipar nuevas opciones de creación {#typing-new-creation-options}
 
-Cuando creas nuevas opciones para `defineStore()`, deberás extender el `DefineStoreOptionsBase`. A diferencia de `PiniaCustomProperties`, solo expone dos genéricos: el tipo Estado y el tipo Almacén, permitiéndote limit que puede ser definido. Por ejemplo, puedes usar los nombres de las acciones:
+Al crear nuevas opciones para `defineStore()`, debe extender la `DefineStoreOptionsBase`. A diferencia de `PiniaCustomProperties`, sólo expone dos genéricos: el Estado y el tipo de Almacén, lo que le permite limitar lo que se puede definir. Por ejemplo, puede utilizar los nombres de las acciones:
 
 ```ts
 import 'pinia'

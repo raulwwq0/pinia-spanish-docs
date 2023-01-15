@@ -26,7 +26,7 @@ Estos son algunos ejemplos de composables que no se pueden usar en almacenes de 
 - [useEyeDropper](https://vueuse.org/core/useEyeDropper/): 
 expone datos y funciones de solo lectura
 
-## Almacenes de configuración {#setup-stores}
+## Almacenes de Configuración {#setup-stores}
 
 Por otro lado, al definir un almacén de configuración, puede usar casi cualquier composable ya que cada propiedad se distingue en estado, acción o getter:
 

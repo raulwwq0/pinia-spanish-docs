@@ -81,7 +81,7 @@ export default {
           ],
         },
         {
-          text: 'Renderización del lado del servidor (Server-Side Rendering o SSR)',
+          text: 'Renderizado del lado del servidor (SSR)',
           children: [
             {
               text: 'Vue y Vite',

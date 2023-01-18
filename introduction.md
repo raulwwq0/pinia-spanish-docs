@@ -20,7 +20,7 @@ Pinia es una librería de almacenes para Vue que te permite compartir el estado 
   - Mantén cualquier estado existente mientras desarrollas
 - Plugins: amplía las características de Pinia con plugins
 - Soporte apropiado para TypeScript o **autocompletado** para usuarios de JS
-- Soporte para Renderización del Lado del Servidor (SSR)
+- Soporte para Renderizado del Lado del Servidor (SSR)
 
 <VueMasteryLogoLink for="pinia-cheat-sheet">
 </VueMasteryLogoLink>

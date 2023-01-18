@@ -46,7 +46,7 @@ Puedes pensar en `state` como los `datos` del almacén, `getters` como las propi
 
 Los almacenes de opciones deberían sentirse como algo intuitivo y simple para empezar.
 
-## Almacenes con Setup {#setup-stores}
+## Almacenes de Configuración {#setup-stores}
 
 También hay otra posible sintaxis para definir los almacenes. Es parecida a la [función setup](https://vuejs.org/api/composition-api-setup.html) de la API de composición de Vue, podemos pasarle una función que defina propiedades reactivas y métodos, y que devuelva un objecto con las propiedades y métodos que queremos exponer.
 

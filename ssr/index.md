@@ -4,7 +4,7 @@
 Si estás usando **Nuxt.js,** necesitas leer [**estas instrucciones**](./nuxt.md) en lugar de estas.
 :::
 
-Crear almacenes con Pinia debería funcionar por defecto para SSR siempre y cuando llames a tus funciones `useStore()` en lo más lato de tus funciones `setup`, `getters` y `acciones`:
+La creación de almacenes con Pinia debería funcionar de forma inmediata para SSR siempre y cuando llame a sus funciones `useStore()` en la parte superior de las funciones `setup`, `getters` y `acciones`:
 
 ```js
 export default defineComponent({

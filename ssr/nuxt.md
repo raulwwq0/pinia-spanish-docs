@@ -114,7 +114,7 @@ Si estás usando Nuxt 2 (`@pinia/nuxt` < 0.3.0) con TypeScript o tienes un `jsco
 
 Esto también asegurará que tengas autocompletado 😉 .
 
-### Usar Pinia junto con Vuex {😉 .}
+### Usar Pinia junto con Vuex {#using-pinia-alongside-vuex}
 
 Es recomendable **evitar usar Pinia y Vuex a la vez**, pero si necesitas usar ambos tendrás que decirle a pinia que no lo deshabilite:
 

@@ -41,7 +41,7 @@ export default {
     sidebar: {
       '/api/': [
         {
-          text: 'packages',
+          text: 'Paquetes',
           children: [
             { text: 'pinia', link: '/api/modules/pinia.html' },
             { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },

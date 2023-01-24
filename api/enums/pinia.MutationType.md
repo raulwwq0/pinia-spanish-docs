@@ -4,7 +4,7 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[Documentación API](../index.md) / [pinia](../modules/pinia.md) / MutationType
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / MutationType
 
 # Enumeración: MutationType {#enumeration-mutationtype}
 

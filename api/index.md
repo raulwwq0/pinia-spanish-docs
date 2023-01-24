@@ -1,8 +1,8 @@
-Documentación API
+Documentación de la API
 
-# Documentación API {#api-documentation}
+# Documentación de la API {#api-documentation}
 
-## Modules
+## Módulos {#modules}
 
 - [@pinia/nuxt](modules/pinia_nuxt.md)
 - [@pinia/testing](modules/pinia_testing.md)

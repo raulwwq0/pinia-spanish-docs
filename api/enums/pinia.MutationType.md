@@ -14,7 +14,7 @@ Posibles tipos de SubscriptionCallback
 
 ## Enumeración de Miembros {#enumeration-members}
 
-### direct {#direct}
+### direct
 
 • **direct** = ``"direct"``
 

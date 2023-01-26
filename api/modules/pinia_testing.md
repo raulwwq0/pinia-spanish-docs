@@ -32,7 +32,7 @@ tu propia opción `createSpy`.
 | :-------- | :---------------------------------------------------------------- | :------------------------------------------------ |
 | `options` | [`TestingOptions`](../interfaces/pinia_testing.TestingOptions.md) | opciones para configurar los almacenes de pruebas |
 
-#### Devuelve {#returns}
+#### Retorna {#returns}
 
 [`TestingPinia`](../interfaces/pinia_testing.TestingPinia.md)
 

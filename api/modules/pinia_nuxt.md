@@ -26,6 +26,6 @@ sidebarDepth: 3
 | `inlineOptions` | [`ModuleOptions`](../interfaces/pinia_nuxt.ModuleOptions.md) |
 | `nuxt` | `Nuxt` |
 
-#### Devuelve {#returns}
+#### Retorna {#returns}
 
 `void` \| `Promise`<`void`\>

@@ -33,7 +33,7 @@ sidebarDepth: 3
 - [\_StoreWithState](../interfaces/pinia._StoreWithState.md)
 - [\_SubscriptionCallbackMutationBase](../interfaces/pinia._SubscriptionCallbackMutationBase.md)
 
-## Tipado de Alias {#type-aliases}
+## Tipado de los Alias {#type-aliases}
 
 ### PiniaStorePlugin  {#piniastoreplugin}
 
@@ -200,7 +200,7 @@ Callback de una suscripción
 
 ___
 
-### SubscriptionCallbackMutation {##subscriptioncallbackmutation}
+### SubscriptionCallbackMutation {#subscriptioncallbackmutation}
 
 Ƭ **SubscriptionCallbackMutation**<`S`\>: [`SubscriptionCallbackMutationDirect`](../interfaces/pinia.SubscriptionCallbackMutationDirect.md) \| [`SubscriptionCallbackMutationPatchObject`](../interfaces/pinia.SubscriptionCallbackMutationPatchObject.md)<`S`\> \| [`SubscriptionCallbackMutationPatchFunction`](../interfaces/pinia.SubscriptionCallbackMutationPatchFunction.md)
 

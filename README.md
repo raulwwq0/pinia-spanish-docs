@@ -15,6 +15,8 @@ En este [issue](https://github.com/raulwwq0/pinia-spanish-docs/issues/1) está l
 
 Para subir tu contribución solo tienes que crear una [Pull Request](https://github.com/raulwwq0/pinia-spanish-docs/pulls) con una descripción detallada de los cambios que hayas realizado y si va todo bien será aceptada y mergeada en la rama principal del proyecto.
 
+> Es importante seguir la [Guía para Traducciones de la Comunidad de Vue](https://github.com/vuejs-translations/guidelines/blob/main/README.md) y en caso de duda puedes preguntar lo que sea :D
+
 ## No entiendo el significado de una frase o expresión
 
 Pese a intentar evitarlo, es posibles que algunas expresiones escritas no sean usadas en todos los países de habla hispana. 

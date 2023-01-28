@@ -6,7 +6,7 @@ sidebarDepth: 3
 
 [Documentación de la API](../index.md) / pinia
 
-# Module: pinia
+# Módulo: pinia
 
 ## Enumeraciones {#enumerations}
 

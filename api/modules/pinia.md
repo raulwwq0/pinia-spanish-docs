@@ -33,7 +33,7 @@ sidebarDepth: 3
 - [\_StoreWithState](../interfaces/pinia._StoreWithState.md)
 - [\_SubscriptionCallbackMutationBase](../interfaces/pinia._SubscriptionCallbackMutationBase.md)
 
-## Alias de Tipos {#type-aliases}
+## Tipado de Alias {#type-aliases}
 
 ### PiniaStorePlugin  {#piniastoreplugin}
 
@@ -61,7 +61,7 @@ ___
 
 Tipo Store para crear almacenes.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -78,7 +78,7 @@ ___
 
 Extrae las acciones de un tipo Store. Funciona con almacenes de configuración o almacenes de opciones.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -100,7 +100,7 @@ ___
 
 Extrae los getters de un tipo Store. Funciona con almacenes de configuración o almacenes de opciones.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -112,7 +112,7 @@ ___
 
 Ƭ **StoreOnActionListener**<`Id`, `S`, `G`, `A`\>: (`context`: [`StoreOnActionListenerContext`](pinia.md#storeonactionlistenercontext)<`Id`, `S`, `G`, {} extiende `A` ? [`_ActionsTree`](pinia.md#_actionstree) : `A`\>) => `void`
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -121,7 +121,7 @@ ___
 | `G` | `G` |
 | `A` | `A` |
 
-#### Tipo de la declaración {#type-declaration}
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (`context`): `void`
 
@@ -146,7 +146,7 @@ ___
 Objecto de contexto pasado a las callbacks de `store.$onAction(context => {})` 
 POR HACER: debería tener solo el Id, el almacén y las acciones para generar el objeto correcto.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -163,7 +163,7 @@ ___
 
 Extrae el estado de un tipo Store. Funciona con almacenes de configuración o almacenes de opciones. Cabe aclarar que desenvuelve las refs.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -175,13 +175,13 @@ ___
 
 Ƭ **SubscriptionCallback**<`S`\>: (`mutation`: [`SubscriptionCallbackMutation`](pinia.md#subscriptioncallbackmutation)<`S`\>, `state`: `UnwrapRef`<`S`\>) => `void`
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
 | `S` |
 
-#### Tipo de la declaración {#type-declaration}
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (`mutation`, `state`): `void`
 
@@ -206,7 +206,7 @@ ___
 
 Objeto de contexto pasado a una callback de una suscripción.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -226,7 +226,7 @@ ___
 
 Ƭ **\_Awaited**<`T`\>: `T` extiende ``null`` \| `undefined` ? `T` : `T` extiende `object` & { `then`: (`onfulfilled`: `F`) => `any`  } ? `F` extiende (`value`: infiere V, ...`args`: `any`) => `any` ? [`_Awaited`](pinia.md#_awaited)<`V`\> : `never` : `T`
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -242,7 +242,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -256,7 +256,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -270,7 +270,7 @@ ___
 
 Tipo que permite refactorizar a través del IDE. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -284,7 +284,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -298,7 +298,7 @@ ___
 
 Tipo que permite refactorizar a través del IDE. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -312,7 +312,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -326,7 +326,7 @@ ___
 
 Tipo que permite refactorizar a través del IDE. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -340,7 +340,7 @@ ___
 
 Tipo de un objeto de Getters que infiere el argumento. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -354,7 +354,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -369,7 +369,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -383,7 +383,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -401,7 +401,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -417,7 +417,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -432,7 +432,7 @@ ___
 
 **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -444,7 +444,7 @@ ___
 
 Ƭ **\_Method**: (...`args`: `any`[]) => `any`
 
-#### Tipo de la declaración {#type-declaration}
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (...`args`): `any`
 
@@ -468,7 +468,7 @@ ___
 
 **Solo** para uso interno.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -482,7 +482,7 @@ ___
 
 **Solo** para uso interno.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -496,7 +496,7 @@ ___
 
 Almacén aumentado para acciones. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -510,7 +510,7 @@ ___
 
 Almacén aumentado con getters. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -524,7 +524,7 @@ ___
 
 Tipo que permite refactorizar a través del IDE. **Solo** para uso interno
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre |
 | :------ |
@@ -558,7 +558,7 @@ new Vue({
 
 `Vue` importado desde 'vue'.
 
-## Functions {#functions}
+## Funciones {#functions}
 
 ### acceptHMRUpdate {#accepthmrupdate}
 
@@ -618,7 +618,7 @@ ___
 
 Crea una función `useStore` que recupera la instancia del almacén
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -642,7 +642,7 @@ Crea una función `useStore` que recupera la instancia del almacén
 
 Crea una función `useStore` que recupera la instancia del almacén
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -665,7 +665,7 @@ Crea una función `useStore` que recupera la instancia del almacén
 
 Crea una función `useStore` que recupera la instancia del almacén
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -721,7 +721,7 @@ export default {
 }
 ```
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -762,7 +762,7 @@ export default {
 }
 ```
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipos |
 | :------ | :------ |
@@ -794,7 +794,7 @@ Alias para `mapState()`. Deberías usar `mapState()` en su lugar.
 
 usa `mapState()` en su lugar.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -823,7 +823,7 @@ Alias para `mapState()`. Deberías usar `mapState()` en su lugar.
 
 usa `mapState()` en su lugar.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -879,7 +879,7 @@ export default {
 }
 ```
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -920,7 +920,7 @@ export default {
 }
 ```
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -965,7 +965,7 @@ export default {
 }
 ```
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -990,7 +990,7 @@ ___
 Igual que `mapState()` pero también crea setters computados para que el estado pueda ser modificado. Al contrario que `mapState()`, solo se pueden añadir propiedades `estado`.
 added.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -1015,7 +1015,7 @@ added.
 
 Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `computed` de un componente.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -1079,7 +1079,7 @@ ___
 
 Le dice a Pinia que se salte el proceso de hidratación de un objeto dado. Esto es útil en almacenes de configuración (solo) cuando retornes un objet de estados en el almacén pero este no es realmente estado. Por ejemplo, retornar una instancia del router en un almacén de configuración.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -1105,7 +1105,7 @@ ___
 
 Crea un objeto de referencias con todo el estado, getters y propiedades de estado añadidas por un plugin del almacén. Parecido a `toRefs()` pero diseñado específicamente para los almacenes de Pinia, por lo que los métodos y propiedades no reactivas son ignorados completamente.
 
-#### Tipos de los parámetros {#type-parameters}
+#### Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipos |
 | :------ | :------ |

@@ -14,7 +14,7 @@ sidebarDepth: 3
 
 ### createSpy
 
-• `Optional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
+• `Opcional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
 #### Declaración del tipo
 

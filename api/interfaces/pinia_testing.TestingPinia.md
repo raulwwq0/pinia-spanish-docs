@@ -10,22 +10,22 @@ sidebarDepth: 3
 
 [@pinia/testing](../modules/pinia_testing.md).TestingPinia
 
-Pinia instance specifically designed for testing. Extends a regular
-`Pinia` instance with test specific properties.
+Instancia de Pinia diseñada específicamente para pruebas. Extiende una instancia 
+`Pinia` normal con propiedades específicas de prueba.
 
-## Hierarchy
+## Jerarquía
 
 - [`Pinia`](pinia.Pinia.md)
 
   ↳ **`TestingPinia`**
 
-## Properties
+## Propiedades
 
 ### app
 
 • **app**: `App`<`any`\>
 
-App used by Pinia
+App usada por Pinia
 
 ___
 
@@ -33,21 +33,21 @@ ___
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Type declaration
+#### Declaración del tipo
 
 ▸ (`app`): `void`
 
-##### Parameters
+##### Parámetros
 
 | Name | Type |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Returns
+##### Retorna
 
 `void`
 
-#### Inherited from
+#### Heredado de
 
 [Pinia](pinia.Pinia.md).[install](pinia.Pinia.md#install)
 
@@ -57,30 +57,30 @@ ___
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
-root state
+estado raíz
 
-#### Inherited from
+#### Heredado de
 
 [Pinia](pinia.Pinia.md).[state](pinia.Pinia.md#state)
 
-## Methods
+## Métodos
 
 ### use
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
-Adds a store plugin to extend every store
+Añade un plugin de almacén para extender cada almacén
 
-#### Parameters
+#### Parámetros
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | store plugin to add |
+| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | plugin de almacén para añadir |
 
-#### Returns
+#### Retorna
 
 [`Pinia`](pinia.Pinia.md)
 
-#### Inherited from
+#### Heredado de
 
 [Pinia](pinia.Pinia.md).[use](pinia.Pinia.md#use)

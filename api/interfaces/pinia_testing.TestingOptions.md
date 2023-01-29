@@ -10,38 +10,37 @@ sidebarDepth: 3
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
-## Properties
+## Propiedades
 
 ### createSpy
 
 • `Optional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Type declaration
+#### Declaración del tipo
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
-Function used to create a spy for actions and `$patch()`. Pre-configured
-with `jest.fn()` in jest projects or `vi.fn()` in vitest projects.
+Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos jest o `vi.fn()` en proyectos vitest. 
 
-##### Parameters
+##### Parámetros
 
 | Name | Type |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
-##### Returns
+##### Retorna
 
 `fn`
 
 ▸ (...`args`): `any`
 
-##### Parameters
+##### Parámetros
 
 | Name | Type |
 | :------ | :------ |
 | `...args` | `any`[] |
 
-##### Returns
+##### Retorna
 
 `any`
 
@@ -49,49 +48,48 @@ ___
 
 ### fakeApp
 
-• `Optional` **fakeApp**: `boolean`
+• `Opcional` **fakeApp**: `boolean`
 
-Creates an empty App and calls `app.use(pinia)` with the created testing
-pinia. This is allows you to use plugins while unit testing stores as
-plugins **will wait for pinia to be installed in order to be executed**.
-Defaults to false.
+Crea una aplicación vacía y llama a `app.use(pinia)` con la pinia de prueba 
+creada. Esto permite el uso de plugins mientras se realizan pruebas unitarias
+ya que los plugins **esperarán a que pinia se instale para poder ejecutarse**.
+Por defecto es false.
 
 ___
 
 ### initialState
 
-• `Optional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
+• `Opcional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
 
-Allows defining a partial initial state of all your stores. This state gets applied after a store is created,
-allowing you to only set a few properties that are required in your test.
+Permite definir un estado inicial parcial para todos tus almacenes. Este estado se aplica después de que un almacén es creado, lo que le permite establecer sólo unas pocas propiedades que se requieren en tu prueba.
 
 ___
 
 ### plugins
 
-• `Optional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
+• `Opcional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
 
-Plugins to be installed before the testing plugin. Add any plugins used in
-your application that will be used while testing.
+Plugins a instalar antes del plugin de pruebas. Añade cualquier plugin utilizado en 
+tu aplicación que se utilizará durante las pruebas.
 
 ___
 
 ### stubActions
 
-• `Optional` **stubActions**: `boolean`
+• `Opcional` **stubActions**: `boolean`
 
-When set to false, actions are only spied, they still get executed. When
-set to true, actions will be replaced with spies, resulting in their code
-not being executed. Defaults to true. NOTE: when providing `createSpy()`,
-it will **only** make the `fn` argument `undefined`. You still have to
-handle this in `createSpy()`.
+Cuando se establece en false, las acciones sólo son espiadas, aún así se ejecutarán. Cuando 
+se establece en true, las acciones serán reemplazadas por espías, en lo que resulta que tu código 
+no se ejecute. Por defecto es true. NOTA: al proveer `createSpy()`,
+este **solo** hará que el argumento `fn` sea `undefined`. Aún tienes que
+manejar esto en `createSpy()`.
 
 ___
 
 ### stubPatch
 
-• `Optional` **stubPatch**: `boolean`
+• `Opcional` **stubPatch**: `boolean`
 
-When set to true, calls to `$patch()` won't change the state. Defaults to
-false. NOTE: when providing `createSpy()`, it will **only** make the `fn`
-argument `undefined`. You still have to handle this in `createSpy()`.
+Cuando se establece en true, llamadas a `$patch`  no cambiarán el estado. Por defecto es
+false. NOTA: al proveer `createSpy()`, este **solo** hará que el argumento `fn` 
+sea `undefined`. Aún tienes que manejar esto en `createSpy()`.

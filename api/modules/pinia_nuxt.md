@@ -4,28 +4,28 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / @pinia/nuxt
+[Documentación de la API](../index.md) / @pinia/nuxt
 
-# Module: @pinia/nuxt
+# Módulo: @pinia/nuxt {#module-pinia-nuxt}
 
-## Interfaces
+## Interfaces {#interfaces}
 
 - [ModuleOptions](../interfaces/pinia_nuxt.ModuleOptions.md)
 
-## Functions
+## Funciones {#functions}
 
-### default
+### default {#default}
 
 ▸ **default**(`this`, `inlineOptions`, `nuxt`): `void` \| `Promise`<`void`\>
 
-#### Parameters
+#### Parámetros {#parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `this` | `void` |
 | `inlineOptions` | [`ModuleOptions`](../interfaces/pinia_nuxt.ModuleOptions.md) |
 | `nuxt` | `Nuxt` |
 
-#### Returns
+#### Retorna {#returns}
 
 `void` \| `Promise`<`void`\>

@@ -622,9 +622,9 @@ Crea una función `useStore` que recupera la instancia del almacén
 
 | Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) = {} |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> = {} |
+| `Id` | extiende `string` |
+| `S` | extiende [`StateTree`](pinia.md#statetree) = {} |
+| `G` | extiende [`_GettersTree`](pinia.md#_getterstree)<`S`\> = {} |
 | `A` | {} |
 
 #### Parámetros {#parameters}

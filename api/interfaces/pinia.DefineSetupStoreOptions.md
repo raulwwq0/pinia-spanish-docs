@@ -36,6 +36,6 @@ aumentar los almacenes con el API de plugins.
 
 ### actions {#actions}
 
-• `Octional` **actions**: `A`
+• `Opcional` **actions**: `A`
 
 Acciones extraídas. Añadidas por useStore(). NO DEBEN ser añadidas por el usuario al crear la tienda. Puede usarse en plugins para obtener la lista de acciones en un almacén definido con una función de tipo setup. Ten en cuenta que esto siempre se define.

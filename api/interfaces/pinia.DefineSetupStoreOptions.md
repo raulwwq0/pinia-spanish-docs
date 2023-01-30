@@ -6,38 +6,36 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineSetupStoreOptions
 
-# Interface: DefineSetupStoreOptions<Id, S, G, A\>
+# Interfaz: DefineSetupStoreOptions<Id, S, G, A\> {#interface-definesetupstoreoptions-id-s-g-a}
 
 [pinia](../modules/pinia.md).DefineSetupStoreOptions
 
-Options parameter of `defineStore()` for setup stores. Can be extended to
-augment stores with the plugin API.
+Parámetro de opciones de `defineStore()` para almacenes del tipo setup. Puede extenderse para
+aumentar los almacenes con el API de plugins.
 
 **`See`**
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Type parameters
+## Tipado de la declaración {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extiende `string` |
+| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Hierarchy
+## Jerarquía {#hierarchy}
 
 - [`DefineStoreOptionsBase`](pinia.DefineStoreOptionsBase.md)<`S`, [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>\>
 
   ↳ **`DefineSetupStoreOptions`**
 
-## Properties
+## Propiedades {#properties}
 
-### actions
+### actions {#actions}
 
-• `Optional` **actions**: `A`
+• `Octional` **actions**: `A`
 
-Extracted actions. Added by useStore(). SHOULD NOT be added by the user when
-creating the store. Can be used in plugins to get the list of actions in a
-store defined with a setup function. Note this is always defined
+Acciones extraídas. Añadidas por useStore(). NO DEBEN ser añadidas por el usuario al crear la tienda. Puede usarse en plugins para obtener la lista de acciones en un almacén definido con una función de tipo setup. Ten en cuenta que esto siempre se define.

@@ -6,47 +6,47 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
-# Interfaz: TestingOptions
+# Interfaz: TestingOptions {#interface-testingoptions}
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
-## Propiedades
+## Propiedades {#properties}
 
-### createSpy
+### createSpy {#createspy}
 
 • `Opcional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Tipado de la declaración
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
 Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos jest o `vi.fn()` en proyectos vitest. 
 
-##### Parámetros
+##### Parámetros {#parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
-##### Retorna
+##### Retorna {#returns}
 
 `fn`
 
 ▸ (...`args`): `any`
 
-##### Parámetros
+##### Parámetros {#parameters-1}
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `...args` | `any`[] |
 
-##### Retorna
+##### Retorna {#returns-1}
 
 `any`
 
 ___
 
-### fakeApp
+### fakeApp {#fakeapp}
 
 • `Opcional` **fakeApp**: `boolean`
 
@@ -57,7 +57,7 @@ Por defecto es false.
 
 ___
 
-### initialState
+### initialState {#initialstate}
 
 • `Opcional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
 
@@ -65,7 +65,7 @@ Permite definir un estado inicial parcial para todos tus almacenes. Este estado 
 
 ___
 
-### plugins
+### plugins {#plugins}
 
 • `Opcional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
 
@@ -74,7 +74,7 @@ tu aplicación que se utilizará durante las pruebas.
 
 ___
 
-### stubActions
+### stubActions {#stubactions}
 
 • `Opcional` **stubActions**: `boolean`
 
@@ -86,7 +86,7 @@ manejar esto en `createSpy()`.
 
 ___
 
-### stubPatch
+### stubPatch {#stubpatch}
 
 • `Opcional` **stubPatch**: `boolean`
 

@@ -143,7 +143,7 @@ ___
 
 Ƭ **StoreOnActionListenerContext**<`Id`, `S`, `G`, `A`\>: [`_ActionsTree`](pinia.md#_actionstree) extiende `A` ? [`_StoreOnActionListenerContext`](../interfaces/pinia._StoreOnActionListenerContext.md)<[`StoreGeneric`](pinia.md#storegeneric), `string`, [`_ActionsTree`](pinia.md#_actionstree)\> : { [Name en keyof A]: Name extiende string ? \_StoreOnActionListenerContext<Store<Id, S, G, A\>, Name, A\> : never }[keyof `A`]
 
-Objecto de contexto pasado a las callbacks de `store.$onAction(context => {})` 
+Objeto de contexto pasado a las callbacks de `store.$onAction(context => {})` 
 POR HACER: debería tener solo el Id, el almacén y las acciones para generar el objeto correcto.
 
 #### Tipado de los parámetros {#type-parameters}
@@ -702,7 +702,7 @@ ___
 
 ▸ **mapActions**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapActionsObjectReturn`](pinia.md#_mapactionsobjectreturn)<`A`, `KeyMapper`\>
 
-Permite usar directamente acciones de tu almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `methods` de un componente. El valor del objeto son las acciones mientras que las claves son los nombre de los métodos resultantes.
+Permite usar directamente acciones de tu almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `methods` de un componente. El valor del objeto son las acciones mientras que las claves son los nombre de los métodos resultantes.
 
 **`Ejemplo`**
 
@@ -744,7 +744,7 @@ export default {
 
 ▸ **mapActions**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapActionsReturn`](pinia.md#_mapactionsreturn)<`A`\>
 
-Permite usar directamente acciones de tu almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `methods` de un componente.
+Permite usar directamente acciones de tu almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `methods` de un componente.
 
 **`Example`**
 
@@ -850,7 +850,7 @@ ___
 
 ▸ **mapState**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapStateObjectReturn`](pinia.md#_mapstateobjectreturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
 
-Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `computed` de un componente. Los valores del objeto son las propiedades del estado/getters mientras que las claves son los nombres de las propiedades computadas resultantes. Opcionalmente, puedes también pasar una función personalizada que recibirá el almacén como primer argumento. Cabe aclarar que mientras tenga acceso al componente mediante `this`, este no será tipado.
+Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente. Los valores del objeto son las propiedades del estado/getters mientras que las claves son los nombres de las propiedades computadas resultantes. Opcionalmente, puedes también pasar una función personalizada que recibirá el almacén como primer argumento. Cabe aclarar que mientras tenga acceso al componente mediante `this`, este no será tipado.
 
 **`Ejemplo`**
 
@@ -902,7 +902,7 @@ export default {
 
 ▸ **mapState**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): [`_MapStateReturn`](pinia.md#_mapstatereturn)<`S`, `G`, `Keys`\>
 
-Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `computed` de un componente.
+Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente.
 
 **`Ejemplo`**
 
@@ -947,7 +947,7 @@ ___
 
 ▸ **mapStores**<`Stores`\>(...`stores`): [`_Spread`](pinia.md#_spread)<`Stores`\>
 
-Permite usar almacenes sin la API de composición (`setup()`) generando un objecto que será extendido en el campo `computed` de un componente. Acepta una lista de definiciones de almacenes.
+Permite usar almacenes sin la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente. Acepta una lista de definiciones de almacenes.
 
 **`Ejemplo`**
 
@@ -1013,7 +1013,7 @@ added.
 
 ▸ **mapWritableState**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapWritableStateReturn`](pinia.md#_mapwritablestatereturn)<`S`\>
 
-Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objecto que será extendido en el campo `computed` de un componente.
+Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente.
 
 #### Tipado de los parámetros {#type-parameters}
 

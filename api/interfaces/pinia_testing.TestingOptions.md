@@ -6,7 +6,7 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
-# Interface: TestingOptions
+# Interfaz: TestingOptions
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
@@ -16,7 +16,7 @@ sidebarDepth: 3
 
 • `Opcional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Declaración del tipo
+#### Tipado de la declaración
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
@@ -24,7 +24,7 @@ Función utilizada para crear un espía para las acciones y `$patch()`. Pre-conf
 
 ##### Parámetros
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
@@ -36,7 +36,7 @@ Función utilizada para crear un espía para las acciones y `$patch()`. Pre-conf
 
 ##### Parámetros
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `...args` | `any`[] |
 

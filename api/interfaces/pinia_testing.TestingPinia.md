@@ -6,7 +6,7 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingPinia
 
-# Interface: TestingPinia
+# Interfaz: TestingPinia
 
 [@pinia/testing](../modules/pinia_testing.md).TestingPinia
 
@@ -33,13 +33,13 @@ ___
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Declaración del tipo
+#### Tipado de la declaración
 
 ▸ (`app`): `void`
 
 ##### Parámetros
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
@@ -73,7 +73,7 @@ Añade un plugin de almacén para extender cada almacén
 
 #### Parámetros
 
-| Name | Type | Description |
+| Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | plugin de almacén para añadir |
 

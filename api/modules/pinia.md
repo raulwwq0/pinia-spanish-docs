@@ -735,7 +735,7 @@ export default {
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
 | `keyMapper` | `KeyMapper` | objeto que define nuevos nombres para las acciones |
 
 #### Retorna {#returns}
@@ -775,8 +775,8 @@ export default {
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
-| `keys` | keyof `A`[] | array de nombre de acciones para mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
+| `keys` | keyof `A`[] | array de nombre de acciones para mapear |
 
 #### Retorna {#returns}
 
@@ -893,7 +893,7 @@ export default {
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
 | `keyMapper` | `KeyMapper` | objeto de propiedades del estado y getters |
 
 #### Retorna {#returns}
@@ -934,7 +934,7 @@ export default {
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
 | `keys` | readonly `Keys`[] | array de propiedades de estado o getters |
 
 #### Retorna {#returns}
@@ -975,7 +975,7 @@ export default {
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `...stores` | [...Stores[]] | lista de almacenes para mappearlos en un objeto |
+| `...stores` | [...Stores[]] | lista de almacenes para mapearlos en un objeto |
 
 #### Retorna {#returns}
 
@@ -1004,7 +1004,7 @@ added.
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
 | `keyMapper` | `KeyMapper` | objeto de propiedades estado |
 
 #### Retorna {#returns}
@@ -1028,7 +1028,7 @@ Permite usar el estado y los getters de un almacén sin usar la API de composici
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mappear |
+| `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
 | `keys` | keyof `S`[] | array de propiedades del estado |
 
 #### Retorna {#returns}

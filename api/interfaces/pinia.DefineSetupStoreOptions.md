@@ -10,8 +10,7 @@ sidebarDepth: 3
 
 [pinia](../modules/pinia.md).DefineSetupStoreOptions
 
-Parámetro de opciones de `defineStore()` para almacenes del tipo setup. Puede extenderse para
-aumentar los almacenes con el API de plugins.
+Parámetro de opciones de `defineStore()` para almacenes de configuración. Puede extenderse para aumentar los almacenes con el API de plugins.
 
 **`See`**
 

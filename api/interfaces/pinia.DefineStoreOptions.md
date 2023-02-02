@@ -10,8 +10,7 @@ sidebarDepth: 3
 
 [pinia](../modules/pinia.md).DefineStoreOptions
 
-Parámetro de opciones de `defineStore()` para almacenes del tipo options. Puede extenderse para
-aumentar los almacenes con el API de plugins.
+Parámetro de opciones de `defineStore()` para almacenes de opciones. Puede extenderse para aumentar los almacenes con el API de plugins.
 
 **`Vea`**
 
@@ -54,7 +53,7 @@ ___
 
 • **id**: `Id`
 
-Código de cadena de texto único para identificar el almacén en la aplicación.
+Código de string único para identificar el almacén en la aplicación.
 
 ___
 

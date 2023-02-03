@@ -4,7 +4,7 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
 
 # Interfaz: DefineStoreOptionsInPlugin<Id, S, G, A\> {#interface-definestoreoptionsinplugin-id-s-g-a}
 

@@ -4,7 +4,7 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomProperties
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomProperties
 
 # Interfaz: PiniaCustomProperties<Id, S, G, A\> {#interface-piniacustomproperties-id-s-g-a}
 

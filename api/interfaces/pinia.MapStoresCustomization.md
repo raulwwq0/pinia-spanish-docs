@@ -6,11 +6,11 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / MapStoresCustomization
 
-# Interface: MapStoresCustomization
+# Interfaz: MapStoresCustomization {#interface-mapstorescustomization}
 
 [pinia](../modules/pinia.md).MapStoresCustomization
 
-Interface to allow customizing map helpers. Extend this interface with the
-following properties:
+Interfaz que permite personalizar los ayudantes de mapeado. Extienda esta interfaz con las 
+siguientes propiedades:
 
-- `suffix`: string. Affects the suffix of `mapStores()`, defaults to `Store`.
+- `suffix`: string. Afecta al sufijo de `mapStores()`, por defecto es `Store`.

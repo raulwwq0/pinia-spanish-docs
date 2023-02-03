@@ -16,7 +16,7 @@ Parámetro de opciones de `defineStore()` para almacenes de configuración. Pued
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Tipado de la declaración {#type-parameters}
+## Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |

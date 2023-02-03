@@ -12,7 +12,7 @@ sidebarDepth: 3
 
 `Opciones` disponibles al crear un plugin de pinia.
 
-## Tipado de parámetros {#type-parameters}
+## Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |

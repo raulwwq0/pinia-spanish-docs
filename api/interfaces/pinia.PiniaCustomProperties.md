@@ -12,7 +12,7 @@ sidebarDepth: 3
 
 Interfaz a extender por el usuario cuando agrega propiedades a través de plugins.
 
-## Tipado de parámetros {#type-parameters}
+## Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |

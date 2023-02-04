@@ -10,7 +10,7 @@ sidebarDepth: 3
 
 [pinia](../modules/pinia.md).PiniaCustomStateProperties
 
-Propiedades que se agregan a cada `store.$state` por `pinia.use()`.
+Propiedades que se añaden a cada `store.$state` mediante `pinia.use()`.
 
 ## Tipado de los parámetros {#type-parameters}
 

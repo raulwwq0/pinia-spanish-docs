@@ -4,7 +4,7 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / \_StoreOnActionListenerContext
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / \_StoreOnActionListenerContext
 
 # Interface: \_StoreOnActionListenerContext<Store, ActionName, A\>
 

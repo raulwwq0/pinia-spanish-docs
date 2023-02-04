@@ -6,54 +6,54 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationDirect
 
-# Interface: SubscriptionCallbackMutationDirect
+# Interfaz: SubscriptionCallbackMutationDirect {#interface-subscriptioncallbackmutationdirect}
 
 [pinia](../modules/pinia.md).SubscriptionCallbackMutationDirect
 
-Context passed to a subscription callback when directly mutating the state of
-a store with `store.someState = newValue` or `store.$state.someState =
+Contexto pasado a un callback de suscripción cuando se muta directamente el estado de 
+un almacén con `store.someState = newValue` o `store.$state.someState =
 newValue`.
 
-## Hierarchy
+##  Jerarquía {#hierarchy}
 
 - [`_SubscriptionCallbackMutationBase`](pinia._SubscriptionCallbackMutationBase.md)
 
   ↳ **`SubscriptionCallbackMutationDirect`**
 
-## Properties
+## Propiedades {#properties}
 
-### events
+### events {#events}
 
 • **events**: `DebuggerEvent`
 
-🔴 DEV ONLY, DO NOT use for production code. Different mutation calls. Comes from
-https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging and allows to track mutations in
-devtools and plugins **during development only**.
+🔴 SOLO PARA DESARROLLO, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
+https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de las mutaciones 
+en devtools y plugins **sólo durante el desarrollo**.
 
-#### Overrides
+#### Sobrescribe {#overrides}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[events](pinia._SubscriptionCallbackMutationBase.md#events)
 
 ___
 
-### storeId
+### storeId {#storeid}
 
 • **storeId**: `string`
 
-`id` of the store doing the mutation.
+`id` del almacén que realiza la mutación.
 
-#### Inherited from
+#### Heredado de {#inherited-from}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
 
 ___
 
-### type
+### type {#type}
 
 • **type**: [`direct`](../enums/pinia.MutationType.md#direct)
 
-Type of the mutation.
+Tipo de mutación.
 
-#### Overrides
+#### Sobrescribe {#overrides-1}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[type](pinia._SubscriptionCallbackMutationBase.md#type)

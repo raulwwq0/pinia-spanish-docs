@@ -4,51 +4,51 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / PiniaPluginContext
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / PiniaPluginContext
 
-# Interface: PiniaPluginContext<Id, S, G, A\>
+# Interfaz: PiniaPluginContext<Id, S, G, A\> {#interfaz-piniaplugincontext-id-s-g-a}
 
 [pinia](../modules/pinia.md).PiniaPluginContext
 
-Context argument passed to Pinia plugins.
+Argumento de contexto que se pasa a los plugins de Pinia.
 
-## Type parameters
+## Tipado de los parámetros {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` = `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extiende `string` = `string` |
+| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Properties
+## Properties {#properties}
 
-### app
+### app {#app}
 
 • **app**: `App`<`any`\>
 
-Current app created with `Vue.createApp()`.
+Aplicación actual creada con `Vue.createApp()`.
 
 ___
 
-### options
+### options {#options}
 
 • **options**: [`DefineStoreOptionsInPlugin`](pinia.DefineStoreOptionsInPlugin.md)<`Id`, `S`, `G`, `A`\>
 
-Initial options defining the store when calling `defineStore()`.
+Opciones iniciales que definen el almacén cuando se llama a `defineStore()`.
 
 ___
 
-### pinia
+### pinia {#pinia}
 
 • **pinia**: [`Pinia`](pinia.Pinia.md)
 
-pinia instance.
+instancia pinia.
 
 ___
 
-### store
+### store {#store}
 
 • **store**: [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-Current store being extended.
+Tienda actual que se está extendiendo.

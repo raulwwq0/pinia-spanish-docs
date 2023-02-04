@@ -6,67 +6,68 @@ sidebarDepth: 3
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationPatchObject
 
-# Interface: SubscriptionCallbackMutationPatchObject<S\>
+# Interfaz: SubscriptionCallbackMutationPatchObject<S\> {#interface-subscriptioncallbackmutationpatchobject-s}
 
 [pinia](../modules/pinia.md).SubscriptionCallbackMutationPatchObject
 
-Context passed to a subscription callback when `store.$patch()` is called
-with an object.
+Contexto pasado a un callback de suscripción cuando `store.$patch()` es llamado
+con un objeto.
 
-## Type parameters
+## Tipado de los parámetros {#type-parameters}
 
-| Name |
+| Nombre |
 | :------ |
 | `S` |
 
-## Hierarchy
+## Jerarquía {#hierarchy}
 
 - [`_SubscriptionCallbackMutationBase`](pinia._SubscriptionCallbackMutationBase.md)
 
   ↳ **`SubscriptionCallbackMutationPatchObject`**
 
-## Properties
+## Propiedades {#properties}
 
-### events
+### events {#events}
 
 • **events**: `DebuggerEvent`[]
 
-🔴 DEV ONLY, DO NOT use for production code. Different mutation calls. Comes from
-https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging and allows to track mutations in
-devtools and plugins **during development only**.
+🔴 SOLO PARA DESARROLLO, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
+https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de las mutaciones 
+en devtools y plugins **sólo durante el desarrollo**.
 
-#### Overrides
+
+#### Sobrescribe {#overrides}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[events](pinia._SubscriptionCallbackMutationBase.md#events)
 
 ___
 
-### payload
+### payload {#payload}
 
 • **payload**: [`_DeepPartial`](../modules/pinia.md#_deeppartial)<`S`\>
 
-Object passed to `store.$patch()`.
+Objeto pasado a `store.$patch()`.
 
 ___
 
-### storeId
+### storeId {#storeid}
 
 • **storeId**: `string`
 
-`id` of the store doing the mutation.
+`id` del almacén que realiza la mutación.
 
-#### Inherited from
+#### Heredado de {#inherited-from}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
 
 ___
 
-### type
+### type {#type}
 
 • **type**: [`patchObject`](../enums/pinia.MutationType.md#patchobject)
 
-Type of the mutation.
+Tipo de mutación.
 
-#### Overrides
+#### Sobrescribe {#overrides-1}
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[type](pinia._SubscriptionCallbackMutationBase.md#type)

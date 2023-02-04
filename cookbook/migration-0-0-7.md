@@ -1,17 +1,17 @@
-# Migrating from 0.0.7
+# Migración desde 0.0.7 %{#migrating-from-0-0-7}%
 
-The versions after `0.0.7`: `0.1.0`, and `0.2.0`, came with a few big breaking changes. This guide helps you migrate whether you use Vue 2 or Vue 3. The whole changelog can be found in the repository:
+Las versiones posteriores a `0.0.7`: `0.1.0`, y `0.2.0`, vinieron con algunos cambios importantes. Esta guía te ayuda a migrar tanto si usas Vue 2 como Vue 3. El registro de cambios completos se puede encontrar en el repositorio:
 
-- [For Pinia <= 1 for Vue 2](https://github.com/vuejs/pinia/blob/v1/CHANGELOG.md)
-- [For Pinia >= 2 for Vue 3](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md)
+- [Pinia <= 1 para Vue 2](https://github.com/vuejs/pinia/blob/v1/CHANGELOG.md)
+- [Pinia >= 2 para Vue 3](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md)
 
-If you have questions or issues regarding the migration, feel free to [open a discussion](https://github.com/vuejs/pinia/discussions/categories/q-a) to ask for help.
+Si tienes preguntas o problemas relacionados con la migración, no dudes en [abrir un debate](https://github.com/vuejs/pinia/discussions/categories/q-a) para pedir ayuda.
 
-## No more `store.state`
+## No más `store.state` %{#no-more-store-state}%
 
-You no longer access the store state via a `state` property, you can directly access any state property.
+Ya no se accede al estado del almacén a través de una propiedad `state`, se puede acceder directamente a cualquier propiedad state.
 
-Given a store defined with:
+Teniendo en cuenta un almacén definido con:
 
 ```js
 const useStore({
@@ -20,7 +20,7 @@ const useStore({
 })
 ```
 
-Do
+Hacer
 
 ```diff
  const store = useStore()
@@ -29,16 +29,16 @@ Do
 +store.count.++
 ```
 
-You can still access the whole store state with `$state` when needed:
+Puedes seguir accediendo a todo el estado del almacén con `$state` cuando lo necesites:
 
 ```diff
 -store.state = newState
 +store.$state = newState
 ```
 
-## Rename of store properties
+## Renombrar las propiedades del almacén %{#rename-of-store-properties}%
 
-All store properties (`id`, `patch`, `reset`, etc) are now prefixed with `$` to allow properties defined on the store with the same names. Tip: you can refactor your whole codebase with F2 (or right-click + Refactor) on each of the store's properties
+Todas las propiedades del almacén (`id`, `patch`, `reset`, etc) llevan ahora el prefijo `$` para permitir propiedades definidas en el almacén con los mismos nombres. Tip: puedes refactorizar toda su base de código con F2 (o clic derecho + Refactorizar) en cada una de las propiedades del almacén
 
 ```diff
  const store = useStore()
@@ -52,11 +52,11 @@ All store properties (`id`, `patch`, `reset`, etc) are now prefixed with `$` to 
 +store.$id
 ```
 
-## The Pinia instance
+## La instancia de Pinia %{#the-pinia-instance}%
 
-It's now necessary to create a pinia instance and install it:
+Ahora es necesario crear una instancia de pinia e instalarla:
 
-If you are using Vue 2 (Pinia <= 1):
+Si está utilizando Vue 2 (Pinia <= 1):
 
 ```js
 import Vue from 'vue'
@@ -71,7 +71,7 @@ new Vue({
 })
 ```
 
-If you are using Vue 3 (Pinia >= 2):
+Si está utilizando Vue 3 (Pinia >= 2):
 
 ```js
 import { createApp } from 'vue'
@@ -82,14 +82,14 @@ const pinia = createPinia()
 createApp(App).use(pinia).mount('#app')
 ```
 
-The `pinia` instance is what holds the state and should **be unique per application**. Check the SSR section of the docs for more details.
+La instancia `pinia` es la que mantiene el estado y debe **ser única por aplicación**. Consulta la sección SSR de la documentación para más detalles.
 
-## SSR changes
+## Cambios en el SSR %{#ssr-changes}%
 
-The SSR plugin `PiniaSsr` is no longer necessary and has been removed.
-With the introduction of pinia instances, `getRootState()` is no longer necessary and should be replaced with `pinia.state.value`:
+El plugin SSR `PiniaSsr` ya no es necesario y ha sido eliminado.
+Con la introducción de las instancias pinia, `getRootState()` ya no es necesario y debe sustituirse por `pinia.state.value`:
 
-If you are using Vue 2 (Pinia <= 1):
+Si está utilizando Vue 2 (Pinia <= 1):
 
 ```diff
 // entry-server.js
@@ -97,19 +97,19 @@ If you are using Vue 2 (Pinia <= 1):
 +import { createPinia, PiniaVuePlugin } from 'pinia',
 
 
--// install plugin to automatically use correct context in setup and onServerPrefetch
+-// instalar plugin para usar automáticamente el contexto correcto en setup y onServerPrefetch
 -Vue.use(PiniaSsr);
 +Vue.use(PiniaVuePlugin)
 
  export default context => {
 +  const pinia = createPinia()
    const app = new Vue({
-     // other options
+     // otras opciones
 +    pinia
    })
 
    context.rendered = () => {
-     // pass state to context
+     // pasar el estado al contexto
 -    context.piniaState = getRootState(context.req)
 +    context.piniaState = pinia.state.value
    };
@@ -119,4 +119,4 @@ If you are using Vue 2 (Pinia <= 1):
  }
 ```
 
-`setActiveReq()` and `getActiveReq()` have been replaced with `setActivePinia()` and `getActivePinia()` respectively. `setActivePinia()` can only be passed a `pinia` instance created with `createPinia()`. **Note that most of the time you won't directly use these functions**.
+`setActiveReq()` y `getActiveReq()` se han sustituido por `setActivePinia()` y `getActivePinia()` respectivamente. A `setActivePinia()` sólo se le puede pasar una instancia de `pinia` creada con `createPinia()`. **Tenga en cuenta que la mayoría de las veces no utilizará directamente estas funciones**.

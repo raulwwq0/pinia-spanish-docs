@@ -4,86 +4,83 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
 
-# Interface: DefineStoreOptionsInPlugin<Id, S, G, A\>
+# Interfaz: DefineStoreOptionsInPlugin<Id, S, G, A\> {#interface-definestoreoptionsinplugin-id-s-g-a}
 
 [pinia](../modules/pinia.md).DefineStoreOptionsInPlugin
 
-Available `options` when creating a pinia plugin.
+`Opciones` disponibles al crear un plugin de pinia.
 
-## Type parameters
+## Tipado de los parámetros {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extiende `string` |
+| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Hierarchy
+## Jerarquía {#hierarchy}
 
 - `Omit`<[`DefineStoreOptions`](pinia.DefineStoreOptions.md)<`Id`, `S`, `G`, `A`\>, ``"id"`` \| ``"actions"``\>
 
   ↳ **`DefineStoreOptionsInPlugin`**
 
-## Properties
+## Propiedades {#properties}
 
-### actions
+### actions {#actions}
 
 • **actions**: `A`
 
-Extracted object of actions. Added by useStore() when the store is built
-using the setup API, otherwise uses the one passed to `defineStore()`.
-Defaults to an empty object if no actions are defined.
+Objeto extraído de acciones. Agregado por useStore() cuando el almacén se construye
+utilizando la API de configuración, de lo contrario utiliza la que se pasa a `defineStore()`.
+Por defecto es un objeto vacío si no hay acciones definidas.
 
 ___
 
-### getters
+### getters {#getters}
 
-• `Optional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
+• `Opcional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
-Optional object of getters.
+Objeto opcional de getters.
 
-#### Inherited from
+#### Heredado de {#inherited-from}
 
 Omit.getters
 
 ___
 
-### state
+### state {#state}
 
-• `Optional` **state**: () => `S`
+• `Opcional` **state**: () => `S`
 
-#### Type declaration
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (): `S`
 
-Function to create a fresh state. **Must be an arrow function** to ensure
-correct typings!
+Función para crear un nuevo estado. **Debe ser una función de flecha** para asegurar
+el tipado correcto.
 
-##### Returns
+##### Retorna {#returns}
 
 `S`
 
-#### Inherited from
+#### Heredado de {#inherited-from-1}
 
 Omit.state
 
-## Methods
+## Métodos {#methods}
 
-### hydrate
+### hydrate {#hydrate}
 
-▸ `Optional` **hydrate**(`storeState`, `initialState`): `void`
+▸ `Opcional` **hydrate**(`storeState`, `initialState`): `void`
 
-Allows hydrating the store during SSR when complex state (like client side only refs) are used in the store
-definition and copying the value from `pinia.state` isn't enough.
+Permite hidratar el almacén durante el SSR cuando se utilizan estados complejos (como refs sólo del lado del cliente) en la definición del almacén y copiar el valor de `pinia.state` no es suficiente.
 
-**`Example`**
+**`Ejemplo`**
 
-If in your `state`, you use any `customRef`s, any `computed`s, or any `ref`s that have a different value on
-Server and Client, you need to manually hydrate them. e.g., a custom ref that is stored in the local
-storage:
+Si en tu `state`, utilizas cualquier `customRef`s, cualquier `computed`s, o cualquier `ref`s que tenga un valor diferente en el Servidor y en el Cliente, necesitas hidratarlos manualmente. por ejemplo, una ref personalizada que se almacena en el almacenamiento local:
 
 ```ts
 const useStore = defineStore('main', {
@@ -97,17 +94,17 @@ const useStore = defineStore('main', {
 })
 ```
 
-#### Parameters
+#### Parámetros {#parameters}
 
-| Name | Type | Description |
+| Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `storeState` | `UnwrapRef`<`S`\> | the current state in the store |
+| `storeState` | `UnwrapRef`<`S`\> | el estado actual en el almacén |
 | `initialState` | `UnwrapRef`<`S`\> | initialState |
 
-#### Returns
+#### Returns {#returns-1}
 
 `void`
 
-#### Inherited from
+#### Heredado de {#inherited-from-2}
 
 Omit.hydrate

@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ name }} Sponsors</h3>
+    <h3>Patrocinadores {{ nameTranslated }}</h3>
 
   <p>
     <a
@@ -45,6 +45,21 @@ const props = defineProps({
     type: [Number, String],
     default: 140,
   },
+})
+
+const nameTranslated = computed(() => {
+  switch (props.name.toLocaleLowerCase()) {
+    case 'platinum':
+      return 'Platino'
+    case 'gold':
+      return 'Oro'
+    case 'silver':
+      return 'Plata'
+    case 'bronze':
+      return 'Bronce'
+    default:
+      return props.name
+  }
 })
 
 const list = computed(() =>

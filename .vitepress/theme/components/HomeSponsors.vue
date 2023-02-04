@@ -16,9 +16,7 @@
       />
 
       <div class="cta">
-        <a class="become-sponsor" href="https://github.com/sponsors/posva">{{
-          translations[site.lang] || translations.en
-        }}</a>
+        <a class="become-sponsor" href="https://github.com/sponsors/posva">¡Convierte en Patrocinador!</a>
       </div>
     </div>
   </div>
@@ -27,14 +25,6 @@
 <script setup lang="ts">
 import HomeSponsorsGroup from './HomeSponsorsGroup.vue'
 import sponsors from './sponsors.json'
-import { useData } from 'vitepress'
-
-const { site } = useData()
-const translations = {
-  en: 'Become a sponsor',
-  'en-US': 'Become a Sponsor!',
-  'zh-CN': '成为赞助者！',
-}
 </script>
 
 <style scoped>

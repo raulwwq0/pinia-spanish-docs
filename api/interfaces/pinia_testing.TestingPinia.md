@@ -63,7 +63,7 @@ estado raíz
 
 [Pinia](pinia.Pinia.md).[state](pinia.Pinia.md#state)
 
-## Métodos %{#Methods}%
+## Métodos %{#Methods}% 
 
 ### use %{#Methods-use}%
 

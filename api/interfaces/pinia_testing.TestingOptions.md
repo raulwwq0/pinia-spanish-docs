@@ -6,47 +6,47 @@ sidebarDepth: 3
 
 [Documentación de la API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
-# Interfaz: TestingOptions {#interface-testingoptions}
+# Interfaz: TestingOptions %{#interface-testingoptions}%
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### createSpy {#createspy}
+### createSpy %{#Properties-createSpy}%
 
 • `Opcional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Tipado de la declaración {#type-declaration}
+#### Tipado de la declaración %{#Properties-createSpy-Type-declaration}%
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
 Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos jest o `vi.fn()` en proyectos vitest. 
 
-##### Parámetros {#parameters}
+##### Parámetros %{#Properties-createSpy-Type-declaration-Parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
-##### Retorna {#returns}
+##### Retorna %{#Properties-createSpy-Type-declaration-Returns}%
 
 `fn`
 
 ▸ (...`args`): `any`
 
-##### Parámetros {#parameters-1}
+##### Parámetros %{#Properties-createSpy-Type-declaration-Parameters_1}%
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `...args` | `any`[] |
 
-##### Retorna {#returns-1}
+##### Retorna %{#Properties-createSpy-Type-declaration-Returns_1}%
 
 `any`
 
 ___
 
-### fakeApp {#fakeapp}
+### fakeApp %{#Properties-fakeApp}%
 
 • `Opcional` **fakeApp**: `boolean`
 
@@ -57,7 +57,7 @@ Por defecto es false.
 
 ___
 
-### initialState {#initialstate}
+### initialState %{#Properties-initialState}%
 
 • `Opcional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
 
@@ -65,7 +65,7 @@ Permite definir un estado inicial parcial para todos tus almacenes. Este estado 
 
 ___
 
-### plugins {#plugins}
+### plugins %{#Properties-plugins}%
 
 • `Opcional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
 
@@ -74,7 +74,7 @@ tu aplicación que se utilizará durante las pruebas.
 
 ___
 
-### stubActions {#stubactions}
+### stubActions %{#Properties-stubActions}%
 
 • `Opcional` **stubActions**: `boolean`
 
@@ -86,7 +86,7 @@ manejar esto en `createSpy()`.
 
 ___
 
-### stubPatch {#stubpatch}
+### stubPatch %{#Properties-stubPatch}%
 
 • `Opcional` **stubPatch**: `boolean`
 

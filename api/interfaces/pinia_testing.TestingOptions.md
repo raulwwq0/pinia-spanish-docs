@@ -4,7 +4,7 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
+[Documentación de la API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
 # Interfaz: TestingOptions {#interface-testingoptions}
 

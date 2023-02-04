@@ -6,13 +6,13 @@ sidebarDepth: 3
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / \_SubscriptionCallbackMutationBase
 
-# Interface: \_SubscriptionCallbackMutationBase
+# Interfaz: \_SubscriptionCallbackMutationBase {#interfaz-subscriptioncallbackmutationbase}
 
 [pinia](../modules/pinia.md)._SubscriptionCallbackMutationBase
 
-Base type for the context passed to a subscription callback. Internal type.
+Tipo base para el contexto pasado a un callback de suscripción. Tipo interno.
 
-## Hierarchy
+## Jerarquía {#hierarchy}
 
 - **`_SubscriptionCallbackMutationBase`**
 
@@ -22,28 +22,27 @@ Base type for the context passed to a subscription callback. Internal type.
 
   ↳ [`SubscriptionCallbackMutationPatchObject`](pinia.SubscriptionCallbackMutationPatchObject.md)
 
-## Properties
+## Propiedades {#properties}
 
-### events
+### events {#events}
 
 • `Optional` **events**: `DebuggerEvent` \| `DebuggerEvent`[]
 
-🔴 DEV ONLY, DO NOT use for production code. Different mutation calls. Comes from
-https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging and allows to track mutations in
-devtools and plugins **during development only**.
-
+🔴 DEV SOLAMENTE, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
+https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de mutaciones en
+devtools y plugins **sólo durante el desarrollo**.
 ___
 
-### storeId
+### storeId {#storeid}
 
 • **storeId**: `string`
 
-`id` of the store doing the mutation.
+`id` del almacén que realiza la mutación.
 
 ___
 
-### type
+### type {#type}
 
 • **type**: [`MutationType`](../enums/pinia.MutationType.md)
 
-Type of the mutation.
+Tipo de mutación.

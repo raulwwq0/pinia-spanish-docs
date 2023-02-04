@@ -1,11 +1,11 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
-export const META_URL = 'https://pinia.vuejs.org'
+export const META_URL = 'https://es-pinia.vercel.app/'
 export const META_TITLE = 'Pinia 🍍'
 export const META_DESCRIPTION =
-  'Intuitive, type safe, light and flexible Store for Vue'
+  'Almacén intuitivo, con tipado seguro, ligero y flexible para Vue'
 
-export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
+export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   description: META_DESCRIPTION,
   head: [
     ['meta', { property: 'og:url', content: META_URL }],
@@ -18,24 +18,24 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   themeConfig: {
     editLink: {
       pattern: 'https://github.com/vuejs/pinia/edit/v2/packages/docs/:path',
-      text: 'Suggest changes to this page',
+      text: 'Sugerir cambios a esta página',
     },
 
     nav: [
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },
       {
-        text: 'Guide',
+        text: 'Guía',
         link: '/core-concepts/',
         activeMatch: '^/core-concepts/',
       },
       { text: 'API', link: '/api/', activeMatch: '^/api/' },
-      { text: 'Cookbook', link: '/cookbook/', activeMatch: '^/cookbook/' },
+      { text: 'Manual', link: '/cookbook/', activeMatch: '^/cookbook/' },
       {
-        text: 'Links',
+        text: 'Enlaces',
         items: [
           {
-            text: 'Discussions',
+            text: 'Discusiones',
             link: 'https://github.com/vuejs/pinia/discussions',
           },
           {
@@ -49,7 +49,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     sidebar: {
       '/api/': [
         {
-          text: 'packages',
+          text: 'Paquetes',
           items: [
             { text: 'pinia', link: '/api/modules/pinia.html' },
             { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },
@@ -63,37 +63,37 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       // catch-all fallback
       '/': [
         {
-          text: 'Introduction',
+          text: 'Introducción',
           items: [
             {
-              text: 'What is Pinia?',
+              text: '¿Qué es Pinia?',
               link: '/introduction.html',
             },
             {
-              text: 'Getting Started',
+              text: 'Cómo empezar',
               link: '/getting-started.html',
             },
           ],
         },
         {
-          text: 'Core Concepts',
+          text: 'Conceptos básicos',
           items: [
-            { text: 'Defining a Store', link: '/core-concepts/' },
-            { text: 'State', link: '/core-concepts/state.html' },
+            { text: 'Definir un Almacén', link: '/core-concepts/' },
+            { text: 'Estado', link: '/core-concepts/state.html' },
             { text: 'Getters', link: '/core-concepts/getters.html' },
-            { text: 'Actions', link: '/core-concepts/actions.html' },
+            { text: 'Acciones', link: '/core-concepts/actions.html' },
             { text: 'Plugins', link: '/core-concepts/plugins.html' },
             {
-              text: 'Stores outside of components',
+              text: 'Almacenes fuera de componentes',
               link: '/core-concepts/outside-component-usage.html',
             },
           ],
         },
         {
-          text: 'Server-Side Rendering (SSR)',
+          text: 'Renderizado del lado del servidor (SSR)',
           items: [
             {
-              text: 'Vue and Vite',
+              text: 'Vue y Vite',
               link: '/ssr/',
             },
             {
@@ -103,20 +103,20 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
           ],
         },
         {
-          text: 'Cookbook',
+          text: 'Manual',
           collapsible: true,
           collapsed: false,
           items: [
             {
-              text: 'Index',
+              text: 'Índice',
               link: '/cookbook/',
             },
             {
-              text: 'Migration from Vuex ≤4',
+              text: 'Migración desde Vuex ≤4',
               link: '/cookbook/migration-vuex.html',
             },
             {
-              text: 'Hot Module Replacement',
+              text: 'Sustitución de módulos en caliente',
               link: '/cookbook/hot-module-replacement.html',
             },
             {
@@ -124,19 +124,19 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/cookbook/testing.html',
             },
             {
-              text: 'Usage without setup()',
+              text: 'Uso sin setup()',
               link: '/cookbook/options-api.html',
             },
             {
-              text: 'Composing Stores',
+              text: 'Componiendo Almacenes',
               link: '/cookbook/composing-stores.html',
             },
             {
-              text: 'Migration from v0/v1 to v2',
+              text: 'Migración desde v0/v1 a v2',
               link: '/cookbook/migration-v1-v2.html',
             },
             {
-              text: 'Dealing with composables',
+              text: 'Tratando con composables',
               link: '/cookbook/composables.html',
             },
           ],

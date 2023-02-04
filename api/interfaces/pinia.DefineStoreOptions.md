@@ -1,12 +1,12 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptions
 
-# Interfaz: DefineStoreOptions<Id, S, G, A\> {#interface-definestoreoptions-id-s-g-a}
+# Interfaz: DefineStoreOptions<Id, S, G, A\> %{#interface-definestoreoptions-id-s-g-a}%
 
 [pinia](../modules/pinia.md).DefineStoreOptions
 
@@ -16,7 +16,7 @@ Parámetro de opciones de `defineStore()` para almacenes de opciones. Puede exte
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -25,15 +25,15 @@ Parámetro de opciones de `defineStore()` para almacenes de opciones. Puede exte
 | `G` | `G` |
 | `A` | `A` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - [`DefineStoreOptionsBase`](pinia.DefineStoreOptionsBase.md)<`S`, [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>\>
 
   ↳ **`DefineStoreOptions`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### actions {#actions}
+### actions %{#Properties-actions}%
 
 • `Opcional` **actions**: `A` & `ThisType`<`A` & `UnwrapRef`<`S`\> & [`_StoreWithState`](pinia._StoreWithState.md)<`Id`, `S`, `G`, `A`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\>
 
@@ -41,7 +41,7 @@ Objecto opcional de acciones.
 
 ___
 
-### getters {#getters}
+### getters %{#Properties-getters}%
 
 • `Opcional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
@@ -49,7 +49,7 @@ Objecto opcional de getters.
 
 ___
 
-### id {#id}
+### id %{#Properties-id}%
 
 • **id**: `Id`
 
@@ -57,24 +57,24 @@ Código de string único para identificar el almacén en la aplicación.
 
 ___
 
-### state {#state}
+### state %{#Properties-state}%
 
 • `Opcional` **state**: () => `S`
 
-#### Tipado de la declaración {#type-declaration}
+#### Tipado de la declaración %{#Properties-state-Type-declaration}%
 
 ▸ (): `S`
 
 Función para crear un nuevo estado. **Debe ser una función de flecha** para asegurar
 tipado correcto.
 
-##### Retorna {#returns}
+##### Retorna %{#Properties-state-Type-declaration-Returns}%
 
 `S`
 
-## Métodos {#methods}
+## Métodos %{#Methods}%
 
-### hydrate {#hydrate}
+### hydrate %{#Methods-hydrate}%
 
 ▸ `Opcional` **hydrate**(`storeState`, `initialState`): `void`
 
@@ -96,13 +96,13 @@ const useStore = defineStore('main', {
 })
 ```
 
-#### Parámetros {#parameters}
+#### Parámetros %{#Methods-hydrate-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `storeState` | `UnwrapRef`<`S`\> | el estado actual en el almacén |
 | `initialState` | `UnwrapRef`<`S`\> | initialState |
 
-#### Returns {#returns-1}
+#### Returns %{#Methods-hydrate-Returns}%
 
 `void`

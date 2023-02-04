@@ -1,18 +1,18 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
 
-# Interfaz: DefineStoreOptionsInPlugin<Id, S, G, A\> {#interface-definestoreoptionsinplugin-id-s-g-a}
+# Interfaz: DefineStoreOptionsInPlugin<Id, S, G, A\> %{#interface-definestoreoptionsinplugin-id-s-g-a}%
 
 [pinia](../modules/pinia.md).DefineStoreOptionsInPlugin
 
 `Opciones` disponibles al crear un plugin de pinia.
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -21,15 +21,15 @@ sidebarDepth: 3
 | `G` | `G` |
 | `A` | `A` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - `Omit`<[`DefineStoreOptions`](pinia.DefineStoreOptions.md)<`Id`, `S`, `G`, `A`\>, ``"id"`` \| ``"actions"``\>
 
   ↳ **`DefineStoreOptionsInPlugin`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### actions {#actions}
+### actions %{#Properties-actions}%
 
 • **actions**: `A`
 
@@ -39,23 +39,23 @@ Por defecto es un objeto vacío si no hay acciones definidas.
 
 ___
 
-### getters {#getters}
+### getters %{#Properties-getters}%
 
 • `Opcional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
 Objeto opcional de getters.
 
-#### Heredado de {#inherited-from}
+#### Heredado de %{#Properties-getters-Inherited-from}%
 
 Omit.getters
 
 ___
 
-### state {#state}
+### state %{#Properties-state}%
 
 • `Opcional` **state**: () => `S`
 
-#### Tipado de la declaración {#type-declaration}
+#### Tipado de la declaración %{#Properties-state-Type-declaration}%
 
 ▸ (): `S`
 
@@ -66,13 +66,13 @@ el tipado correcto.
 
 `S`
 
-#### Heredado de {#inherited-from-1}
+#### Heredado de %{#Properties-state-Inherited-from}%
 
 Omit.state
 
-## Métodos {#methods}
+## Métodos %{#Methods}%
 
-### hydrate {#hydrate}
+### hydrate %{#Methods-hydrate}%
 
 ▸ `Opcional` **hydrate**(`storeState`, `initialState`): `void`
 
@@ -94,17 +94,17 @@ const useStore = defineStore('main', {
 })
 ```
 
-#### Parámetros {#parameters}
+#### Parámetros %{#Methods-hydrate-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `storeState` | `UnwrapRef`<`S`\> | el estado actual en el almacén |
 | `initialState` | `UnwrapRef`<`S`\> | initialState |
 
-#### Returns {#returns-1}
+#### Returns %{#Methods-hydrate-Returns}%
 
 `void`
 
-#### Heredado de {#inherited-from-2}
+#### Heredado de %{#Methods-hydrate-Inherited-from}%
 
 Omit.hydrate

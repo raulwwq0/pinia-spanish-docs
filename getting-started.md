@@ -1,24 +1,25 @@
-## Instalación {#installation}
+# Getting Started
+
+## Installation
 
 <VueMasteryLogoLink for="pinia-cheat-sheet">
 </VueMasteryLogoLink>
 
-Instala `pinia` con tu gestor de paquetes favorito:
+Install `pinia` with your favorite package manager:
 
 ```bash
 yarn add pinia
-# o con npm
+# or with npm
 npm install pinia
 ```
 
 :::tip
-
-Si tu aplicación está usando Vue<2.7 también necesitarás instalar la API de composición: `@vue/composition-api`. Si estás usando Nuxt tienes que seguir [estas instrucciones](/ssr/nuxt.md).
+If your app is using Vue <2.7, you also need to install the composition api: `@vue/composition-api`. If you are using Nuxt, you should follow [these instructions](/ssr/nuxt.md).
 :::
 
-Si estás usando Vue CLI puedes darle una oportunidad a este [**plugin no oficial**](https://github.com/wobsoriano/vue-cli-plugin-pinia)
+If you are using the Vue CLI, you can instead give this [**unofficial plugin**](https://github.com/wobsoriano/vue-cli-plugin-pinia) a try.
 
-Crea una instancia de Pinia (la raíz del almacén) y pásasela a la aplicación como si fuese un plugin:
+Create a pinia instance (the root store) and pass it to the app as a plugin:
 
 ```js {2,5-6,8}
 import { createApp } from 'vue'
@@ -32,7 +33,7 @@ app.use(pinia)
 app.mount('#app')
 ```
 
-Si estás usando Vue 2 tendrás que instalar un plugin e inyectar la `pinia` creada en la raíz de la aplicación:
+If you are using Vue 2, you also need to install a plugin and inject the created `pinia` at the root of the app:
 
 ```js {1,3-4,12}
 import { createPinia, PiniaVuePlugin } from 'pinia'
@@ -42,24 +43,24 @@ const pinia = createPinia()
 
 new Vue({
   el: '#app',
-  // otras opciones...
+  // other options...
   // ...
-  // cabe destacar que la misma instancia de  `pinia` puede ser
-  // usada en múltiples aplicaciones de Vue en la misma página
+  // note the same `pinia` instance can be used across multiple Vue apps on
+  // the same page
   pinia,
 })
 ```
 
-Esto también añade soporte para las herramientas de desarrollo. En Vue 3 algunas características como volver para atrás y editar no están todavía disponibles porque vue-devtools no muestra las APIs necesarias aún pero las herramientas de desarrollo tienen muchas más características y la experiencia de desarrollo está a otro nivel. En Vue 2, Pinia usa la ya existente interfaz para Vuex (y por tanto no se pueden usar a la vez).
+This will also add devtools support. In Vue 3, some features like time traveling and editing are still not supported because vue-devtools doesn't expose the necessary APIs yet but the devtools have way more features and the developer experience as a whole is far superior. In Vue 2, Pinia uses the existing interface for Vuex (and can therefore not be used alongside it).
 
-## ¿Qué es un Almacén? {#what-is-a-store}
+## What is a Store?
 
-Un almacén (como Pinia) es una entidad que contiene el estado y la lógica de negocio que no está vinculada al árbol de componentes. En otras palabras, **contiene el estado global**. Es como si fuese un componente que está siempre ahí y todos los demás pueden leerlo y escribirlo. Tiene **tres conceptos**, el [estado](./core-concepts/state.md), [getters](./core-concepts/getters.md) y [acciones](./core-concepts/actions.md) y es seguro afirmar que estos conceptos son equivalentes a `datos`, `propiedades computadas` y `métodos` de los componentes.
+A Store (like Pinia) is an entity holding state and business logic that isn't bound to your Component tree. In other words, **it hosts global state**. It's a bit like a component that is always there and that everybody can read off and write to. It has **three concepts**, the [state](./core-concepts/state.md), [getters](./core-concepts/getters.md) and [actions](./core-concepts/actions.md) and it's safe to assume these concepts are the equivalent of `data`, `computed` and `methods` in components.
 
-## ¿Cuándo debería usar un Almacén? {#when-should-i-use-a-store}
+## When should I use a Store
 
-Un almacén debería contener datos que pudiesen ser accesibles a lo largo de una aplicación. Esto incluye los datos que son usados en muchos sitios, como por ejemplo información del usuario que se está mostrando en la barra de navegación, así como datos que necesiten ser conservados entre páginas, como por ejemplo un formulario muy complejos con muchos pasos.
+A store should contain data that can be accessed throughout your application. This includes data that is used in many places, e.g. User information that is displayed in the navbar, as well as data that needs to be preserved through pages, e.g. a very complicated multi-step form.
 
-Por otro lado, deberías evitar incluir en el almacén datos que pueden ser guardados en un componente, como por ejemplo la visibilidad de un elemento de una página concreta.
+On the other hand, you should avoid including in the store local data that could be hosted in a component instead, e.g. the visibility of an element local to a page.
 
-No todas las aplicaciones necesitan acceso a un estado global, pero si la tuya lo necesita Pinia hará tu vida más sencilla.
+Not all applications need access to a global state, but if yours need one, Pinia will make your life easier.

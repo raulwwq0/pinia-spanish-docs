@@ -1,86 +1,89 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
-[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
+[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
 
-# Interfaz: DefineStoreOptionsInPlugin<Id, S, G, A\> {#interface-definestoreoptionsinplugin-id-s-g-a}
+# Interface: DefineStoreOptionsInPlugin<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).DefineStoreOptionsInPlugin
 
-`Opciones` disponibles al crear un plugin de pinia.
+Available `options` when creating a pinia plugin.
 
-## Tipado de los parámetros {#type-parameters}
+## Type parameters %{#Type-parameters}%
 
-| Nombre | Tipo |
+| Name | Type |
 | :------ | :------ |
-| `Id` | extiende `string` |
-| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extends `string` |
+| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Jerarquía {#hierarchy}
+## Hierarchy %{#Hierarchy}%
 
 - `Omit`<[`DefineStoreOptions`](pinia.DefineStoreOptions.md)<`Id`, `S`, `G`, `A`\>, ``"id"`` \| ``"actions"``\>
 
   ↳ **`DefineStoreOptionsInPlugin`**
 
-## Propiedades {#properties}
+## Properties %{#Properties}%
 
-### actions {#actions}
+### actions %{#Properties-actions}%
 
 • **actions**: `A`
 
-Objeto extraído de acciones. Agregado por useStore() cuando el almacén se construye
-utilizando la API de configuración, de lo contrario utiliza la que se pasa a `defineStore()`.
-Por defecto es un objeto vacío si no hay acciones definidas.
+Extracted object of actions. Added by useStore() when the store is built
+using the setup API, otherwise uses the one passed to `defineStore()`.
+Defaults to an empty object if no actions are defined.
 
 ___
 
-### getters {#getters}
+### getters %{#Properties-getters}%
 
-• `Opcional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
+• `Optional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
-Objeto opcional de getters.
+Optional object of getters.
 
-#### Heredado de {#inherited-from}
+#### Inherited from %{#Properties-getters-Inherited-from}%
 
 Omit.getters
 
 ___
 
-### state {#state}
+### state %{#Properties-state}%
 
-• `Opcional` **state**: () => `S`
+• `Optional` **state**: () => `S`
 
-#### Tipado de la declaración {#type-declaration}
+#### Type declaration %{#Properties-state-Type-declaration}%
 
 ▸ (): `S`
 
-Función para crear un nuevo estado. **Debe ser una función de flecha** para asegurar
-el tipado correcto.
+Function to create a fresh state. **Must be an arrow function** to ensure
+correct typings!
 
-##### Retorna {#returns}
+##### Returns %{#Properties-state-Type-declaration-Returns}%
 
 `S`
 
-#### Heredado de {#inherited-from-1}
+#### Inherited from %{#Properties-state-Inherited-from}%
 
 Omit.state
 
-## Métodos {#methods}
+## Methods %{#Methods}%
 
-### hydrate {#hydrate}
+### hydrate %{#Methods-hydrate}%
 
-▸ `Opcional` **hydrate**(`storeState`, `initialState`): `void`
+▸ `Optional` **hydrate**(`storeState`, `initialState`): `void`
 
-Permite hidratar el almacén durante el SSR cuando se utilizan estados complejos (como refs sólo del lado del cliente) en la definición del almacén y copiar el valor de `pinia.state` no es suficiente.
+Allows hydrating the store during SSR when complex state (like client side only refs) are used in the store
+definition and copying the value from `pinia.state` isn't enough.
 
-**`Ejemplo`**
+**`Example`**
 
-Si en tu `state`, utilizas cualquier `customRef`s, cualquier `computed`s, o cualquier `ref`s que tenga un valor diferente en el Servidor y en el Cliente, necesitas hidratarlos manualmente. por ejemplo, una ref personalizada que se almacena en el almacenamiento local:
+If in your `state`, you use any `customRef`s, any `computed`s, or any `ref`s that have a different value on
+Server and Client, you need to manually hydrate them. e.g., a custom ref that is stored in the local
+storage:
 
 ```ts
 const useStore = defineStore('main', {
@@ -94,17 +97,17 @@ const useStore = defineStore('main', {
 })
 ```
 
-#### Parámetros {#parameters}
+#### Parameters %{#Methods-hydrate-Parameters}%
 
-| Nombre | Tipo | Descripción |
+| Name | Type | Description |
 | :------ | :------ | :------ |
-| `storeState` | `UnwrapRef`<`S`\> | el estado actual en el almacén |
+| `storeState` | `UnwrapRef`<`S`\> | the current state in the store |
 | `initialState` | `UnwrapRef`<`S`\> | initialState |
 
-#### Returns {#returns-1}
+#### Returns %{#Methods-hydrate-Returns}%
 
 `void`
 
-#### Heredado de {#inherited-from-2}
+#### Inherited from %{#Methods-hydrate-Inherited-from}%
 
 Omit.hydrate

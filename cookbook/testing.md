@@ -1,27 +1,27 @@
-# Probar almacenes {#testing-stores}
+# Testing stores
 
-Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer que las pruebas sean mucho más difíciles de lo que deberían. Afortunadamente, esto no tiene por qué ser así. Tenemos que tener cuidado de tres cosas al probar almacenes:
+Stores will, by design, be used at many places and can make testing much harder than it should be. Fortunately, this doesn't have to be the case. We need to take care of three things when testing stores:
 
-- La instancia `pinia`: Los almacenes no pueden funcionar sin ella
-- `actions`: La mayoría de las veces contienen la lógica más compleja del almacén. ¿No sería bueno si pudieran burlarse de ellos por defecto?
-- Plugins: Si dependes de plugins, tendrás que instalarlos también para las pruebas
+- The `pinia` instance: Stores cannot work without it
+- `actions`: most of the time, they contain the most complex logic of our stores. Wouldn't it be nice if they were mocked by default?
+- Plugins: If you rely on plugins, you will have to install them for tests too
 
-Dependiendo de qué o cómo se realicen las pruebas, debemos ocuparnos de estos tres aspectos de forma diferente:
+Depending on what or how you are testing, we need to take care of these three differently:
 
-- [Probar almacenes](#testing-stores)
-  - [Pruebas unitarias de un almacén](#unit-testing-a-store)
-  - [Componentes de las pruebas unitarias](#unit-testing-components)
-    - [Estado inicial](#initial-state)
-    - [Personalizar el comportamiento de las acciones](#customizing-behavior-of-actions)
-    - [Especificación de la función createSpy](#specifying-the-createspy-function)
-    - [Simular getters](#mocking-getters)
-    - [Plugins de Pinia](#pinia-plugins)
-  - [Pruebas E2E](#e2e-tests)
-  - [Componentes de pruebas unitarias (Vue 2)](#unit-test-components-vue-2)
+- [Testing stores](#testing-stores)
+  - [Unit testing a store](#unit-testing-a-store)
+  - [Unit testing components](#unit-testing-components)
+    - [Initial State](#initial-state)
+    - [Customizing behavior of actions](#customizing-behavior-of-actions)
+    - [Specifying the createSpy function](#specifying-the-createspy-function)
+    - [Mocking getters](#mocking-getters)
+    - [Pinia Plugins](#pinia-plugins)
+  - [E2E tests](#e2e-tests)
+  - [Unit test components (Vue 2)](#unit-test-components-vue-2)
 
-## Pruebas unitarias de un almacén {#unit-testing-a-store}
+## Unit testing a store
 
-Para probar unitariamente un almacén, la parte más importante es crear una instancia de `pinia`:
+To unit test a store, the most important part is creating a `pinia` instance:
 
 ```js
 // stores/counter.spec.ts
@@ -30,8 +30,8 @@ import { useCounter } from '../src/stores/counter'
 
 describe('Counter Store', () => {
   beforeEach(() => {
-    // crea una Pinia nueva y la activa para que se elija automáticamente
-    // por cualquier llamada a useStore() sin tener que pasarla:
+    // creates a fresh pinia and make it active so it's automatically picked
+    // up by any useStore() call without having to pass it to it:
     // `useStore(pinia)`
     setActivePinia(createPinia())
   })
@@ -51,16 +51,16 @@ describe('Counter Store', () => {
 })
 ```
 
-Si tienes algún plugin del almacén, hay una cosa importante que debes saber: **los plugins no se utilizarán hasta que `pinia` esté instalado en una aplicación**. Esto se puede solucionar creando una aplicación vacía o una falsa:
+If you have any store plugins, there is one important thing to know: **plugins won't be used until `pinia` is installed in an App**. This can be solved by creating an empty App or a fake one:
 
 ```js
 import { setActivePinia, createPinia } from 'pinia'
 import { createApp } from 'vue'
 import { somePlugin } from '../src/stores/plugin'
 
-// mismo código que arriba...
+// same code as above...
 
-// no es necesario crear una aplicación por prueba
+// you don't need to create one app per test
 const app = createApp({})
 beforeEach(() => {
   const pinia = createPinia().use(somePlugin)
@@ -69,22 +69,22 @@ beforeEach(() => {
 })
 ```
 
-## Componentes de las pruebas unitarias {#unit-testing-components}
+## Unit testing components
 
-Esto se puede lograr con `createTestingPinia()`, que devuelve una instancia pinia diseñada para ayudar a los componentes de pruebas unitarias.
+This can be achieved with `createTestingPinia()`, which returns a pinia instance designed to help unit tests components.
 
-Empieza instalando `@pinia/testing`:
+Start by installing `@pinia/testing`:
 
 ```shell
 npm i -D @pinia/testing
 ```
 
-Y asegúrese de crear una pinia de prueba en sus pruebas cuando monte un componente:
+And make sure to create a testing pinia in your tests when mounting a component:
 
 ```js
 import { mount } from '@vue/test-utils'
 import { createTestingPinia } from '@pinia/testing'
-// importar cualquier almacén con la que desees interactuar en las pruebas
+// import any store you want to interact with in tests
 import { useSomeStore } from '@/stores/myStore'
 
 const wrapper = mount(Counter, {
@@ -93,27 +93,27 @@ const wrapper = mount(Counter, {
   },
 })
 
-const store = useSomeStore() // ¡utiliza la pinia de pruebas!
+const store = useSomeStore() // uses the testing pinia!
 
-// el estado puede manipularse directamente
+// state can be directly manipulated
 store.name = 'my new name'
-// también se puede hacer a través de patch
+// can also be done through patch
 store.$patch({ name: 'new name' })
 expect(store.name).toBe('new name')
 
-// las acciones están bloqueadas por defecto, lo que significa que no ejecutan su código por defecto.
-// Consulta más abajo para personalizar este comportamiento.
+// actions are stubbed by default, meaning they don't execute their code by default.
+// See below to customize this behavior.
 store.someAction()
 
 expect(store.someAction).toHaveBeenCalledTimes(1)
 expect(store.someAction).toHaveBeenLastCalledWith()
 ```
 
-Ten en cuenta que si utilizas Vue 2, `@vue/test-utils` requiere una [configuración ligeramente diferente](#componentes-de-pruebas-unitarias-vue-2).
+Please note that if you are using Vue 2, `@vue/test-utils` requires a [slightly different configuration](#unit-test-components-vue-2).
 
-### Estado inicial {#initial-state}
+### Initial State
 
-Puede establecer el estado inicial de **todos sus almacenes** al crear una pinia de pruebas pasando un objeto `initialState`. Este objeto será utilizado por la pinia de pruebas para _parchear_ los almacenes cuando sean creados. Digamos que quieres inicializar el estado de este almacén:
+You can set the initial state of **all of your stores** when creating a testing pinia by passing an `initialState` object. This object will be used by the testing pinia to _patch_ stores when they are created. Let's say you want to initialize the state of this store:
 
 ```ts
 import { defineStore } from 'pinia'
@@ -124,31 +124,31 @@ const useCounterStore = defineStore('counter', {
 })
 ```
 
-Dado que el almacén se llama _"counter"_, es necesario añadir un objeto coincidente a `initialState`:
+Since the store is named _"counter"_, you need to add a matching object to `initialState`:
 
 ```ts
-// en alguna parte de tu prueba
+// somewhere in your test
 const wrapper = mount(Counter, {
   global: {
     plugins: [
       createTestingPinia({
         initialState: {
-          counter: { n: 20 }, // iniciar el counter en 20 en lugar de 0
+          counter: { n: 20 }, // start the counter at 20 instead of 0
         },
       }),
     ],
   },
 })
 
-const store = useSomeStore() // ¡utiliza la pinia de pruebas!
+const store = useSomeStore() // uses the testing pinia!
 store.n // 20
 ```
 
-### Personalizar el comportamiento de las acciones {#customizing-behavior-of-actions}
+### Customizing behavior of actions
 
-`createTestingPinia`  extrae todas las acciones del almacén a menos que se indique lo contrario. Esto le permite probar tus componentes y almacenes por separado.
+`createTestingPinia` stubs out all store actions unless told otherwise. This allows you to test your components and stores separately.
 
-Si deseas revertir este comportamiento y ejecutar normalmente sus acciones durante las pruebas, especifique `stubActions: false` al llamar a `createTestingPinia`:
+If you want to revert this behavior and normally execute your actions during tests, specify `stubActions: false` when calling `createTestingPinia`:
 
 ```js
 const wrapper = mount(Counter, {
@@ -159,30 +159,30 @@ const wrapper = mount(Counter, {
 
 const store = useSomeStore()
 
-// Ahora esta llamada EJECUTARÁ la implementación definida por el almacén
+// Now this call WILL execute the implementation defined by the store
 store.someAction()
 
-// ...pero sigue envuelto con un espía, así que puedes inspeccionar las llamadas
+// ...but it's still wrapped with a spy, so you can inspect calls
 expect(store.someAction).toHaveBeenCalledTimes(1)
 ```
 
-### Especificación de la función createSpy {#specifying-the-createspy-function}
+### Specifying the createSpy function
 
-Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente las acciones stubs usan la funciones espía en base a framework de pruebas existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy):
+When using Jest, or vitest with `globals: true`, `createTestingPinia` automatically stubs actions using the spy function based on the existing test framework (`jest.fn` or `vitest.fn`). If you are using a different framework, you'll need to provide a [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy) option:
 
 ```js
 import sinon from 'sinon'
 
 createTestingPinia({
-  createSpy: sinon.spy, // usa el espía de sinon para envolver acciones
+  createSpy: sinon.spy, // use sinon's spy to wrap actions
 })
 ```
 
-Puede encontrar más ejemplos en [las pruebas del paquete de pruebas](https://github.com/vuejs/pinia/blob/v2/packages/testing/src/testing.spec.ts).
+You can find more examples in [the tests of the testing package](https://github.com/vuejs/pinia/blob/v2/packages/testing/src/testing.spec.ts).
 
-### Simular getters {#mocking-getters}
+### Mocking getters
 
-Por defecto, cualquier getter se calculará como un uso normal, pero puedes forzar manualmente un valor estableciendo el getter a lo que quieras:
+By default, any getter will be computed like regular usage but you can manually force a value by setting the getter to anything you want:
 
 ```ts
 import { defineStore } from 'pinia'
@@ -198,23 +198,23 @@ const useCounter = defineStore('counter', {
 const pinia = createTestingPinia()
 const counter = useCounter(pinia)
 
-counter.double = 3 // 🪄 los getters sólo se pueden escribir en las pruebas
+counter.double = 3 // 🪄 getters are writable only in tests
 
-// establecer a undefined para restablecer el comportamiento por defecto
-// @ts-expect-error: generalmente es un número
+// set to undefined to reset the default behavior
+// @ts-expect-error: usually it's a number
 counter.double = undefined
 counter.double // 2 (=1 x 2)
 ```
 
-### Plugins de Pinia {#pinia-plugins}
+### Pinia Plugins
 
-Si tienes algún plugin de pinia, asegúrate de pasarlo cuando llames a `createTestingPinia()` para que se apliquen correctamente. **No los añadas con `testingPinia.use(MyPlugin)`** como lo harías con una pinia normal:
+If you have any pinia plugins, make sure to pass them when calling `createTestingPinia()` so they are properly applied. **Do not add them with `testingPinia.use(MyPlugin)`** like you would do with a regular pinia:
 
 ```js
 import { createTestingPinia } from '@pinia/testing'
 import { somePlugin } from '../src/stores/plugin'
 
-// dentro de alguna prueba
+// inside some test
 const wrapper = mount(Counter, {
   global: {
     plugins: [
@@ -227,13 +227,13 @@ const wrapper = mount(Counter, {
 })
 ```
 
-## Pruebas E2E {#e2e-tests}
+## E2E tests
 
-Cuando se trata de pinia, no necesitas cambiar nada para las pruebas e2e, ¡ese es todo el punto de las pruebas e2e! Tal vez podría probar las peticiones HTTP, pero eso está mucho más allá del alcance de esta guía 😄.
+When it comes to pinia, you don't need to change anything for e2e tests, that's the whole point of e2e tests! You could maybe test HTTP requests, but that's way beyond the scope of this guide 😄.
 
-## Componentes de pruebas unitarias (Vue 2) {#unit-test-components-vue-2}
+## Unit test components (Vue 2)
 
-Cuando utilices [Vue Test Utils 1](https://v1.test-utils.vuejs.org/), instala Pinia en un `localVue`:
+When using [Vue Test Utils 1](https://v1.test-utils.vuejs.org/), install Pinia on a `localVue`:
 
 ```js
 import { PiniaVuePlugin } from 'pinia'
@@ -248,5 +248,5 @@ const wrapper = mount(Counter, {
   pinia: createTestingPinia(),
 })
 
-const store = useSomeStore() // ¡utiliza la pinia de pruebas!
+const store = useSomeStore() // uses the testing pinia!
 ```

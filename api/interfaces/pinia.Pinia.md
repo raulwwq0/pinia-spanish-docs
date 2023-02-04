@@ -1,65 +1,65 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
-[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / Pinia
+[API Documentation](../index.md) / [pinia](../modules/pinia.md) / Pinia
 
-# Interfaz: Pinia {#interface-pinia}
+# Interface: Pinia
 
 [pinia](../modules/pinia.md).Pinia
 
-Cada aplicación debe poseer su propia pinia para poder crear almacenes
+Every application must own its own pinia to be able to create stores
 
-## Jerarquía {#hierarchy}
+## Hierarchy %{#Hierarchy}%
 
 - **`Pinia`**
 
   ↳ [`TestingPinia`](pinia_testing.TestingPinia.md)
 
-## Propiedades {#properties}
+## Properties %{#Properties}%
 
-### install {#install}
+### install %{#Properties-install}%
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Tipado de la declaración {#type-declaration}
+#### Type declaration %{#Properties-install-Type-declaration}%
 
 ▸ (`app`): `void`
 
-##### Parámetros {#parameters}
+##### Parameters %{#Properties-install-Type-declaration-Parameters}%
 
-| Nombre | Tipo |
+| Name | Type |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Retorna {#returns}
+##### Returns %{#Properties-install-Type-declaration-Returns}%
 
 `void`
 
 ___
 
-### state {#state}
+### state %{#Properties-state}%
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
-estado raíz
+root state
 
-## Métodos {#methods}
+## Methods %{#Methods}%
 
-### use {#use}
+### use %{#Methods-use}%
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
-Añade un plugin de almacén para extender a cada almacén
+Adds a store plugin to extend every store
 
-#### Parámetros {#parameters-1}
+#### Parameters %{#Methods-use-Parameters}%
 
-| Nombre | Tipo | Descripción |
+| Name | Type | Description |
 | :------ | :------ | :------ |
-| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | plugin de almacén por añadir |
+| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | store plugin to add |
 
-#### Retorna {#returns-1}
+#### Returns %{#Methods-use-Returns}%
 
 [`Pinia`](pinia.Pinia.md)

@@ -1,38 +1,48 @@
 ---
-home: true
-title: Inicio
-heroImage: /logo.svg
-actionText: Comenzar
-actionLink: /introduction.html
+layout: home
 
-altActionText: Demo
-altActionLink: https://stackblitz.com/github/piniajs/example-vue-3-vite
+title: Pinia
+titleTemplate: The intuitive store for Vue.js
+
+hero: 
+  name: Pinia
+  text: The intuitive store for Vue.js
+  tagline: Type Safe, Extensible, and Modular by design. Forget you are even using a store.
+  image:
+    src: /logo.svg
+    alt: Pinia
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /introduction
+    - theme: alt
+      text: Demo
+      link: https://stackblitz.com/github/piniajs/example-vue-3-vite
+    - theme: cta vueschool
+      text: Watch Video Introduction
+      link: https://vueschool.io/lessons/introduction-to-pinia?friend=vuerouter&utm_source=pinia&utm_medium=link&utm_campaign=homepage
+    - theme: cta vue-mastery
+      text: Get the Pinia Cheat Sheet
+      link: https://www.vuemastery.com/pinia?coupon=PINIA-DOCS&via=eduardo
 
 features:
-  - title: 💡 Intuitivo
-    details: Los almacenes son muy similares a los componentes. La API está diseñada para que puedas escribir almacenes bien organizadas.
-  - title: 🔑 Tipa Seguro
-    details: Los tipos se deducen, lo que significa que los almacenes te ayudan con auto-completado ¡incluso en JavaScript!
-  - title: ⚙️ Soporte para las Herramientas de Desarrollo
-    details: Pinia se conecta a Vue Devtools para ofrecerte una experiencia de desarrollo mejorada tanto en Vue 2 como en Vue 3.
-  - title: 🔌 Ampliable
-    details: Reacciona a los cambios de los almacenes para ampliar Pinia con transacciones, sincronización de almacenamiento local, etc.
-  - title: 🏗 Diseño Modular
-    details: Crea varios almacenes y deja que tu bundler las divida automáticamente.
-  - title: 📦 Extremadamente Ligero
-    details: Pinia pesa ~1.5kb, ¡ni siquiera recordarás que está ahí!
-footer: MIT Licensed | Copyright © 2019-present Eduardo San Martin Morote
+  - title: 💡 Intuitive
+    details: Stores are as familiar as components. API designed to let you write well organized stores.
+  - title: 🔑 Type Safe
+    details: Types are inferred, which means stores provide you with autocompletion even in JavaScript!
+  - title: ⚙️ Devtools support
+    details: Pinia hooks into Vue devtools to give you an enhanced development experience in both Vue 2 and Vue 3.
+  - title: 🔌 Extensible
+    details: React to store changes to extend Pinia with transactions, local storage synchronization, etc.
+  - title: 🏗 Modular by design
+    details: Build multiple stores and let your bundler code split them automatically.
+  - title: 📦 Extremely light
+    details: Pinia weighs ~1.5kb, you will forget it's even there!
 ---
 
-<ClientOnly>
-  <ThemeToggle/>
-  <!-- <TestStore/> -->
-</ClientOnly>
+<script setup>
+import HomeSponsors from './.vitepress/theme/components/HomeSponsors.vue'
+import './.vitepress/theme/styles/home-links.css'
+</script>
 
 <HomeSponsors />
-
-<script setup>
-import HomeSponsors from './.vitepress/components/HomeSponsors.vue'
-import ThemeToggle from './.vitepress/components/ThemeToggle.vue'
-// import TestStore from './.vitepress/components/TestStore.vue'
-</script>

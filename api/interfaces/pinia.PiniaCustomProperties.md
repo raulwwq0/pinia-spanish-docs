@@ -1,44 +1,44 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
-[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomProperties
+[API Documentation](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomProperties
 
-# Interfaz: PiniaCustomProperties<Id, S, G, A\> {#interface-piniacustomproperties-id-s-g-a}
+# Interface: PiniaCustomProperties<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).PiniaCustomProperties
 
-Interfaz a extender por el usuario cuando agrega propiedades a través de plugins.
+Interface to be extended by the user when they add properties through plugins.
 
-## Tipado de los parámetros {#type-parameters}
+## Type parameters %{#Type-parameters}%
 
-| Nombre | Tipo |
+| Name | Type |
 | :------ | :------ |
-| `Id` | extiende `string` = `string` |
-| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extends `string` = `string` |
+| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Accesores {#accessors}
+## Accessors %{#Accessors}%
 
-### route {#route}
+### route %{#Accessors-route}%
 
 • `get` **route**(): `RouteLocationNormalized`
 
-#### Retorna {#returns}
+#### Returns %{#Accessors-route-Returns}%
 
 `RouteLocationNormalized`
 
 • `set` **route**(`value`): `void`
 
-#### Parámetros {#parameters}
+#### Parameters %{#Accessors-route-Parameters}%
 
-| Nombre | Tipo |
+| Name | Type |
 | :------ | :------ |
 | `value` | `RouteLocationNormalizedLoaded` \| `Ref`<`RouteLocationNormalizedLoaded`\> |
 
-#### Retorna {#returns-1}
+#### Returns %{#Accessors-route-Returns_1}%
 
 `void`

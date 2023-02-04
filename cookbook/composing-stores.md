@@ -1,18 +1,18 @@
-# Almacenes de composición {#composing-stores}
+# Composing Stores
 
-Componer almacenes consiste en tener almacenes que se utilicen mutuamente, y esto está soportado en Pinia. Hay una regla a seguir:
+Composing stores is about having stores that use each other, and this is supported in Pinia. There is one rule to follow:
 
-Si **dos o más almacenes se utilizan entre sí**, no pueden crear un bucle infinito a través de _getters_ o _acciones_. No pueden **ambos** leer directamente el estado del otro en su función de configuración:
+If **two or more stores use each other**, they cannot create an infinite loop through _getters_ or _actions_. They cannot **both** directly read each other state in their setup function:
 
 ```js
 const useX = defineStore('x', () => {
   const y = useY()
 
-  // ❌ Esto no es posible porque y también intenta leer x.name
+  // ❌ This is not possible because y also tries to read x.name
   y.name
 
   function doSomething() {
-    // ✅ Leer y propiedades computadas o acciones
+    // ✅ Read y properties in computed or actions
     const yName = y.name
     // ...
   }
@@ -25,11 +25,11 @@ const useX = defineStore('x', () => {
 const useY = defineStore('y', () => {
   const x = useX()
 
-  // ❌ Esto no es posible porque x también intenta leer y.name
+  // ❌ This is not possible because x also tries to read y.name
   x.name
 
   function doSomething() {
-    // ✅ Leer x propiedades computadas o acciones
+    // ✅ Read x properties in computed or actions
     const xName = x.name
     // ...
   }
@@ -40,11 +40,11 @@ const useY = defineStore('y', () => {
 })
 ```
 
-## Almacenes anidados {#nested-stores}
+## Nested Stores
 
-Ten en cuenta que si un almacén utiliza otro almacén, puedes importar directamente y llamar a la función `useStore()` dentro de _acciones_ y _getters_. Entonces puedes interactuar con el almacén como lo harías desde dentro de un componente Vue. Ver [Getters Compartidos](#shared-getters) y [Acciones Compartidas](#shared-actions).
+Note that if one store uses another store, you can directly import and call the `useStore()` function within _actions_ and _getters_. Then you can interact with the store just like you would from within a Vue component. See [Shared Getters](#shared-getters) and [Shared Actions](#shared-actions).
 
-Cuando se trata de _establecer almacenes_, simplemente puedes usar una de los almacenes **en la parte superior** de la función del almacén:
+When it comes to _setup stores_, you can simply use one of the stores **at the top** of the store function:
 
 ```ts
 import { useUserStore } from './user'
@@ -64,9 +64,9 @@ export const useCartStore = defineStore('cart', () => {
 })
 ```
 
-## Getters Compartidos {#shared-getters}
+## Shared Getters
 
-Puedes simplemente llamar a `useOtherStore()` dentro de un _getter_:
+You can simply call `useOtherStore()` inside a _getter_:
 
 ```js
 import { defineStore } from 'pinia'
@@ -83,9 +83,9 @@ export const useCartStore = defineStore('cart', {
 })
 ```
 
-## Acciones Compartidas {#shared-actions}
+## Shared Actions
 
-Lo mismo ocurre con las _acciones_:
+The same applies to _actions_:
 
 ```js
 import { defineStore } from 'pinia'
@@ -98,7 +98,7 @@ export const useCartStore = defineStore('cart', {
 
       try {
         await apiOrderCart(user.token, this.items)
-        // otra acción
+        // another action
         this.emptyCart()
       } catch (err) {
         displayError(err)

@@ -1,39 +1,39 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
-[Documentación de la API](../index.md) / @pinia/testing
+[API Documentation](../index.md) / @pinia/testing
 
-# Módulo: @pinia/testing {#module-pinia-testing}
+# Module: @pinia/testing
 
-## Interfaces {#interfaces}
+## Interfaces %{#Interfaces}%
 
--   [TestingOptions](../interfaces/pinia_testing.TestingOptions.md)
--   [TestingPinia](../interfaces/pinia_testing.TestingPinia.md)
+- [TestingOptions](../interfaces/pinia_testing.TestingOptions.md)
+- [TestingPinia](../interfaces/pinia_testing.TestingPinia.md)
 
-## Funciones {#functions}
+## Functions %{#Functions}%
 
-### createTestingPinia {#createtestingpinia}
+### createTestingPinia %{#Functions-createTestingPinia}%
 
 ▸ **createTestingPinia**(`options?`): [`TestingPinia`](../interfaces/pinia_testing.TestingPinia.md)
 
-Crea una instancia de pinia diseñada para test unitarios que **requiere simular**
-los almacenes. Por defecto, **todas las acciones son simuladas** y por tanto
-no se ejecutan. Esto te permite hacer test unitarios a tu almacén y componentes
-de forma separada. Puedes cambiar esto con la opción `stubActions`. Si estás usando
-jest, son reemplazadas con `jest.fn()`, de lo contrario deberás proporcionar
-tu propia opción `createSpy`.
+Creates a pinia instance designed for unit tests that **requires mocking**
+the stores. By default, **all actions are mocked** and therefore not
+executed. This allows you to unit test your store and components separately.
+You can change this with the `stubActions` option. If you are using jest,
+they are replaced with `jest.fn()`, otherwise, you must provide your own
+`createSpy` option.
 
-#### Parámetros {#parameters}
+#### Parameters %{#Functions-createTestingPinia-Parameters}%
 
-| Nombre    | Tipo                                                              | Descripción                                       |
-| :-------- | :---------------------------------------------------------------- | :------------------------------------------------ |
-| `options` | [`TestingOptions`](../interfaces/pinia_testing.TestingOptions.md) | opciones para configurar los almacenes de pruebas |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | [`TestingOptions`](../interfaces/pinia_testing.TestingOptions.md) | options to configure the testing pinia |
 
-#### Retorna {#returns}
+#### Returns %{#Functions-createTestingPinia-Returns}%
 
 [`TestingPinia`](../interfaces/pinia_testing.TestingPinia.md)
 
-una instancia de pinia aumentada
+a augmented pinia instance

@@ -1,6 +1,6 @@
 ---
 sidebar: "auto"
-editLink: false
+editLinks: false
 sidebarDepth: 3
 ---
 
@@ -12,7 +12,7 @@ sidebarDepth: 3
 
 Base type for the context passed to a subscription callback. Internal type.
 
-## Hierarchy %{#Hierarchy}%
+## Hierarchy
 
 - **`_SubscriptionCallbackMutationBase`**
 
@@ -22,9 +22,9 @@ Base type for the context passed to a subscription callback. Internal type.
 
   ↳ [`SubscriptionCallbackMutationPatchObject`](pinia.SubscriptionCallbackMutationPatchObject.md)
 
-## Properties %{#Properties}%
+## Properties
 
-### events %{#Properties-events}%
+### events
 
 • `Optional` **events**: `DebuggerEvent` \| `DebuggerEvent`[]
 
@@ -34,7 +34,7 @@ devtools and plugins **during development only**.
 
 ___
 
-### storeId %{#Properties-storeId}%
+### storeId
 
 • **storeId**: `string`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### type %{#Properties-type}%
+### type
 
 • **type**: [`MutationType`](../enums/pinia.MutationType.md)
 

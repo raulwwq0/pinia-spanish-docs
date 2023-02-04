@@ -1,27 +1,26 @@
 ---
 sidebar: "auto"
-editLink: false
+editLinks: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsBase
 
-# Interface: DefineStoreOptionsBase<S, Store\>
+# Interfaz: DefineStoreOptionsBase<S, Store\> {#interface-definestoreoptionsbase-s-store}
 
 [pinia](../modules/pinia.md).DefineStoreOptionsBase
 
-Options passed to `defineStore()` that are common between option and setup
-stores. Extend this interface if you want to add custom options to both kinds
-of stores.
+Opciones pasadas a `defineStore()` que son comunes entre options y setup. 
+Extiende esta interfaz si deseas añadir opciones personalizadas a ambos tipos de almacenes.
 
-## Type parameters %{#Type-parameters}%
+## Tipado de los parámetros {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
+| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) |
 | `Store` | `Store` |
 
-## Hierarchy %{#Hierarchy}%
+## Jerarquía {#hierarchy}
 
 - **`DefineStoreOptionsBase`**
 

@@ -1,6 +1,6 @@
 ---
 sidebar: "auto"
-editLink: false
+editLinks: false
 sidebarDepth: 3
 ---
 
@@ -12,21 +12,21 @@ sidebarDepth: 3
 
 Properties of a store.
 
-## Type parameters %{#Type-parameters}%
+## Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `Id` | extends `string` |
 
-## Hierarchy %{#Hierarchy}%
+## Hierarchy
 
 - **`StoreProperties`**
 
   ↳ [`_StoreWithState`](pinia._StoreWithState.md)
 
-## Properties %{#Properties}%
+## Properties
 
-### $id %{#Properties-$id}%
+### $id
 
 • **$id**: `Id`
 
@@ -34,7 +34,7 @@ Unique identifier of the store
 
 ___
 
-### \_customProperties %{#Properties-\_customProperties}%
+### \_customProperties
 
 • **\_customProperties**: `Set`<`string`\>
 

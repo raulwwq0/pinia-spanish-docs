@@ -1,65 +1,65 @@
 ---
 sidebar: "auto"
-editLink: false
+editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / Pinia
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / Pinia
 
-# Interface: Pinia
+# Interfaz: Pinia {#interface-pinia}
 
 [pinia](../modules/pinia.md).Pinia
 
-Every application must own its own pinia to be able to create stores
+Cada aplicación debe poseer su propia pinia para poder crear almacenes
 
-## Hierarchy %{#Hierarchy}%
+## Jerarquía {#hierarchy}
 
 - **`Pinia`**
 
   ↳ [`TestingPinia`](pinia_testing.TestingPinia.md)
 
-## Properties %{#Properties}%
+## Propiedades {#properties}
 
-### install %{#Properties-install}%
+### install {#install}
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Type declaration %{#Properties-install-Type-declaration}%
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (`app`): `void`
 
-##### Parameters %{#Properties-install-Type-declaration-Parameters}%
+##### Parámetros {#parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Returns %{#Properties-install-Type-declaration-Returns}%
+##### Retorna {#returns}
 
 `void`
 
 ___
 
-### state %{#Properties-state}%
+### state {#state}
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
-root state
+estado raíz
 
-## Methods %{#Methods}%
+## Métodos {#methods}
 
-### use %{#Methods-use}%
+### use {#use}
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
-Adds a store plugin to extend every store
+Añade un plugin de almacén para extender a cada almacén
 
-#### Parameters %{#Methods-use-Parameters}%
+#### Parámetros {#parameters-1}
 
-| Name | Type | Description |
+| Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | store plugin to add |
+| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | plugin de almacén por añadir |
 
-#### Returns %{#Methods-use-Returns}%
+#### Retorna {#returns-1}
 
 [`Pinia`](pinia.Pinia.md)

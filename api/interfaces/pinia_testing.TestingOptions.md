@@ -6,92 +6,90 @@ sidebarDepth: 3
 
 [Documentación de la API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
-# Interface: TestingOptions
+# Interfaz: TestingOptions {#interface-testingoptions}
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
-## Properties %{#Properties}%
+## Propiedades {#properties}
 
-### createSpy %{#Properties-createSpy}%
+### createSpy {#createspy}
 
-• `Optional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
+• `Opcional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Type declaration %{#Properties-createSpy-Type-declaration}%
+#### Tipado de la declaración {#type-declaration}
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
-Function used to create a spy for actions and `$patch()`. Pre-configured
-with `jest.fn()` in jest projects or `vi.fn()` in vitest projects.
+Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos jest o `vi.fn()` en proyectos vitest. 
 
-##### Parameters %{#Properties-createSpy-Type-declaration-Parameters}%
+##### Parámetros {#parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
-##### Returns %{#Properties-createSpy-Type-declaration-Returns}%
+##### Retorna {#returns}
 
 `fn`
 
 ▸ (...`args`): `any`
 
-##### Parameters %{#Properties-createSpy-Type-declaration-Parameters_1}%
+##### Parámetros {#parameters-1}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
 | `...args` | `any`[] |
 
-##### Returns %{#Properties-createSpy-Type-declaration-Returns_1}%
+##### Retorna {#returns-1}
 
 `any`
 
 ___
 
-### fakeApp %{#Properties-fakeApp}%
+### fakeApp {#fakeapp}
 
-• `Optional` **fakeApp**: `boolean`
+• `Opcional` **fakeApp**: `boolean`
 
-Creates an empty App and calls `app.use(pinia)` with the created testing
-pinia. This is allows you to use plugins while unit testing stores as
-plugins **will wait for pinia to be installed in order to be executed**.
-Defaults to false.
-
-___
-
-### initialState %{#Properties-initialState}%
-
-• `Optional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
-
-Allows defining a partial initial state of all your stores. This state gets applied after a store is created,
-allowing you to only set a few properties that are required in your test.
+Crea una aplicación vacía y llama a `app.use(pinia)` con la pinia de prueba 
+creada. Esto permite el uso de plugins mientras se realizan pruebas unitarias
+ya que los plugins **esperarán a que pinia se instale para poder ejecutarse**.
+Por defecto es false.
 
 ___
 
-### plugins %{#Properties-plugins}%
+### initialState {#initialstate}
 
-• `Optional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
+• `Opcional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
 
-Plugins to be installed before the testing plugin. Add any plugins used in
-your application that will be used while testing.
-
-___
-
-### stubActions %{#Properties-stubActions}%
-
-• `Optional` **stubActions**: `boolean`
-
-When set to false, actions are only spied, they still get executed. When
-set to true, actions will be replaced with spies, resulting in their code
-not being executed. Defaults to true. NOTE: when providing `createSpy()`,
-it will **only** make the `fn` argument `undefined`. You still have to
-handle this in `createSpy()`.
+Permite definir un estado inicial parcial para todos tus almacenes. Este estado se aplica después de que un almacén es creado, lo que le permite establecer sólo unas pocas propiedades que se requieren en tu prueba.
 
 ___
 
-### stubPatch %{#Properties-stubPatch}%
+### plugins {#plugins}
 
-• `Optional` **stubPatch**: `boolean`
+• `Opcional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
 
-When set to true, calls to `$patch()` won't change the state. Defaults to
-false. NOTE: when providing `createSpy()`, it will **only** make the `fn`
-argument `undefined`. You still have to handle this in `createSpy()`.
+Plugins a instalar antes del plugin de pruebas. Añade cualquier plugin utilizado en 
+tu aplicación que se utilizará durante las pruebas.
+
+___
+
+### stubActions {#stubactions}
+
+• `Opcional` **stubActions**: `boolean`
+
+Cuando se establece en false, las acciones sólo son espiadas, aún así se ejecutarán. Cuando 
+se establece en true, las acciones serán reemplazadas por espías, en lo que resulta que tu código 
+no se ejecute. Por defecto es true. NOTA: al proveer `createSpy()`,
+este **solo** hará que el argumento `fn` sea `undefined`. Aún tienes que
+manejar esto en `createSpy()`.
+
+___
+
+### stubPatch {#stubpatch}
+
+• `Opcional` **stubPatch**: `boolean`
+
+Cuando se establece en true, llamadas a `$patch`  no cambiarán el estado. Por defecto es
+false. NOTA: al proveer `createSpy()`, este **solo** hará que el argumento `fn` 
+sea `undefined`. Aún tienes que manejar esto en `createSpy()`.

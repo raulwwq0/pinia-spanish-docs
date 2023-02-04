@@ -13,7 +13,7 @@ sidebarDepth: 3
 Opciones pasadas a `defineStore()` que son comunes entre options y setup. 
 Extiende esta interfaz si deseas añadir opciones personalizadas a ambos tipos de almacenes.
 
-## Tipado de la declaración {#type-parameters}
+## Tipado de los parámetros {#type-parameters}
 
 | Nombre | Tipo |
 | :------ | :------ |

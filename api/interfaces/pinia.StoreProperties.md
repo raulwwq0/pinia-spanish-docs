@@ -4,40 +4,38 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / StoreProperties
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / StoreProperties
 
-# Interface: StoreProperties<Id\>
+# Interfaz: StoreProperties<Id\> {#interface-storeproperties-id}
 
 [pinia](../modules/pinia.md).StoreProperties
 
-Properties of a store.
+Propiedades de un almacén.
 
-## Type parameters
+## Tipado de los parámetros {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` |
+| `Id` | extiende `string` |
 
-## Hierarchy
+## Jerarquía {#hierarchy}
 
 - **`StoreProperties`**
 
   ↳ [`_StoreWithState`](pinia._StoreWithState.md)
 
-## Properties
+## Propiedades {#properties}
 
-### $id
+### $id {#id}
 
 • **$id**: `Id`
 
-Unique identifier of the store
+Identificador único del almacén
 
 ___
 
-### \_customProperties
+### \_customProperties {#customproperties}
 
 • **\_customProperties**: `Set`<`string`\>
 
-Used by devtools plugin to retrieve properties added with plugins. Removed
-in production. Can be used by the user to add property keys of the store
-that should be displayed in devtools.
+Usado por el plugin de devtools para obtener propiedades añadidas con plugins. Eliminado en producción. Puede ser usado por el usuario para añadir llaves de propiedades del almacén que deberían mostrarse en devtools.

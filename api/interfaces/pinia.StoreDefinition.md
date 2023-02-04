@@ -4,44 +4,44 @@ editLinks: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / StoreDefinition
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / StoreDefinition
 
-# Interface: StoreDefinition<Id, S, G, A\>
+# Interfaz: StoreDefinition<Id, S, G, A\> {#interface-storedefinition-id-s-g-a}
 
 [pinia](../modules/pinia.md).StoreDefinition
 
-## Type parameters
+## Tipado de los parámetros {#type-parameters}
 
-| Name | Type |
+| Nombre | Tipo |
 | :------ | :------ |
-| `Id` | extends `string` = `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
+| `Id` | extiende `string` = `string` |
+| `S` | extiende [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Callable
+## Invocable {#callable}
 
-### StoreDefinition
+### StoreDefinition {#storedefinition}
 
 ▸ **StoreDefinition**(`pinia?`, `hot?`): [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-Returns a store, creates it if necessary.
+Retorna un almacén, lo crea si es necesario.
 
-#### Parameters
+#### Parámetros {#parameters}
 
-| Name | Type | Description |
+| Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md) | Pinia instance to retrieve the store |
-| `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | dev only hot module replacement |
+| `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md) | Instancia de Pinia para obtener el almacén |
+| `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | hot module replacement solo para desarrollar |
 
-#### Returns
+#### Returns {#returns}
 
 [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-## Properties
+## Properties {#properties}
 
-### $id
+### $id {#id}
 
 • **$id**: `Id`
 
-Id of the store. Used by map helpers.
+Id de la tienda. Utilizado por los ayudantes de mapeado.

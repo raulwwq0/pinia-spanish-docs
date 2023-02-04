@@ -1,22 +1,22 @@
-# Server Side Rendering (SSR)
+# Renderizado del Lado del Servidor (SSR) %{#server-side-rendering-ssr}%
 
 :::tip
-If you are using **Nuxt.js,** you need to read [**these instructions**](./nuxt.md) instead.
+Si estás usando **Nuxt.js,** necesitas leer [**estas instrucciones**](./nuxt.md) en lugar de estas.
 :::
 
-Creating stores with Pinia should work out of the box for SSR as long as you call your `useStore()` functions at the top of `setup` functions, `getters` and `actions`:
+La creación de almacenes con Pinia debería funcionar de forma inmediata para SSR siempre y cuando llame a sus funciones `useStore()` en la parte superior de las funciones `setup`, `getters` y `acciones`:
 
 ```vue
 <script setup>
-// this works because pinia knows what application is running inside of
-// `setup`
+// esto funciona porque pinia sabe que aplicación está ejecutándose
+// dentro de `setup()`
 const main = useMainStore()
 </script>
 ```
 
-## Using the store outside of `setup()`
+## Usar el almacén fuera de `setup()` %{#using-the-store-outside-of-setup}%
 
-If you need to use the store somewhere else, you need to pass the `pinia` instance [that was passed to the app](#install-the-plugin) to the `useStore()` function call:
+Si necesitas usar el almacén en algún otro lugar, necesitas pasar la instancia de `pinia` [que fue pasada a la aplicación](#install-the-plugin) a la llamada de la función `useStore()`:
 
 ```js
 const pinia = createPinia()
@@ -26,15 +26,15 @@ app.use(router)
 app.use(pinia)
 
 router.beforeEach((to) => {
-  // ✅ This will work make sure the correct store is used for the
-  // current running app
+  // ✅ Esto funcionará si te aseguras que usas el almacén
+  // correcto en la aplicación que está siendo ejecutada
   const main = useMainStore(pinia)
 
   if (to.meta.requiresAuth && !main.isLoggedIn) return '/login'
 })
 ```
 
-Pinia conveniently adds itself as `$pinia` to your app so you can use it in functions like `serverPrefetch()`:
+Pinia se añadirá convenientemente como `$pinia` a tu aplicación para que puedas usarla en funciones como `serverPrefetch()`:
 
 ```js
 export default {
@@ -44,41 +44,41 @@ export default {
 }
 ```
 
-Note you don't need to do anything special when using `onServerPrefetch()`:
+Nota: no necesitas hacer nada especial cuando usas `onServerPrefetch()`:
 
 ```vue
 <script setup>
 const store = useStore()
 onServerPrefetch(async () => {
-  // ✅ this will work
+  // ✅ esto funcionará
   await store.fetchData()
 })
 </script>
 ```
 
-## State hydration
+## Hidratación del Estado %{#state-hydration}%
 
-To hydrate the initial state, you need to make sure the rootState is included somewhere in the HTML for Pinia to pick it up later on. Depending on what you are using for SSR, **you should escape the state for security reasons**. We recommend using [@nuxt/devalue](https://github.com/nuxt-contrib/devalue) which is the one used by Nuxt.js:
+Para hidratar en estado inicial, necesitas asegurarte que el estado raíz este incluido en algún lugar del HTML para que Pinia lo recoja más adelante. Dependiendo de para que uses SSR, **deberás escapar el estado por razones de seguridad**. Recomendamos usar [@nuxt/devalue](https://github.com/nuxt-contrib/devalue) que es el usado por Nuxt.js:
 
 ```js
 import devalue from '@nuxt/devalue'
 import { createPinia } from 'pinia'
-// retrieve the rootState server side
+// recupera el estado raíz del lado del servidor
 const pinia = createPinia()
 const app = createApp(App)
 app.use(router)
 app.use(pinia)
 
-// after rendering the page, the root state is built and can be read directly
-// on `pinia.state.value`.
+// después de renderizar la página, el estado raíz es construido y puede ser
+// leído directamente en `pinia.state.value`.
 
-// serialize, escape (VERY important if the content of the state can be changed
-// by the user, which is almost always the case), and place it somewhere on
-// the page, for example, as a global variable.
+// serializa, escapa (MUY importante si el contenido del estado pude ser cambiado)
+// por el usuario, que casi siempre es el caso), y ponlo en algún lugar de la
+// página, por ejemplo, como una variable global.
 devalue(pinia.state.value)
 ```
 
-Depending on what you are using for SSR, you will set an _initial state_ variable that will be serialized in the HTML. You should also protect yourself from XSS attacks. For example, with [vite-ssr](https://github.com/frandiox/vite-ssr) you can use the [`transformState` option](https://github.com/frandiox/vite-ssr#state-serialization) and `@nuxt/devalue`:
+Dependiendo de para que uses SSR, deberás poner una variable de _estado inicial_ que será serializada en el HTML. También deberás protegerte contra ataques XSS. Por ejemplo, con [vite-ssr](https://github.com/frandiox/vite-ssr) puedes usar la [opción `transformState`](https://github.com/frandiox/vite-ssr#state-serialization) y `@nuxt/devalue`:
 
 ```js
 import devalue from '@nuxt/devalue'
@@ -94,26 +94,26 @@ export default viteSSR(
   ({ initialState }) => {
     // ...
     if (import.meta.env.SSR) {
-      // this will be stringified and set to window.__INITIAL_STATE__
+      // esto será convertido a string y puesto en window.__INITIAL_STATE__
       initialState.pinia = pinia.state.value
     } else {
-      // on the client side, we restore the state
+      // en el lado del cliente, restauramos el estado
       pinia.state.value = initialState.pinia
     }
   }
 )
 ```
 
-You can use [other alternatives](https://github.com/nuxt-contrib/devalue#see-also) to `@nuxt/devalue` depending on what you need, e.g. if you can serialize and parse your state with `JSON.stringify()`/`JSON.parse()`, **you could improve your performance by a lot**.
+Puedes usar [otras alternativas](https://github.com/nuxt-contrib/devalue#see-also) a `@nuxt/devalue` dependiendo de lo que necesites, por ejemplo, si puedes serializar y parsear tu estado con `JSON.stringify()`/`JSON.parse()`, **puedes mejorar mucho tu rendimiento**.
 
-Adapt this strategy to your environment. Make sure to hydrate pinia's state before calling any `useStore()` function on client side. For example, if we serialize the state into a `<script>` tag to make it accessible globally on client side through `window.__pinia`, we can write this:
+Adapta esta estrategia a tu entorno. Asegúrate de hidratar el estado de pinia antes de llamar a cualquier función `useStore()` en el lado del cliente. Por ejemplo, si serializamos el estado dentro de una etiqueta `<script>` para hacerlo accesible globalmente en el lado del cliente a través de `window.__pinia`, podemos escribir esto:
 
 ```js
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
 
-// must be set by the user
+// debe ser establecido por el usuario
 if (isClient) {
   pinia.state.value = JSON.parse(window.__pinia)
 }

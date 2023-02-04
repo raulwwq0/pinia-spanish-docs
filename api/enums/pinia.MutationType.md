@@ -4,21 +4,21 @@ editLink: false
 sidebarDepth: 3
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / MutationType
+[Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / MutationType
 
-# Enumeration: MutationType
+# Enumeración: MutationType %{#enumeration-mutationtype}%
 
 [pinia](../modules/pinia.md).MutationType
 
-Possible types for SubscriptionCallback
+Posibles tipos de SubscriptionCallback
 
-## Enumeration Members %{#Enumeration-Members}%
+## Enumeración de Miembros %{#Enumeration-Members}%
 
 ### direct %{#Enumeration-Members-direct}%
 
 • **direct** = ``"direct"``
 
-Direct mutation of the state:
+Mutación directa del estado:
 
 - `store.name = 'new name'`
 - `store.$state.name = 'new name'`
@@ -30,7 +30,7 @@ ___
 
 • **patchFunction** = ``"patch function"``
 
-Mutated the state with `$patch` and a function
+Mutar el estado con `$patch` y una función
 
 - `store.$patch(state => state.name = 'newName')`
 
@@ -40,6 +40,6 @@ ___
 
 • **patchObject** = ``"patch object"``
 
-Mutated the state with `$patch` and an object
+Mutar el estado con `$patch` y un objeto
 
 - `store.$patch({ name: 'newName' })`

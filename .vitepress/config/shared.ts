@@ -98,7 +98,7 @@ export const sharedConfig = defineConfig({
 
     footer: {
       copyright: 'Copyright © 2019-present Eduardo San Martin Morote',
-      message: 'Released under the MIT License.',
+      message: 'Lanzado bajo la Licencia MIT.',
     },
 
     editLink: {

@@ -27,7 +27,7 @@ Pinia es una librería de almacenes para Vue que te permite compartir el estado 
 
 ## Ejemplos básicos %{#basic-example}%
 
-Así es como se ve usar Pinia en términos de API (asegúrate de mirar el [Cómo Empezar](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando un almacén:
+Así es como se ve usar Pinia en términos de API (asegúrate de mirar los [Primeros Pasos](./getting-started.md) para instrucciones más detalladas). Tienes que empezar creando un almacén:
 
 ```js
 // stores/counter.js

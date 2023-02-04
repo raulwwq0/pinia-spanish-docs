@@ -70,7 +70,7 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/introduction.html',
             },
             {
-              text: 'Cómo empezar',
+              text: 'Primeros Pasos',
               link: '/getting-started.html',
             },
           ],

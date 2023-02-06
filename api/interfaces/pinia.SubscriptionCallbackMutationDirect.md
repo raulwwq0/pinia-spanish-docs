@@ -26,7 +26,7 @@ newValue`.
 
 • **events**: `DebuggerEvent`
 
-🔴 DEV SOLAMENTE, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
+🔴 SOLO PARA DESARROLLO, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
 https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de las mutaciones 
 en devtools y plugins **sólo durante el desarrollo**.
 

@@ -28,7 +28,7 @@ Tipo base para el contexto pasado a un callback de suscripción. Tipo interno.
 
 • `Optional` **events**: `DebuggerEvent` \| `DebuggerEvent`[]
 
-🔴 DEV SOLAMENTE, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
+🔴 SOLO PARA DESARROLLO, NO usar para código de producción. Diferentes llamadas de mutación. Viene de
 https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de mutaciones en
 devtools y plugins **sólo durante el desarrollo**.
 ___

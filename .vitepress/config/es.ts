@@ -21,6 +21,13 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       text: 'Sugerir cambios a esta página',
     },
 
+    outlineTitle: 'En esta página',
+
+    docFooter: {
+      prev: 'Anterior',
+      next: 'Siguiente',
+    },
+
     nav: [
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },

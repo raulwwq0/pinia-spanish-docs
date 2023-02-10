@@ -120,7 +120,7 @@ Para los siguientes ejemplos, puedes asumir que se ha creado el siguiente almacÃ
 // Ruta de ejemplo:
 // ./src/stores/counter.js
 
-import { defineStore } from 'pinia',
+import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', {
   state: () => ({

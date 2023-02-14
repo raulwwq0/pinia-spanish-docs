@@ -1,32 +1,32 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / StoreProperties
 
-# Interfaz: StoreProperties<Id\> {#interface-storeproperties-id}
+# Interfaz: StoreProperties<Id\> %{#interface-storeproperties-id}%
 
 [pinia](../modules/pinia.md).StoreProperties
 
 Propiedades de un almacén.
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `Id` | extiende `string` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - **`StoreProperties`**
 
   ↳ [`_StoreWithState`](pinia._StoreWithState.md)
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### $id {#id}
+### $id %{#Properties-$id}%
 
 • **$id**: `Id`
 
@@ -34,7 +34,7 @@ Identificador único del almacén
 
 ___
 
-### \_customProperties {#customproperties}
+### \_customProperties %{#Properties-_customProperties}%
 
 • **\_customProperties**: `Set`<`string`\>
 

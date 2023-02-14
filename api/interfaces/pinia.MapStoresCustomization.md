@@ -1,12 +1,12 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / MapStoresCustomization
 
-# Interfaz: MapStoresCustomization {#interface-mapstorescustomization}
+# Interfaz: MapStoresCustomization %{#interface-mapstorescustomization}%
 
 [pinia](../modules/pinia.md).MapStoresCustomization
 

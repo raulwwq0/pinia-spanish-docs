@@ -1,18 +1,18 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / \_SubscriptionCallbackMutationBase
 
-# Interfaz: \_SubscriptionCallbackMutationBase {#interfaz-subscriptioncallbackmutationbase}
+# Interfaz: \_SubscriptionCallbackMutationBase %{#interfaz-subscriptioncallbackmutationbase}%
 
 [pinia](../modules/pinia.md)._SubscriptionCallbackMutationBase
 
 Tipo base para el contexto pasado a un callback de suscripción. Tipo interno.
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - **`_SubscriptionCallbackMutationBase`**
 
@@ -22,9 +22,9 @@ Tipo base para el contexto pasado a un callback de suscripción. Tipo interno.
 
   ↳ [`SubscriptionCallbackMutationPatchObject`](pinia.SubscriptionCallbackMutationPatchObject.md)
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### events {#events}
+### events %{#Properties-events}%
 
 • `Optional` **events**: `DebuggerEvent` \| `DebuggerEvent`[]
 
@@ -33,7 +33,7 @@ https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y p
 devtools y plugins **sólo durante el desarrollo**.
 ___
 
-### storeId {#storeid}
+### storeId %{#Properties-storeId}%
 
 • **storeId**: `string`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### type {#type}
+### type %{#Properties-type}%
 
 • **type**: [`MutationType`](../enums/pinia.MutationType.md)
 

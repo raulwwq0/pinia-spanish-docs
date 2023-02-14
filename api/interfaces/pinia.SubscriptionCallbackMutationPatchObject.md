@@ -1,33 +1,33 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationPatchObject
 
-# Interfaz: SubscriptionCallbackMutationPatchObject<S\> {#interface-subscriptioncallbackmutationpatchobject-s}
+# Interfaz: SubscriptionCallbackMutationPatchObject<S\> %{#interface-subscriptioncallbackmutationpatchobject-s}%
 
 [pinia](../modules/pinia.md).SubscriptionCallbackMutationPatchObject
 
 Contexto pasado a un callback de suscripción cuando `store.$patch()` es llamado
 con un objeto.
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre |
 | :------ |
 | `S` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - [`_SubscriptionCallbackMutationBase`](pinia._SubscriptionCallbackMutationBase.md)
 
   ↳ **`SubscriptionCallbackMutationPatchObject`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### events {#events}
+### events %{#Properties-events}%
 
 • **events**: `DebuggerEvent`[]
 
@@ -36,13 +36,13 @@ https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y p
 en devtools y plugins **sólo durante el desarrollo**.
 
 
-#### Sobrescribe {#overrides}
+#### Sobrescribe %{#Properties-events-Overrides}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[events](pinia._SubscriptionCallbackMutationBase.md#events)
 
 ___
 
-### payload {#payload}
+### payload %{#Properties-payload}%
 
 • **payload**: [`_DeepPartial`](../modules/pinia.md#_deeppartial)<`S`\>
 
@@ -50,24 +50,24 @@ Objeto pasado a `store.$patch()`.
 
 ___
 
-### storeId {#storeid}
+### storeId %{#Properties-storeId}%
 
 • **storeId**: `string`
 
 `id` del almacén que realiza la mutación.
 
-#### Heredado de {#inherited-from}
+#### Heredado de %{#Properties-storeId-Inherited-from}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
 
 ___
 
-### type {#type}
+### type %{#Properties-type}%
 
 • **type**: [`patchObject`](../enums/pinia.MutationType.md#patchobject)
 
 Tipo de mutación.
 
-#### Sobrescribe {#overrides-1}
+#### Sobrescribe %{#Properties-type-Overrides}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[type](pinia._SubscriptionCallbackMutationBase.md#type)

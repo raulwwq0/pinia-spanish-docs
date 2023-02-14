@@ -1,16 +1,16 @@
 ---
 sidebar: "auto"
-editLinks: false
+editLink: false
 sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / StoreDefinition
 
-# Interfaz: StoreDefinition<Id, S, G, A\> {#interface-storedefinition-id-s-g-a}
+# Interfaz: StoreDefinition<Id, S, G, A\> %{#interface-storedefinition-id-s-g-a}%
 
 [pinia](../modules/pinia.md).StoreDefinition
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -19,28 +19,28 @@ sidebarDepth: 3
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Invocable {#callable}
+## Invocable %{#Callable}%
 
-### StoreDefinition {#storedefinition}
+### StoreDefinition %{#Callable-StoreDefinition}%
 
 ▸ **StoreDefinition**(`pinia?`, `hot?`): [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
 Retorna un almacén, lo crea si es necesario.
 
-#### Parámetros {#parameters}
+#### Parámetros %{#Callable-StoreDefinition-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md) | Instancia de Pinia para obtener el almacén |
 | `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | hot module replacement solo para desarrollar |
 
-#### Returns {#returns}
+#### Returns %{#Callable-StoreDefinition-Returns}%
 
 [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-## Properties {#properties}
+## Properties %{#Properties}%
 
-### $id {#id}
+### $id %{#Properties-$id}%
 
 • **$id**: `Id`
 

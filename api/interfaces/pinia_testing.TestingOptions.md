@@ -1,7 +1,5 @@
 ---
-sidebar: "auto"
 editLink: false
-sidebarDepth: 3
 ---
 
 [Documentación de la API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions

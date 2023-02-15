@@ -87,12 +87,26 @@ Cabe aclarar que no puedes añadir una nueva propiedad al estado **si no está d
 
 ## Restablecer el estado %{#resetting-the-state}%
 
-Puedes restablecer el estado a su valor inicial llamando al método `$reset()` del almacén:
+En los [Almacenes de Opciones](/core-concepts/index.md#option-stores), puedes restablecer el estado a su valor inicial llamando al método `$reset()` del almacén:
 
 ```js
 const store = useStore()
 
 store.$reset()
+```
+
+Internamente llama a la función `state()` para crear un nuevo objeto estado y reemplaza el estado actual con él.
+
+En los [Almacenes de Configuración](/core-concepts/index.md#setup-stores) necesitas crear tu propio método `$reset()`:
+
+```ts
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0)
+  function $reset() {
+    count.value = 0
+  }
+  return { count, $reset }
+})
 ```
 
 ### Uso con la API de Opciones %{#usage-with-the-options-api}%

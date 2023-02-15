@@ -30,7 +30,7 @@ Función utilizada para crear un espía para las acciones y `$patch()`. Pre-conf
 
 `fn`
 
-▸ (...`args`): `any`
+▸ (`...args`): `any`
 
 ##### Parámetros %{#Properties-createSpy-Type-declaration-Parameters_1}%
 

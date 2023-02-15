@@ -446,7 +446,7 @@ ___
 #### Tipado de la declaración %{#Type-Aliases-_Method-Type-declaration}%
 
 
-▸ (...`args`): `any`
+▸ (`...args`): `any`
 
 Tipo genérico para una función que infiere argumentos y retorna el tipo. **Solo** para uso interno
 
@@ -945,7 +945,7 @@ ___
 
 ### mapStores %{#Functions-mapStores}%
 
-▸ **mapStores**<`Stores`\>(...`stores`): [`_Spread`](pinia.md#_spread)<`Stores`\>
+▸ **mapStores**<`Stores`\>(`...stores`): [`_Spread`](pinia.md#_spread)<`Stores`\>
 
 Permite usar almacenes sin la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente. Acepta una lista de definiciones de almacenes.
 

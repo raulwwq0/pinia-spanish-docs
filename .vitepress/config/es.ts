@@ -1,34 +1,49 @@
-export default {
-  vitepressConfig: {
-    title: 'Pinia',
-    lang: 'es-ES',
-    description: 'El Almacén de Vue que te gustará usar',
-  },
+import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
+
+export const META_URL = 'https://es-pinia.vercel.app/'
+export const META_TITLE = 'Pinia 🍍'
+export const META_DESCRIPTION =
+  'Almacén intuitivo, con tipado seguro, ligero y flexible para Vue'
+
+export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
+  description: META_DESCRIPTION,
+  head: [
+    ['meta', { property: 'og:url', content: META_URL }],
+    ['meta', { property: 'og:description', content: META_DESCRIPTION }],
+    ['meta', { property: 'twitter:url', content: META_URL }],
+    ['meta', { property: 'twitter:title', content: META_TITLE }],
+    ['meta', { property: 'twitter:description', content: META_DESCRIPTION }],
+  ],
+
   themeConfig: {
-    label: 'Español',
-    selectText: 'Idiomas',
-    editLinkText: 'Sugerir cambios a esta página',
-    lastUpdated: 'Última actualización',
+    editLink: {
+      pattern: 'https://github.com/vuejs/pinia/edit/v2/packages/docs/:path',
+      text: 'Sugerir cambios a esta página',
+    },
+
+    outlineTitle: 'En esta página',
+
+    docFooter: {
+      prev: 'Anterior',
+      next: 'Siguiente',
+    },
 
     nav: [
-      { text: 'Guía', link: '/introduction.html' },
-      { text: 'API', link: '/api/' },
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },
+      {
+        text: 'Guía',
+        link: '/core-concepts/',
+        activeMatch: '^/core-concepts/',
+      },
+      { text: 'API', link: '/api/', activeMatch: '^/api/' },
+      { text: 'Manual', link: '/cookbook/', activeMatch: '^/cookbook/' },
       {
         text: 'Enlaces',
         items: [
           {
             text: 'Discusiones',
             link: 'https://github.com/vuejs/pinia/discussions',
-          },
-          {
-            text: 'Chat',
-            link: 'https://chat.vuejs.org',
-          },
-          {
-            text: 'Twitter',
-            link: 'https://twitter.com/posva',
           },
           {
             text: 'Changelog',
@@ -42,7 +57,7 @@ export default {
       '/api/': [
         {
           text: 'Paquetes',
-          children: [
+          items: [
             { text: 'pinia', link: '/api/modules/pinia.html' },
             { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },
             {
@@ -52,23 +67,24 @@ export default {
           ],
         },
       ],
+      // catch-all fallback
       '/': [
         {
           text: 'Introducción',
-          children: [
+          items: [
             {
               text: '¿Qué es Pinia?',
               link: '/introduction.html',
             },
             {
-              text: 'Cómo empezar',
+              text: 'Primeros Pasos',
               link: '/getting-started.html',
             },
           ],
         },
         {
           text: 'Conceptos básicos',
-          children: [
+          items: [
             { text: 'Definir un Almacén', link: '/core-concepts/' },
             { text: 'Estado', link: '/core-concepts/state.html' },
             { text: 'Getters', link: '/core-concepts/getters.html' },
@@ -82,7 +98,7 @@ export default {
         },
         {
           text: 'Renderizado del lado del servidor (SSR)',
-          children: [
+          items: [
             {
               text: 'Vue y Vite',
               link: '/ssr/',
@@ -95,8 +111,13 @@ export default {
         },
         {
           text: 'Manual',
-          link: '/cookbook/',
-          children: [
+          collapsible: true,
+          collapsed: false,
+          items: [
+            {
+              text: 'Índice',
+              link: '/cookbook/',
+            },
             {
               text: 'Migración desde Vuex ≤4',
               link: '/cookbook/migration-vuex.html',

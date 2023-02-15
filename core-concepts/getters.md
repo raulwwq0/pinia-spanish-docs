@@ -1,4 +1,4 @@
-# Getters {#getters}
+# Getters %{#getters}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/getters-in-pinia"
@@ -42,22 +42,18 @@ export const useCounterStore = defineStore('counter', {
 Entonces puedes acceder al getter directamente desde la instancia del almacén:
 
 ```vue
+<script setup>
+import { useCounterStore } from './counterStore'
+
+const store = useCounterStore()
+</script>
+
 <template>
   <p>Double count is {{ store.doubleCount }}</p>
 </template>
-
-<script>
-export default {
-  setup() {
-    const store = useCounterStore()
-
-    return { store }
-  },
-}
-</script>
 ```
 
-## Acceder a otros getters {#accessing-other-getters}
+## Acceder a otros getters %{#accessing-other-getters}%
 
 Como en las propiedades computadas, puedes combinar multiples getters. Accede a cualquier otro getter con `this`. Incluso si no quieres usar TypeScript puedes pedir sugerencias a tu IDE para tipos con [JSDoc](https://jsdoc.app/tags-returns.html):
 
@@ -85,7 +81,7 @@ export const useCounterStore = defineStore('counter', {
 })
 ```
 
-## Pasar argumentos a los getters {#passing-arguments-to-getters}
+## Pasar argumentos a los getters %{#passing-arguments-to-getters}%
 
 Los _getters_ son solo propiedades _computadas_ detrás de cámaras, así que no es posible pasarles ningún parámetro. Sin embargo, puedes retornar una función desde el _getter_ para aceptar cualquier argumento:
 
@@ -103,13 +99,12 @@ y usarlos en un componente:
 
 ```vue
 <script>
-export default {
-  setup() {
-    const store = useStore()
+import { useUserListStore } from './store'
 
-    return { getUserById: store.getUserById }
-  },
-}
+const userList = useUserListStore()
+const { getUserById } = storeToRefs(userList)
+// nota: tendrás que usar `getUserById.value` para acceder
+// a la función en el <script setup>
 </script>
 
 <template>
@@ -130,7 +125,7 @@ export const useStore = defineStore('main', {
 })
 ```
 
-## Acceder a getters de otros almacenes {#accessing-other-stores-getters}
+## Acceder a getters de otros almacenes %{#accessing-other-stores-getters}%
 
 Para usar getters de otros almacenes puedes _usarlos_ directamente dentro del _getter_:
 
@@ -150,22 +145,20 @@ export const useStore = defineStore('main', {
 })
 ```
 
-## Uso con `setup()` {#usage-with-setup}
+## Uso con `setup()` %{#usage-with-setup}%
 
 Puedes acceder directamente a cualquier getter como una propiedad del almacén (exactamente igual que las propiedades del estado):
 
-```js
-export default {
-  setup() {
-    const store = useCounterStore()
+```vue
+<script setup>
+const store = useCounterStore()
 
-    store.count = 3
-    store.doubleCount // 6
-  },
-}
+store.count = 3
+store.doubleCount // 6
+</script>
 ```
 
-## Uso con la API de Opciones {#usage-with-the-options-api}
+## Uso con la API de Opciones %{#usage-with-the-options-api}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/access-pinia-getters-in-the-options-api"
@@ -192,17 +185,19 @@ export const useCounterStore = defineStore('counter', {
 })
 ```
 
-### Con `setup()` {#with-setup}
+### Con `setup()` %{#with-setup}%
 
 Dado que la API de composición no es para todo el mundo, el hook `setup()` puede hacer que trabajar con Pinia sea más fácil con la API de opciones. ¡No necesitas funciones map helper adicionales!
 
-```js
+```vue
+<script>
 import { useCounterStore } from '../stores/counter'
 
-export default {
+export default defineComponent({
   setup() {
     const counterStore = useCounterStore()
 
+    // **solo retorna el almacén entero** en vez de desestructurarlo
     return { counterStore }
   },
   computed: {
@@ -210,10 +205,13 @@ export default {
       return this.counterStore.doubleCount * 2
     },
   },
-}
+})
+</script>
 ```
 
-### Sin `setup()` {#without-setup}
+Esto es útil mientras migras un componente desde la API de opciones a la API de composición pero **solo debe haber un paso de migración**, siempre intenta evitar mezclar ambos estilos de API en el mismo componente.
+
+### Sin `setup()` %{#without-setup}%
 
 Puedes usar la misma función `mapState()` usada en la [sección anterior del estado](./state.md#options-api) para mapear los getters:
 

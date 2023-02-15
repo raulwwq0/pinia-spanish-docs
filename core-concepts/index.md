@@ -1,4 +1,4 @@
-# Definir un Almacén {#defining-a-store}
+# Definir un Almacén %{#defining-a-store}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/define-your-first-pinia-store"
@@ -24,7 +24,7 @@ Este _nombre_, también conocido como _id_, es obligatorio y es usado por Pinia 
 
 `defineStore()` acepta dos valores distintos para su segundo parámetro: una función Setup o un objeto de opciones.
 
-## Almacenes de Opciones {#option-stores}
+## Almacenes de Opciones %{#option-stores}%
 
 Tal y como se hace en la API de opciones de Vue, podemos pasar un objeto de opciones con las propiedades `state`, `actions` y `getters`.
 
@@ -46,7 +46,7 @@ Puedes pensar en `state` como los `datos` del almacén, `getters` como las propi
 
 Los almacenes de opciones deberían sentirse como algo intuitivo y simple para empezar.
 
-## Almacenes de Configuración {#setup-stores}
+## Almacenes de Configuración %{#setup-stores}%
 
 También hay otra posible sintaxis para definir los almacenes. Es parecida a la [función setup](https://vuejs.org/api/composition-api-setup.html) de la API de composición de Vue, podemos pasarle una función que defina propiedades reactivas y métodos, y que devuelva un objecto con las propiedades y métodos que queremos exponer.
 
@@ -71,27 +71,22 @@ En los _almacenes con setup_:
 
 Los almacenes con setup ofrecen mucha más flexibilidad que los [almacenes de opciones](#option-stores) dado que puedes crear observadores en un almacén y usar libremente cualquier [composable](https://vuejs.org/guide/reusability/composables.html#composables). Sin embargo, ten en mente que usar composables puede traer más complejidad cuando se usa [SSR](../cookbook/composables.md).
 
-## ¿Qué sintaxis debería usar? {#what-syntax-should-i-pick}
+## ¿Qué sintaxis debería usar? %{#what-syntax-should-i-pick}%
 
 Al igual que con las [API de composición y API de opciones de Vue](https://vuejs.org/guide/introduction.html#which-to-choose), quédate con la que te sientas más cómodo. Si no estás seguro prueba primero los [almacenes de opciones](#option-stores).
 
-## Usando el almacén {#using-the-store}
+## Usando el almacén %{#using-the-store}%
 
-Estamos _definiendo_ un almacén porque hasta que no se llame a `use...Store()` dentro de `setup()` este no se creará.
+Estamos _definiendo_ un almacén porque este no se creará hasta que no se llame a `use...Store()` dentro del `<script setup>` de un componente (o dentro de `setup()` **como cualquier composable**).
 
-```js
+```vue
+<script setup>
 import { useCounterStore } from '@/stores/counter'
 
-export default {
-  setup() {
-    const store = useCounterStore()
-
-    return {
-      // puedes devolver la instancia completa del almacén para usarla en el template
-      store,
-    }
-  },
-}
+// accede a la variable `store` desde cualquier lugar
+// del componente ✨
+const store = useCounterStore()
+</script>
 ```
 
 :::tip
@@ -104,56 +99,37 @@ Una vez que el almacén está instanciado puede acceder a cualquier propiedad de
 
 Cabe destacar que un `almacén` es un objeto envuelto en un `reactive`, por lo que no es necesario escribir `.value` después de los getters, pero tal y como las `props` en `setup` **no podemos desestructurarlo**:
 
-```js
-export default defineComponent({
-  setup() {
-    const store = useCounterStore()
-    // ❌ Esto no va a funcionar porque se carga la reactividad
-    // es lo mismo que desestructurar una prop
-    const { name, doubleCount } = store
+```vue
+<script setup>
+const store = useCounterStore()
+// ❌ Esto no funcionará porque rompe la reactividad
+// es igual que desestructurar desde `props`
+const { name, doubleCount } = store // [!aviso del código]
+name // siempre será "Eduardo" // [!aviso del código]
+doubleCount // siempre será 0 // [!aviso del código]
 
-    name // "Eduardo"
-    doubleCount // 0
+setTimeout(() => {
+  store.increment()
+}, 1000)
 
-    setTimeout(() => {
-      store.increment()
-    }, 1000)
-
-    return {
-      // siempre será "Eduardo"
-      name,
-      // siempre será 0
-      doubleCount,
-      // también siempre será 0
-      doubleNumber: store.doubleCount,
-
-      // ✅ esto si será reactivo
-      doubleValue: computed(() => store.doubleCount),
-    }
-  },
-})
+// ✅ este será reactivo
+// 💡 pero también puedes usar `store.doubleCount` directamente
+const doubleValue = computed(() => store.doubleCount)
+</script>
 ```
 
 Para poder extraer propiedades del almacén mientras mantenemos la reactividad es necesario usar `storeToRefs()`. Esto creará refs por cada propiedad reactiva. Esto es útil cuando solo usas el estado del almacén pero no llamas a ninguna acción. Cabe destacar que puedes desestructurar acciones directamente del almacén ya que también están vinculadas al propio almacén:
 
-```js
+```vue
+<script setup>
 import { storeToRefs } from 'pinia'
 
-export default defineComponent({
-  setup() {
-    const store = useCounterStore()
-    // `name` y `doubleCount` son refs reactivas
-    // Esto también creará refs para las propiedades añadidas por plugins
-    // pero se saltará cualquier acción o propiedad no reactiva (sin ref/reactive)
-    const { name, doubleCount } = storeToRefs(store)
-    // la acción de incremento puede ser extraída
-    const { increment } = store
-
-    return {
-      name,
-      doubleCount,
-      increment,
-    }
-  },
-})
+const store = useCounterStore()
+// `name` y `doubleCount` son refs reactivas
+// Esto también extraerá refs para las propiedades añadidas por plugins
+// pero se saltará cualquier acción o propiedad no reactiva (sin ref/reactive)
+const { name, doubleCount } = storeToRefs(store)
+// la acción de incremento puede ser desestructurada
+const { increment } = store
+</script>
 ```

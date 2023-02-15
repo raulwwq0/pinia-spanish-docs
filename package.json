@@ -1,15 +1,15 @@
 {
-  "name": "@pinia/docs",
-  "version": "0.0.0",
+  "name": "@pinia/spanish-docs",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "docs": "vitepress dev .",
-    "docs:build": "vitepress build .",
-    "docs:preview": "vitepress build . && npx http-server ./.vitepress/dist"
+    "docs:api": "node run-typedoc.js",
+    "docs:build": "vitepress build ."
   },
   "dependencies": {
-    "@vueuse/core": "^9.5.0",
-    "vitepress": "^0.22.4",
-    "vue": "^3.2.45"
+    "@chenfengyuan/vue-countdown": "^2.1.0",
+    "@vueuse/core": "^9.11.1",
+    "vitepress": "1.0.0-alpha.40"
   }
 }

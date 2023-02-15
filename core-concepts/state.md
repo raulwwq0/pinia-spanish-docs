@@ -1,4 +1,4 @@
-# Estado {#state}
+# Estado %{#state}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/access-state-from-a-pinia-store"
@@ -29,7 +29,7 @@ export const useStore = defineStore('storeId', {
 Si estás usando Vue 2, los datos creados en `state` seguirán las mismas reglas que el `data` en una instancia de Vue, por eso el objeto estado tiene que ser plano y necesitas llamar a `Vue.set()` cuando **añadas nuevas** propiedades a él. **Mira también: [Vue#data](https://v2.vuejs.org/v2/api/#data)**.
 :::
 
-## TypeScript {#typescript}
+## TypeScript %{#typescript}%
 
 No necesitas hacer mucho para poder hacer tu estado compatible con TS: asegúrate de que [`strict`](https://www.typescriptlang.org/tsconfig#strict) o, al menos, [`noImplicitThis`](https://www.typescriptlang.org/tsconfig#noImplicitThis) estén habilitados y !Pinia deducirá los tipos de tu estado automáticamente! Sin embargo, hay pocas veces donde deberás proporcionárselo manualmente con algún casting.
 
@@ -73,7 +73,7 @@ interface UserInfo {
 }
 ```
 
-## Acceder al `estado` {#accessing-the-state}
+## Acceder al `estado` %{#accessing-the-state}%
 
 Por defecto, puedes leer y escribir en el estado directamente accediendo a él a través la instancia del `almacén`:
 
@@ -85,9 +85,9 @@ store.count++
 
 Cabe aclarar que no puedes añadir una nueva propiedad al estado **si no está definida en `state()`**, tiene que contener el estado inicial, por ejemplo: no podemos hacer `store.secondCount = 2` si `secondCount` no está definido en `state()`.
 
-## Restablecer el estado {#resetting-the-state}
+## Restablecer el estado %{#resetting-the-state}%
 
-Puedes restablecer el estado a su valor inicial llamando al método `$reset()` del almacén:
+En los [Almacenes de Opciones](/core-concepts/index.md#option-stores), puedes restablecer el estado a su valor inicial llamando al método `$reset()` del almacén:
 
 ```js
 const store = useStore()
@@ -95,7 +95,21 @@ const store = useStore()
 store.$reset()
 ```
 
-### Uso con la API de Opciones {#usage-with-the-options-api}
+Internamente llama a la función `state()` para crear un nuevo objeto estado y reemplaza el estado actual con él.
+
+En los [Almacenes de Configuración](/core-concepts/index.md#setup-stores) necesitas crear tu propio método `$reset()`:
+
+```ts
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0)
+  function $reset() {
+    count.value = 0
+  }
+  return { count, $reset }
+})
+```
+
+### Uso con la API de Opciones %{#usage-with-the-options-api}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/access-pinia-state-in-the-options-api"
@@ -142,7 +156,7 @@ export default {
 }
 ```
 
-#### Estado modificable {#modifiable-state}
+#### Estado modificable %{#modifiable-state}%
 
 Si quieres poder escribir en estas propiedades de estado (por ejemplo, si tienes un formulario), puedes utilizar `mapWritableState()` en su lugar. Ten en cuenta que no puedes pasar una función como con `mapState()`:
 
@@ -168,7 +182,7 @@ export default {
 No necesitas `mapWritableState()` para colecciones como arrays a no ser que estés sustituyendo el array al completo con `cartItems = []`, `mapState()` te sigue permitiendo llamar métodos en tus colecciones.
 :::
 
-## Mutar el estado {#mutating-the-state}
+## Mutar el estado %{#mutating-the-state}%
 
 Aparte de mutar directamente el almacén con `store.count++`, también puedes llamar al método `$patch`. Te permite aplicar múltiples cambios a la vez con un objeto `estado` parcial:
 
@@ -191,7 +205,7 @@ store.$patch((state) => {
 
 La principal diferencia aquí es que `$patch()` te permite agrupar multiples cambios en una sola entrada en las herramientas de desarrollo. Cabe aclarar que **ambas formas, cambios directo al `estado` y `$patch()` aparecen en las herramientas de desarrollo** y pueden ser movidas en el tiempo (aún no es posible en Vue 3).
 
-## Reemplazar el `estado` {#replacing-the-state}
+## Reemplazar el `estado` %{#replacing-the-state}%
 
 **No puedes reemplazar como tal** el estado de un almacén ya que rompería la reactividad. Pero puedes _parchearlo_:
 
@@ -208,7 +222,7 @@ También puedes **establecer el estado inicial** de toda tu aplicación con camb
 pinia.state.value = {}
 ```
 
-## Suscribirse al estado {#subscribing-to-the-state}
+## Suscribirse al estado %{#subscribing-to-the-state}%
 
 Puedes observar el estado y sus cambios a través del método `$subscribe()` de un almacén, similar al [método subscribe](https://vuex.vuejs.org/api/#subscribe) de Vuex. Las ventajas de usar `$subscribe()` sobre un `watch()` común es que las _suscripciones_ se activarán solo después de los _parches_ (por ejemplo cuando usas la versión en función de lo anterior).
 
@@ -228,22 +242,18 @@ cartStore.$subscribe((mutation, state) => {
 
 Por defecto, las _suscripciones de estado_ están vinculada con el componente donde se añaden (si el almacén está dentro del `setup()` de un componente). Esto significa que se borrará automáticamente cuando se desmonte el componente. Si también quieres mantenerlas una vez se desmonte el componente tienes que pasarle `{ detached: true }` como segundo parámetro para separar la _suscripción de estado_ del componente actual:
 
-```js
-export default {
-  setup() {
-    const someStore = useSomeStore()
+```vue
+<script setup>
+const someStore = useSomeStore()
 
-    // esta suscripción se mantendrá incluso después 
-    // de desmontar el componente
-    someStore.$subscribe(callback, { detached: true })
-
-    // ...
-  },
-}
+// esta suscripción se mantendrá incluso después 
+// de desmontar el componente
+someStore.$subscribe(callback, { detached: true })
+</script>
 ```
 
 :::tip
-Puedes observar todo el estado en la instancia de `pinia`:
+Puedes _observar_ todo el estado en la instancia de `pinia` con un solo `watch()`:
 
 ```js
 watch(

@@ -1,8 +1,8 @@
-# Tratando con Composables {#dealing-with-composables}
+# Tratando con Composables %{#dealing-with-composables}%
 
 Los [Composables](https://vuejs.org/guide/reusability/composables.html#composables) son funciones que aprovechan la API de composición de Vue para encapsular y reutilizar la lógica con estado. Ya sea que escribas el tuyo propio, usa [bibliotecas externas](https://vueuse.org/) o hacer ambas cosas, puedes usar completamente el poder de Composables en tus almacenes pinia.
 
-## Almacén de opciones {#option-stores}
+## Almacén de opciones %{#option-stores}%
 
 Al definir un almacén de opciones, puedes llamar a un composable dentro de la propiedad `state`:
 
@@ -26,7 +26,7 @@ Estos son algunos ejemplos de composables que no se pueden usar en almacenes de 
 - [useEyeDropper](https://vueuse.org/core/useEyeDropper/): 
 expone datos y funciones de solo lectura
 
-## Almacenes de Configuración {#setup-stores}
+## Almacenes de Configuración %{#setup-stores}%
 
 Por otro lado, al definir un almacén de configuración, puede usar casi cualquier composable ya que cada propiedad se distingue en estado, acción o getter:
 

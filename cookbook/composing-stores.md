@@ -1,4 +1,4 @@
-# Almacenes de composición {#composing-stores}
+# Almacenes de composición %{#composing-stores}%
 
 Componer almacenes consiste en tener almacenes que se utilicen mutuamente, y esto está soportado en Pinia. Hay una regla a seguir:
 
@@ -40,7 +40,7 @@ const useY = defineStore('y', () => {
 })
 ```
 
-## Almacenes anidados {#nested-stores}
+## Almacenes anidados %{#nested-stores}%
 
 Ten en cuenta que si un almacén utiliza otro almacén, puedes importar directamente y llamar a la función `useStore()` dentro de _acciones_ y _getters_. Entonces puedes interactuar con el almacén como lo harías desde dentro de un componente Vue. Ver [Getters Compartidos](#shared-getters) y [Acciones Compartidas](#shared-actions).
 
@@ -64,7 +64,7 @@ export const useCartStore = defineStore('cart', () => {
 })
 ```
 
-## Getters Compartidos {#shared-getters}
+## Getters Compartidos %{#shared-getters}%
 
 Puedes simplemente llamar a `useOtherStore()` dentro de un _getter_:
 
@@ -83,7 +83,7 @@ export const useCartStore = defineStore('cart', {
 })
 ```
 
-## Acciones Compartidas {#shared-actions}
+## Acciones Compartidas %{#shared-actions}%
 
 Lo mismo ocurre con las _acciones_:
 

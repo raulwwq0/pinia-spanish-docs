@@ -1,4 +1,4 @@
-# Plugins {#plugins}
+# Plugins %{#plugins}%
 
 Los almacenes de Pinia pueden ser completamente extensibles gracias a una API de bajo nivel. Aquí tienes una lista de cosas que puedes hacer:
 
@@ -6,7 +6,7 @@ Los almacenes de Pinia pueden ser completamente extensibles gracias a una API de
 - Añadir nuevas opciones cuando defines almacenes
 - Añadir nuevos métodos a los almacenes
 - Envolver métodos existentes
-- Cambiar o incluso cancelar acciones
+- Interceptar acciones y sus resultados
 - Implementar efectos secundarios como [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
 - Aplicar solo a almacenes específicos
 
@@ -33,7 +33,7 @@ store.secret // 'the cake is a lie'
 
 Esto es útil para añadir objetos globales como router, modal o toast managers.
 
-## Introducción {#introduction}
+## Introducción %{#introduction}%
 
 Un plugin de Pinia es una función que opcionalmente retorna propiedades para ser añadidas a un almacén. Toma un argumento opcional, un _contexto_:
 
@@ -55,7 +55,7 @@ pinia.use(myPiniaPlugin)
 
 Los plugins son solo aplicadas a almacenes creados **después de los propios plugins, y después de que `pinia` sea pasada a la aplicación**, de lo contrario no serán aplicados.
 
-## Aumentar un Almacén {#augmenting-a-store}
+## Aumentar un Almacén %{#augmenting-a-store}%
 
 Puedes añadir propiedades a cualquier almacén solo retornando un objeto de estas mismas en un plugin:
 
@@ -103,7 +103,7 @@ pinia.use(({ store }) => {
 
 Por eso se puede acceder a todas las propiedades computadas sin .value y por eso son reactivas.
 
-### Añadir nuevo estado {#adding-new-state}
+### Añadir nuevo estado %{#adding-new-state}%
 
 Si quieres añadir nuevas propiedades de estado a un almacén o propiedades que están hechas para ser usadas durante la hidratación, **tendrás que añadirlas en dos lugares**:
 
@@ -164,7 +164,7 @@ pinia.use(({ store }) => {
 
 :::
 
-## Añadir nuevas propiedades externas {#adding-new-external-properties}
+## Añadir nuevas propiedades externas %{#adding-new-external-properties}%
 
 Cuando añadas nuevas propiedades externas, instancias de clase que vengan de otras librerías o simplemente cosas que no sean reactivas, deberás envolverlos en el objeto con `markRaw()` antes de pasárselos a pinia. Aquí tienes un ejemplo añadiendo el router a todos los almacén:
 
@@ -178,7 +178,7 @@ pinia.use(({ store }) => {
 })
 ```
 
-## Llamar a `$subscribe` dentro de plugins {#calling-subscribe-inside-plugins}
+## Llamar a `$subscribe` dentro de plugins %{#calling-subscribe-inside-plugins}%
 
 También puedes usar [store.$subscribe](./state.md#subscribing-to-the-state) y [store.$onAction](./actions.md#subscribing-to-actions) dentro de plugins:
 
@@ -193,7 +193,7 @@ pinia.use(({ store }) => {
 })
 ```
 
-## Añadir nuevas opciones {#adding-new-options}
+## Añadir nuevas opciones %{#adding-new-options}%
 
 Es posible crear nuevas opciones cuando definas almacenes para luego consumirlas desde los plugins. Por ejemplo, puedes crear una opción `debounce` que te permita retrasar cualquier acción:
 
@@ -251,11 +251,11 @@ defineStore(
 )
 ```
 
-## TypeScript {#typescript}
+## TypeScript %{#typescript}%
 
 Todo lo mostrado arriba puede ser hecho con soporte de tipado, así que no necesitas usar nunca más ni `any` ni `@ts-ignore`.
 
-### Tipar plugins {#typing-plugins}
+### Tipar plugins %{#typing-plugins}%
 
 Un plugin de Pinia puede ser tipado de la siguiente forma:
 
@@ -267,12 +267,13 @@ export function myPiniaPlugin(context: PiniaPluginContext) {
 }
 ```
 
-### Tipar nuevas propiedades de almacenes {#typing-new-store-properties}
+### Tipar nuevas propiedades de almacenes %{#typing-new-store-properties}%
 
 Cuando añadas nuevas propiedades al almacén, deberías hacer uso de la interfaz `PiniaCustomProperties`.
 
 ```ts
 import 'pinia'
+import type { Router } from 'vue-router'
 
 declare module 'pinia' {
   export interface PiniaCustomProperties {
@@ -282,6 +283,9 @@ declare module 'pinia' {
 
     // también puedes definir valores simples
     simpleNumber: number
+
+    // tipa el router añadido por el plugin anterior (#adding-new-external-properties)
+    router: Router
   }
 }
 ```
@@ -332,7 +336,7 @@ Cuando extiendes los tipos en genéricos, estos deben ser nombrados **exactament
 
 :::
 
-### Tipar nuevo estado {#typing-new-state}
+### Tipar nuevo estado %{#typing-new-state}%
 
 Cuando añades nuevas propiedades (a ambos sitios, el `almacén` and `almacén.$state`), necesitar añadir el tipo a `PiniaCustomStateProperties` en su lugar. A diferencia de `PiniaCustomProperties`, solo recibe el `Estado` genérico:
 
@@ -346,7 +350,7 @@ declare module 'pinia' {
 }
 ```
 
-### Tipar nuevas opciones de creación {#typing-new-creation-options}
+### Tipar nuevas opciones de creación %{#typing-new-creation-options}%
 
 Al crear nuevas opciones para `defineStore()`, debe extender la `DefineStoreOptionsBase`. A diferencia de `PiniaCustomProperties`, sólo expone dos genéricos: el Estado y el tipo de Almacén, lo que le permite limitar lo que se puede definir. Por ejemplo, puede utilizar los nombres de las acciones:
 
@@ -365,7 +369,7 @@ declare module 'pinia' {
 También hay un tipo `StoreGetters` para extraer los _getters_ del tipo Almacén. También puedes extender las opciones de los _almacenes de configuración_ o _almacenes de opciones_ **solo** extendiendo los tipos `DefineStoreOptions` y `DefineSetupStoreOptions` respectivamente.
 :::
 
-## Nuxt.js {#nuxt-js}
+## Nuxt.js %{#nuxt-js}%
 
 Cuando [usas pinia junto con Nuxt](../ssr/nuxt.md), primero tendrás que crear un [plugin de Nuxt](https://nuxtjs.org/docs/2.x/directory-structure/plugins). Esto te dará acceso a la instancia de `pinia`:
 
@@ -390,7 +394,7 @@ export default defineNuxtPlugin(({ $pinia }) => {
 
 Cabe aclarar que el ejemplo de arriba está usando TypeScript, tienes que eliminar las anotaciones de tipos `PiniaPluginContext` y `Plugin` junto con sus imports si estás usando un archivo `.js`.
 
-### Nuxt.js 2 {#nuxt-js-2}
+### Nuxt.js 2 %{#nuxt-js-2}%
 
 Si estás usando Nuxt.js 2, los tipos son un poco diferentes:
 

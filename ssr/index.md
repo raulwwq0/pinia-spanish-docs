@@ -1,4 +1,4 @@
-# Renderizado del Lado del Servidor (SSR) {#server-side-rendering-ssr}
+# Renderizado del Lado del Servidor (SSR) %{#server-side-rendering-ssr}%
 
 :::tip
 Si estás usando **Nuxt.js,** necesitas leer [**estas instrucciones**](./nuxt.md) en lugar de estas.
@@ -6,18 +6,15 @@ Si estás usando **Nuxt.js,** necesitas leer [**estas instrucciones**](./nuxt.md
 
 La creación de almacenes con Pinia debería funcionar de forma inmediata para SSR siempre y cuando llame a sus funciones `useStore()` en la parte superior de las funciones `setup`, `getters` y `acciones`:
 
-```js
-export default defineComponent({
-  setup() {
-    // esto funciona porque pinia sabe que aplicación está ejecutándose
-    // dentro de `setup()`
-    const main = useMainStore()
-    return { main }
-  },
-})
+```vue
+<script setup>
+// esto funciona porque pinia sabe que aplicación está ejecutándose
+// dentro de `setup()`
+const main = useMainStore()
+</script>
 ```
 
-## Usar el almacén fuera de `setup()` {#using-the-store-outside-of-setup}
+## Usar el almacén fuera de `setup()` %{#using-the-store-outside-of-setup}%
 
 Si necesitas usar el almacén en algún otro lugar, necesitas pasar la instancia de `pinia` [que fue pasada a la aplicación](#install-the-plugin) a la llamada de la función `useStore()`:
 
@@ -47,7 +44,19 @@ export default {
 }
 ```
 
-## Hidratación del Estado {#state-hydration}
+Nota: no necesitas hacer nada especial cuando usas `onServerPrefetch()`:
+
+```vue
+<script setup>
+const store = useStore()
+onServerPrefetch(async () => {
+  // ✅ esto funcionará
+  await store.fetchData()
+})
+</script>
+```
+
+## Hidratación del Estado %{#state-hydration}%
 
 Para hidratar en estado inicial, necesitas asegurarte que el estado raíz este incluido en algún lugar del HTML para que Pinia lo recoja más adelante. Dependiendo de para que uses SSR, **deberás escapar el estado por razones de seguridad**. Recomendamos usar [@nuxt/devalue](https://github.com/nuxt-contrib/devalue) que es el usado por Nuxt.js:
 

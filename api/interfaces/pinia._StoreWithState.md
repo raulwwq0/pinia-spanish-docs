@@ -1,18 +1,16 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / \_StoreWithState
 
-# Interfaz: \_StoreWithState<Id, S, G, A\> {#interface-storewithstate-id-s-g-a}
+# Interfaz: \_StoreWithState<Id, S, G, A\> %{#interface-storewithstate-id-s-g-a}%
 
 [pinia](../modules/pinia.md)._StoreWithState
 
 Almacén base con estado y funciones. No debe utilizarse directamente.
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -21,27 +19,27 @@ Almacén base con estado y funciones. No debe utilizarse directamente.
 | `G` | `G` |
 | `A` | `A` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - [`StoreProperties`](pinia.StoreProperties.md)<`Id`\>
 
   ↳ **`_StoreWithState`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### $id {#id}
+### $id %{#Properties-$id}%
 
 • **$id**: `Id`
 
 Identificador único del almacén
 
-#### Heredado de {#inherited-from}
+#### Heredado de %{#Properties-$id-Inherited-from}%
 
 [StoreProperties](pinia.StoreProperties.md).[$id](pinia.StoreProperties.md#$id)
 
 ___
 
-### $state {#state}
+### $state %{#Properties-$state}%
 
 • **$state**: `UnwrapRef`<`S`\> & [`PiniaCustomStateProperties`](pinia.PiniaCustomStateProperties.md)<`S`\>
 
@@ -49,7 +47,7 @@ Estado del almacén. Establecerlo reemplazará todo el estado.
 
 ___
 
-### \_customProperties {#customproperties}
+### \_customProperties %{#Properties-_customProperties}%
 
 • **\_customProperties**: `Set`<`string`\>
 
@@ -57,27 +55,28 @@ Usado por el plugin devtools para obtener propiedades añadidas con plugins. Eli
 en producción. Puede ser usado por el usuario para añadir claves de propiedades del almacén
 que deberían mostrarse en devtools.
 
-#### Heredado de {#inherited-from-1}
+#### Heredado de %{#Properties-_customProperties-Inherited-from}%
 
 [StoreProperties](pinia.StoreProperties.md).[_customProperties](pinia.StoreProperties.md#_customproperties)
 
-## Methods {#methods}
+## Methods %{#Methods}%
 
-### $dispose {#dispose}
+### $dispose %{#Methods-$dispose}%
 
 ▸ **$dispose**(): `void`
 
 Detiene el alcance del efecto asociado al almacén y lo elimina del registro.
 Los plugins pueden sobrescribir este método para limpiar cualquier efecto añadido.
 Por ejemplo, el plugin devtools deja de mostrar los almacenes desechados desde devtools.
+Nota: esto no borra el estado del almacén, si quieres hacerlo tienes que hacerlo manualmente con `delete pinia.state.value[store.$id]`. Si no quieres y el almacén vuelve a ser usado de nuevo se volverá a usar el estado anterior.
 
-#### Returns {#returns}
+#### Returns %{#Methods-$dispose-Returns}%
 
 `void`
 
 ___
 
-### $onAction {#onaction}
+### $onAction %{#Methods-$onAction}%
 
 ▸ **$onAction**(`callback`, `detached?`): () => `void`
 
@@ -112,14 +111,14 @@ store.$onAction(({ after, onError }) => {
 })
 ```
 
-#### Parameters {#parameters}
+#### Parameters %{#Methods-$onAction-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `callback` | [`StoreOnActionListener`](../modules/pinia.md#storeonactionlistener)<`Id`, `S`, `G`, `A`\> | callback llamado antes de cada acción |
 | `detached?` | `boolean` | desvincular la suscripción del contexto desde el que se llama a esta opción |
 
-#### Returns {#returns-1}
+#### Returns %{#Methods-$onAction-Returns}%
 
 `fn`
 
@@ -158,7 +157,7 @@ store.$onAction(({ after, onError }) => {
 })
 ```
 
-##### Retorna {#returns-2}
+##### Retorna %{#Methods-$onAction-Returns-Returns}%
 
 `void`
 
@@ -166,19 +165,19 @@ función que elimina el observador
 
 ___
 
-### $patch {#patch}
+### $patch %{#Methods-$patch}%
 
 ▸ **$patch**(`partialState`): `void`
 
 Aplica un patch de estado al estado actual. Permite pasar valores anidados
 
-#### Parámetros {#parameters-1} 
+#### Parámetros %{#Methods-$patch-Parameters}% 
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `partialState` | [`_DeepPartial`](../modules/pinia.md#_deeppartial)<`UnwrapRef`<`S`\>\> | patch para aplicar al estado |
 
-#### Retorna {#returns-3}
+#### Retorna %{#Methods-$patch-Returns}%
 
 `void`
 
@@ -188,38 +187,38 @@ Agrupa múltiples cambios en una función. Útil cuando se mutan objetos como
 Sets o arrays y aplicar un patch a un objeto no es práctico, por ejemplo, añadir 
 a un array. La función pasada a `$patch()` **debe ser síncrona**.
 
-#### Tipado de los parámetros {#type-parameters-1}
+#### Tipado de los parámetros %{#Methods-$patch-Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `F` | extiende (`state`: `UnwrapRef`<`S`\>) => `any` |
 
-#### Parámetros {#parameters-2}
+#### Parámetros %{#Methods-$patch-Parameters_1}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `stateMutator` | `ReturnType`<`F`\> extiende `Promise`<`any`\> ? `never` : `F` | función que muta `state`, no puede ser async |
 
-#### Retorna {#returns-4}
+#### Retorna %{#Methods-$patch-Returns_1}%
 
 `void`
 
 ___
 
-### $reset {#reset}
+### $reset %{#Methods-$reset}%
 
 ▸ **$reset**(): `void`
 
 Reinicia el almacén a su estado inicial mediante la construcción de un nuevo objeto de estado.
 TODO: hacer esto solo para almacenes de opciones
 
-#### Retorna {#returns-5}
+#### Retorna %{#Methods-$reset-Returns}%
 
 `void`
 
 ___
 
-### $subscribe {#subscribe}
+### $subscribe %{#Methods-$subscribe}%
 
 ▸ **$subscribe**(`callback`, `options?`): () => `void`
 
@@ -227,14 +226,14 @@ Establece un callback que se llamará cada vez que cambie el estado. También de
 que cuando se llama a `store.$subscribe()` dentro de un componente, se limpiará automáticamente cuando el 
 componente se desmonte a menos que `detached` sea true.
 
-#### Parámetros {#parameters-3}
+#### Parámetros %{#Methods-$subscribe-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `callback` | [`SubscriptionCallback`](../modules/pinia.md#subscriptioncallback)<`S`\> | callback pasado al observador |
 | `options?` | { `detached?`: `boolean`  } & `WatchOptions`<`boolean`\> | opciones de `watch` + `detached` para desvincular la suscripción del contexto (normalmente un componente) desde el que se llama. Ten en cuenta que la opción `flush` no afecta a las llamadas a `store.$patch()`. |
 
-#### Retorna {#returns-6}
+#### Retorna %{#Methods-$subscribe-Returns}%
 
 `fn`
 
@@ -246,7 +245,7 @@ Establece un callback que se llamará cada vez que cambie el estado. También de
 que cuando se llama a `store.$subscribe()` dentro de un componente, se limpiará automáticamente cuando el 
 componente se desmonte a menos que `detached` sea true.
 
-##### Retorna {#returns-7}
+##### Retorna %{#Methods-$subscribe-Returns-Returns}%
 
 `void`
 

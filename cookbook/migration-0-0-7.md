@@ -1,4 +1,4 @@
-# Migración desde 0.0.7 {#migrating-from-0-0-7}
+# Migración desde 0.0.7 %{#migrating-from-0-0-7}%
 
 Las versiones posteriores a `0.0.7`: `0.1.0`, y `0.2.0`, vinieron con algunos cambios importantes. Esta guía te ayuda a migrar tanto si usas Vue 2 como Vue 3. El registro de cambios completos se puede encontrar en el repositorio:
 
@@ -7,7 +7,7 @@ Las versiones posteriores a `0.0.7`: `0.1.0`, y `0.2.0`, vinieron con algunos ca
 
 Si tienes preguntas o problemas relacionados con la migración, no dudes en [abrir un debate](https://github.com/vuejs/pinia/discussions/categories/q-a) para pedir ayuda.
 
-## No más `store.state` {#no-more-store-state}
+## No más `store.state` %{#no-more-store-state}%
 
 Ya no se accede al estado del almacén a través de una propiedad `state`, se puede acceder directamente a cualquier propiedad state.
 
@@ -36,7 +36,7 @@ Puedes seguir accediendo a todo el estado del almacén con `$state` cuando lo ne
 +store.$state = newState
 ```
 
-## Renombrar las propiedades del almacén {#rename-of-store-properties}
+## Renombrar las propiedades del almacén %{#rename-of-store-properties}%
 
 Todas las propiedades del almacén (`id`, `patch`, `reset`, etc) llevan ahora el prefijo `$` para permitir propiedades definidas en el almacén con los mismos nombres. Tip: puedes refactorizar toda su base de código con F2 (o clic derecho + Refactorizar) en cada una de las propiedades del almacén
 
@@ -52,7 +52,7 @@ Todas las propiedades del almacén (`id`, `patch`, `reset`, etc) llevan ahora el
 +store.$id
 ```
 
-## La instancia de Pinia {#the-pinia-instance}
+## La instancia de Pinia %{#the-pinia-instance}%
 
 Ahora es necesario crear una instancia de pinia e instalarla:
 
@@ -84,7 +84,7 @@ createApp(App).use(pinia).mount('#app')
 
 La instancia `pinia` es la que mantiene el estado y debe **ser única por aplicación**. Consulta la sección SSR de la documentación para más detalles.
 
-## Cambios en el SSR {#ssr-changes}
+## Cambios en el SSR %{#ssr-changes}%
 
 El plugin SSR `PiniaSsr` ya no es necesario y ha sido eliminado.
 Con la introducción de las instancias pinia, `getRootState()` ya no es necesario y debe sustituirse por `pinia.state.value`:

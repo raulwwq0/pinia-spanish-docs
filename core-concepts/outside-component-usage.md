@@ -1,4 +1,4 @@
-# Uso de almacenes fuera de componentes {#using-a-store-outside-of-a-component}
+# Uso de almacenes fuera de componentes %{#using-a-store-outside-of-a-component}%
 
 Los almacenes de Pinia dependen de la instancia de `pinia` para compartir la misma instancia del almacén a través de todas las llamadas de la misma. La mayoría del tiempo esto funciona por defecto solo con llamar a tu función `useStore()`. Por ejemplo, en `setup()`, no necesitas hacer nada más. Pero las cosas son un poco diferentes fuera de un componente. 
 
@@ -6,7 +6,7 @@ Detrás de cámaras, `useStore()` _inyecta_ la instancia de `pinia` para dársel
 
 Puedes solucionar esto de varias formas según el tipo de aplicación que estás escribiendo.
 
-## Aplicaciones de una sola página (SPA) {#single-page-applications}
+## Aplicaciones de una sola página (SPA) %{#single-page-applications}%
 
 Si no estás haciendo nada de SSR (Renderizado del Lado del Servidor), cualquier llamada de `useStore()` tras instalar el plugin de pinia con `app.use(pinia)` funcionará:
 
@@ -54,7 +54,7 @@ router.beforeEach((to) => {
 })
 ```
 
-## Aplicaciones SSR {#single-page-applications}
+## Aplicaciones SSR %{#ssr-apps}%
 
 Cuando tratas con Renderizado del Lado del Servidor, tendrás que pasar la instancia de `pinia` a `useStore()`. Esto previene que pinia comparta el estado global entre las distintas instancias de la aplicación.
 

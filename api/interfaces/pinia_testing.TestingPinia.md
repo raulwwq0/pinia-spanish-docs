@@ -1,27 +1,25 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [Documentación de la API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingPinia
 
-# Interfaz: TestingPinia {#interface-testingpinia}
+# Interfaz: TestingPinia %{#interface-testingpinia}%
 
 [@pinia/testing](../modules/pinia_testing.md).TestingPinia
 
 Instancia de Pinia diseñada específicamente para pruebas. Extiende una instancia 
 `Pinia` normal con propiedades específicas de prueba.
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - [`Pinia`](pinia.Pinia.md)
 
   ↳ **`TestingPinia`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### app {#app}
+### app %{#Properties-app}%
 
 • **app**: `App`<`any`\>
 
@@ -29,58 +27,58 @@ App usada por Pinia
 
 ___
 
-### install {#install}
+### install %{#Properties-install}%
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Tipado de la declaración {#type-declaration}
+#### Tipado de la declaración %{#Properties-install-Type-declaration}%
 
 ▸ (`app`): `void`
 
-##### Parámetros {#parameters}
+##### Parámetros %{#Properties-install-Type-declaration-Parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Retorna {#returns}
+##### Retorna %{#Properties-install-Type-declaration-Returns}%
 
 `void`
 
-#### Heredado de {#inherited-from}
+#### Heredado de  %{#Properties-install-Inherited-from}%
 
 [Pinia](pinia.Pinia.md).[install](pinia.Pinia.md#install)
 
 ___
 
-### state {#state}
+### state %{#Properties-state}%
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
 estado raíz
 
-#### Heredado de {#inherited-from-1}
+#### Heredado de %{#Properties-state-Inherited-from}%
 
 [Pinia](pinia.Pinia.md).[state](pinia.Pinia.md#state)
 
-## Métodos {#methods}
+## Métodos %{#Methods}% 
 
-### use {#use}
+### use %{#Methods-use}%
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
 Añade un plugin de almacén para extender cada almacén
 
-#### Parámetros {#parameters-1}
+#### Parámetros %{#Methods-use-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | plugin de almacén para añadir |
 
-#### Retorna {#returns-1}
+#### Retorna %{#Methods-use-Returns}%
 
 [`Pinia`](pinia.Pinia.md)
 
-#### Heredado de {#inherited-from-2}
+#### Heredado de %{#Methods-use-Inherited-from}%
 
 [Pinia](pinia.Pinia.md).[use](pinia.Pinia.md#use)

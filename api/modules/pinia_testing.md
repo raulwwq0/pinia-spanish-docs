@@ -1,21 +1,19 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [Documentación de la API](../index.md) / @pinia/testing
 
-# Módulo: @pinia/testing {#module-pinia-testing}
+# Módulo: @pinia/testing %{#module-pinia-testing}%
 
-## Interfaces {#interfaces}
+## Interfaces %{#Interfaces}%
 
 -   [TestingOptions](../interfaces/pinia_testing.TestingOptions.md)
 -   [TestingPinia](../interfaces/pinia_testing.TestingPinia.md)
 
-## Funciones {#functions}
+## Funciones %{#Functions}%
 
-### createTestingPinia {#createtestingpinia}
+### createTestingPinia %{#Functions-createTestingPinia}%
 
 ▸ **createTestingPinia**(`options?`): [`TestingPinia`](../interfaces/pinia_testing.TestingPinia.md)
 
@@ -26,13 +24,13 @@ de forma separada. Puedes cambiar esto con la opción `stubActions`. Si estás u
 jest, son reemplazadas con `jest.fn()`, de lo contrario deberás proporcionar
 tu propia opción `createSpy`.
 
-#### Parámetros {#parameters}
+#### Parámetros %{#Functions-createTestingPinia-Parameters}%
 
 | Nombre    | Tipo                                                              | Descripción                                       |
 | :-------- | :---------------------------------------------------------------- | :------------------------------------------------ |
 | `options` | [`TestingOptions`](../interfaces/pinia_testing.TestingOptions.md) | opciones para configurar los almacenes de pruebas |
 
-#### Retorna {#returns}
+#### Retorna %{#Functions-createTestingPinia-Returns}%
 
 [`TestingPinia`](../interfaces/pinia_testing.TestingPinia.md)
 

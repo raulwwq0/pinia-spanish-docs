@@ -1,12 +1,10 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [API Documentation](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationDirect
 
-# Interfaz: SubscriptionCallbackMutationDirect {#interface-subscriptioncallbackmutationdirect}
+# Interfaz: SubscriptionCallbackMutationDirect %{#interface-subscriptioncallbackmutationdirect}%
 
 [pinia](../modules/pinia.md).SubscriptionCallbackMutationDirect
 
@@ -14,15 +12,15 @@ Contexto pasado a un callback de suscripción cuando se muta directamente el est
 un almacén con `store.someState = newValue` o `store.$state.someState =
 newValue`.
 
-##  Jerarquía {#hierarchy}
+##  Jerarquía %{#Hierarchy}%
 
 - [`_SubscriptionCallbackMutationBase`](pinia._SubscriptionCallbackMutationBase.md)
 
   ↳ **`SubscriptionCallbackMutationDirect`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### events {#events}
+### events %{#Properties-events}%
 
 • **events**: `DebuggerEvent`
 
@@ -30,30 +28,30 @@ newValue`.
 https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging y permite realizar un rastreo de las mutaciones 
 en devtools y plugins **sólo durante el desarrollo**.
 
-#### Sobrescribe {#overrides}
+#### Sobrescribe %{#Properties-events-Overrides}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[events](pinia._SubscriptionCallbackMutationBase.md#events)
 
 ___
 
-### storeId {#storeid}
+### storeId %{#Properties-storeId}%
 
 • **storeId**: `string`
 
 `id` del almacén que realiza la mutación.
 
-#### Heredado de {#inherited-from}
+#### Heredado de %{#Properties-storeId-Inherited-from}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
 
 ___
 
-### type {#type}
+### type %{#Properties-type}%
 
 • **type**: [`direct`](../enums/pinia.MutationType.md#direct)
 
 Tipo de mutación.
 
-#### Sobrescribe {#overrides-1}
+#### Sobrescribe %{#Properties-type-Overrides}%
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[type](pinia._SubscriptionCallbackMutationBase.md#type)

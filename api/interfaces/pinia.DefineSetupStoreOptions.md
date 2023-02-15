@@ -1,12 +1,10 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / DefineSetupStoreOptions
 
-# Interfaz: DefineSetupStoreOptions<Id, S, G, A\> {#interface-definesetupstoreoptions-id-s-g-a}
+# Interfaz: DefineSetupStoreOptions<Id, S, G, A\> %{#interface-definesetupstoreoptions-id-s-g-a}%
 
 [pinia](../modules/pinia.md).DefineSetupStoreOptions
 
@@ -16,7 +14,7 @@ Parámetro de opciones de `defineStore()` para almacenes de configuración. Pued
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Tipado de los parámetros {#type-parameters}
+## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |
 | :------ | :------ |
@@ -25,15 +23,15 @@ Parámetro de opciones de `defineStore()` para almacenes de configuración. Pued
 | `G` | `G` |
 | `A` | `A` |
 
-## Jerarquía {#hierarchy}
+## Jerarquía %{#Hierarchy}%
 
 - [`DefineStoreOptionsBase`](pinia.DefineStoreOptionsBase.md)<`S`, [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>\>
 
   ↳ **`DefineSetupStoreOptions`**
 
-## Propiedades {#properties}
+## Propiedades %{#Properties}%
 
-### actions {#actions}
+### actions %{#Properties-actions}%
 
 • `Opcional` **actions**: `A`
 

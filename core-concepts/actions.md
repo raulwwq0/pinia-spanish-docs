@@ -1,4 +1,4 @@
-# Acciones {#actions}
+# Acciones %{#actions}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/synchronous-and-asynchronous-actions-in-pinia"
@@ -54,21 +54,22 @@ export const useUsers = defineStore('users', {
 
 También eres libre de poner cuantos argumentos quieras y no devolver nada. Cuando llames a las acciones ¡todo será deducido automáticamente!
 
-Las acciones son llamadas cómo los métodos:
+Las acciones son llamadas cómo las funciones o los métodos normales:
 
-```js
-export default defineComponent({
-  setup() {
-    const store = useCounterStore()
-    // llama a la acción como un método del almacén
-    store.randomizeCounter()
+```vue
+<script setup>
+const store = useCounterStore()
+// llama a la acción como un método del almacén 
+store.randomizeCounter()
+</script>
 
-    return {}
-  },
-})
+<template>
+  <!-- Incluso en el template -->
+  <button @click="store.randomizeCounter()">Randomize</button>
+</template>
 ```
 
-## Acceder a acciones de otros almacenes {#accessing-other-stores-actions}
+## Acceder a acciones de otros almacenes %{#accessing-other-stores-actions}%
 
 Para usar otro almacén puedes _usarlo_ directamente dentro de la _acción_:
 
@@ -93,21 +94,7 @@ export const useSettingsStore = defineStore('settings', {
 })
 ```
 
-## Uso con `setup()` {#usage-with-setup}
-
-Puedes llamar directamente a cualquier acción como un método del almacén:
-
-```js
-export default {
-  setup() {
-    const store = useCounterStore()
-
-    store.randomizeCounter()
-  },
-}
-```
-
-## Uso con la API de Opciones {#usage-with-the-options-api}
+## Uso con la API de Opciones %{#usage-with-the-options-api}%
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/access-pinia-actions-in-the-options-api"
@@ -134,14 +121,15 @@ export const useCounterStore = defineStore('counter', {
 })
 ```
 
-### Con `setup()` {#with-setup}
+### Con `setup()` %{#with-setup}%
 
 Dado que la API de composición no es para todo el mundo, el hook `setup()` puede hacer que trabajar con Pinia sea más fácil con la API de opciones. ¡No necesitas funciones map helper adicionales!
 
-```js
+```vue
+<script>
 import { useCounterStore } from '../stores/counter'
 
-export default {
+export default defineComponent({
   setup() {
     const counterStore = useCounterStore()
 
@@ -153,10 +141,11 @@ export default {
       console.log('New Count:', this.counterStore.count)
     },
   },
-}
+})
+</script>
 ```
 
-### Sin `setup()` {#without-setup}
+### Sin `setup()` %{#without-setup}%
 
 Si prefieres no usar la API de composición puedes usar el helper `mapActions()` para mapear las propiedades de las acciones como métodos en tus componentes:
 
@@ -175,7 +164,7 @@ export default {
 }
 ```
 
-## Suscribirse a acciones {#subscribing-to-actions}
+## Suscribirse a acciones %{#subscribing-to-actions}%
 
 Es posible observar acciones y sus resultados con `store.$onAction()`. La callback que se le pasa es ejecutada antes que la propia acción. `after` se encarga de manejar las promesas y te permite ejecutar una función después de resolver la acción. De forma similar, `onError` te permite ejecutar una función si la acción lanza un error o es rechazada. Estos son útiles para seguir errores en tiempo de ejecución, parecido a [este tip en la documentación de Vue](https://v3.vuejs.org/guide/tooling/deployment.html#tracking-runtime-errors).
 
@@ -221,15 +210,11 @@ unsubscribe()
 
 Por defecto, las _suscripciones a acciones_ están enlazadas al componente donde son añadidas (si el almacén está dentro de un `setup()` de un componente). Esto significa que se eliminarán automáticamente cuando el componente sea desmontado. Si también quieres mantenerlas después de que el componente sea desmontado, pasa `true` como segundo parámetro para _separar_ la _suscripción de la acción_ de su componente actual:
 
-```js
-export default {
-  setup() {
-    const someStore = useSomeStore()
+```vue
+<script setup>
+const someStore = useSomeStore()
 
-    // esta suscripción se mantendrá incluso tras desmontar el componente
-    someStore.$onAction(callback, true)
-
-    // ...
-  },
-}
+// esta suscripción se mantendrá incluso tras desmontar el componente
+someStore.$onAction(callback, true)
+</script>
 ```

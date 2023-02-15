@@ -1,4 +1,4 @@
-# Probar almacenes {#testing-stores}
+# Probar almacenes %{#testing-stores}%
 
 Los almacenes, por su diseño, se utilizarán en muchos lugares y pueden hacer que las pruebas sean mucho más difíciles de lo que deberían. Afortunadamente, esto no tiene por qué ser así. Tenemos que tener cuidado de tres cosas al probar almacenes:
 
@@ -19,7 +19,7 @@ Dependiendo de qué o cómo se realicen las pruebas, debemos ocuparnos de estos 
   - [Pruebas E2E](#e2e-tests)
   - [Componentes de pruebas unitarias (Vue 2)](#unit-test-components-vue-2)
 
-## Pruebas unitarias de un almacén {#unit-testing-a-store}
+## Pruebas unitarias de un almacén %{#unit-testing-a-store}%
 
 Para probar unitariamente un almacén, la parte más importante es crear una instancia de `pinia`:
 
@@ -69,7 +69,7 @@ beforeEach(() => {
 })
 ```
 
-## Componentes de las pruebas unitarias {#unit-testing-components}
+## Componentes de las pruebas unitarias %{#unit-testing-components}%
 
 Esto se puede lograr con `createTestingPinia()`, que devuelve una instancia pinia diseñada para ayudar a los componentes de pruebas unitarias.
 
@@ -111,7 +111,7 @@ expect(store.someAction).toHaveBeenLastCalledWith()
 
 Ten en cuenta que si utilizas Vue 2, `@vue/test-utils` requiere una [configuración ligeramente diferente](#componentes-de-pruebas-unitarias-vue-2).
 
-### Estado inicial {#initial-state}
+### Estado inicial %{#initial-state}%
 
 Puede establecer el estado inicial de **todos sus almacenes** al crear una pinia de pruebas pasando un objeto `initialState`. Este objeto será utilizado por la pinia de pruebas para _parchear_ los almacenes cuando sean creados. Digamos que quieres inicializar el estado de este almacén:
 
@@ -144,7 +144,7 @@ const store = useSomeStore() // ¡utiliza la pinia de pruebas!
 store.n // 20
 ```
 
-### Personalizar el comportamiento de las acciones {#customizing-behavior-of-actions}
+### Personalizar el comportamiento de las acciones %{#customizing-behavior-of-actions}%
 
 `createTestingPinia`  extrae todas las acciones del almacén a menos que se indique lo contrario. Esto le permite probar tus componentes y almacenes por separado.
 
@@ -166,7 +166,7 @@ store.someAction()
 expect(store.someAction).toHaveBeenCalledTimes(1)
 ```
 
-### Especificación de la función createSpy {#specifying-the-createspy-function}
+### Especificación de la función createSpy %{#specifying-the-createspy-function}%
 
 Cuando se utiliza Jest, o vitest con `globals: true`, `createTestingPinia` automáticamente las acciones stubs usan la funciones espía en base a framework de pruebas existente (`jest.fn` o `vitest.fn`). Si estás utilizando un framework diferente, tendrás que proporcionar una opción [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy):
 
@@ -180,7 +180,7 @@ createTestingPinia({
 
 Puede encontrar más ejemplos en [las pruebas del paquete de pruebas](https://github.com/vuejs/pinia/blob/v2/packages/testing/src/testing.spec.ts).
 
-### Simular getters {#mocking-getters}
+### Simular getters %{#mocking-getters}%
 
 Por defecto, cualquier getter se calculará como un uso normal, pero puedes forzar manualmente un valor estableciendo el getter a lo que quieras:
 
@@ -206,7 +206,7 @@ counter.double = undefined
 counter.double // 2 (=1 x 2)
 ```
 
-### Plugins de Pinia {#pinia-plugins}
+### Plugins de Pinia %{#pinia-plugins}%
 
 Si tienes algún plugin de pinia, asegúrate de pasarlo cuando llames a `createTestingPinia()` para que se apliquen correctamente. **No los añadas con `testingPinia.use(MyPlugin)`** como lo harías con una pinia normal:
 
@@ -227,11 +227,11 @@ const wrapper = mount(Counter, {
 })
 ```
 
-## Pruebas E2E {#e2e-tests}
+## Pruebas E2E %{#e2e-tests}%
 
 Cuando se trata de pinia, no necesitas cambiar nada para las pruebas e2e, ¡ese es todo el punto de las pruebas e2e! Tal vez podría probar las peticiones HTTP, pero eso está mucho más allá del alcance de esta guía 😄.
 
-## Componentes de pruebas unitarias (Vue 2) {#unit-test-components-vue-2}
+## Componentes de pruebas unitarias (Vue 2) %{#unit-test-components-vue-2}%
 
 Cuando utilices [Vue Test Utils 1](https://v1.test-utils.vuejs.org/), instala Pinia en un `localVue`:
 

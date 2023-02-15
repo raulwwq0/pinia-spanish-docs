@@ -1,20 +1,18 @@
 ---
-sidebar: "auto"
-editLinks: false
-sidebarDepth: 3
+editLink: false
 ---
 
 [Documentación de la API](../index.md) / [pinia](../modules/pinia.md) / MutationType
 
-# Enumeración: MutationType {#enumeration-mutationtype}
+# Enumeración: MutationType %{#enumeration-mutationtype}%
 
 [pinia](../modules/pinia.md).MutationType
 
 Posibles tipos de SubscriptionCallback
 
-## Enumeración de Miembros {#enumeration-members}
+## Enumeración de Miembros %{#Enumeration-Members}%
 
-### direct
+### direct %{#Enumeration-Members-direct}%
 
 • **direct** = ``"direct"``
 
@@ -26,7 +24,7 @@ Mutación directa del estado:
 
 ___
 
-### patchFunction
+### patchFunction %{#Enumeration-Members-patchFunction}%
 
 • **patchFunction** = ``"patch function"``
 
@@ -36,7 +34,7 @@ Mutar el estado con `$patch` y una función
 
 ___
 
-### patchObject
+### patchObject %{#Enumeration-Members-patchObject}%
 
 • **patchObject** = ``"patch object"``
 

@@ -1,4 +1,4 @@
-# HMR (Sustitución de módulos en caliente) {#hmr-hot-module-replacement}
+# HMR (Sustitución de módulos en caliente) %{#hmr-hot-module-replacement}%
 
 Pinia soporta el reemplazo de módulos en caliente para que puedas editar tus almacenes e interactuar con ellas directamente en tu aplicación sin recargar la página, permitiéndote mantener el estado existente, añadir o incluso eliminar estados, acciones y getters.
 

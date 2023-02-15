@@ -67,6 +67,7 @@ export const sharedConfig = defineConfig({
       },
     ],
 
+    /* TODO: Remove comment when official docs fix the issue
     [
       'script',
       {
@@ -75,7 +76,7 @@ export const sharedConfig = defineConfig({
         async: true,
         type: 'text/javascript',
       },
-    ],
+    ], */
 
     ...(isProduction ? productionHead : []),
   ],

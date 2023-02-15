@@ -1,0 +1,24 @@
+name: ryu-cho
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  ryu-cho:
+    name: Ryu Cho
+    runs-on: ubuntu-latest
+    steps:
+      - uses: vuejs-translations/ryu-cho@v1
+        with:
+          access-token: ${{ secrets.RYU_CHO_ACCESS_TOKEN }}
+          username: ${{ secrets.RYU_CHO_USER }}
+          email: ${{ secrets.RYU_CHO_EMAIL }}
+          upstream-repo: https://github.com/raulwwq0/pinia-spanish-docs.git
+          upstream-repo-branch: main
+          head-repo: https://github.com/vuejs/pinia
+          head-repo-branch: v2
+          track-from: f42d181927755b9a1f4c694e9c21fe9889ae6ea9
+          path-starts-with: packages/docs/
+          workflow-name: ryu-cho

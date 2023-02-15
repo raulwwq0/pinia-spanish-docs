@@ -100,15 +100,15 @@ cuando el componente sea desmontado a menos que `detached` sea true.
 
 ```js
 store.$onAction(({ after, onError }) => {
- // Here you could share variables between all of the hooks as well as
- // setting up watchers and clean them up
+  // Aquí puedes compartir variables entre todos los hooks así como
+  // establecer observadores y limpiarlos
  after((resolvedValue) => {
-   // can be used to cleanup side effects
-.  // `resolvedValue` is the value returned by the action, if it's a
-.  // Promise, it will be the resolved value instead of the Promise
+  // puede ser usado para limpiar efectos secundarios
+  // `resolvedValue` es el valor retornado por la acción, si es una
+  // Promesa, será el valor resuelto en vez de la Promesa
  })
  onError((error) => {
-   // can be used to pass up errors
+  // puede ser usado para pasar errores
  })
 })
 ```
@@ -146,15 +146,15 @@ cuando el componente sea desmontado a menos que `detached` sea true.
 
 ```js
 store.$onAction(({ after, onError }) => {
- // Here you could share variables between all of the hooks as well as
- // setting up watchers and clean them up
+  // Aquí puedes compartir variables entre todos los hooks así como
+  // establecer observadores y limpiarlos
  after((resolvedValue) => {
-   // can be used to cleanup side effects
-.  // `resolvedValue` is the value returned by the action, if it's a
-.  // Promise, it will be the resolved value instead of the Promise
+  // puede ser usado para limpiar efectos secundarios
+  // `resolvedValue` es el valor retornado por la acción, si es una
+  // Promesa, será el valor resuelto en vez de la Promesa
  })
  onError((error) => {
-   // can be used to pass up errors
+  // puede ser usado para pasar errores
  })
 })
 ```

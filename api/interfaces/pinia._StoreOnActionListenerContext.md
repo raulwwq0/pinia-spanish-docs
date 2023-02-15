@@ -68,7 +68,6 @@ ___
 
 #### Tipado de la declaración %{#Properties-onError-Type-declaration}%
 
-
 ▸ (`callback`): `void`
 
 Establece un hook si la acción falla. Retorna `false` para capturar el error y 

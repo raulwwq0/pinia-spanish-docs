@@ -108,9 +108,9 @@ export const sharedConfig = defineConfig({
     },
 
     algolia: {
-      appId: '69Y3N7LHI2',
-      apiKey: '45441f4b65a2f80329fd45c7cb371fea',
-      indexName: 'pinia',
+      appId: 'WWHDVZOVW8',
+      apiKey: '9182688aa41745d0aa68ffa71f6b202b',
+      indexName: 'es-pinia',
     },
 
     carbonAds: {

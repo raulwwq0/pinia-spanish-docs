@@ -74,7 +74,6 @@ export default defineNuxtConfig({
         autoImports: [
           // importa automáticamente `defineStore`
           'defineStore', // import { defineStore } from 'pinia'
-          // importa automáticamente `defineStore` como `definePiniaStore`
           ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
       },

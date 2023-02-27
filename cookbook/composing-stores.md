@@ -107,3 +107,30 @@ export const useCartStore = defineStore('cart', {
   },
 })
 ```
+
+Como las acciones pueden ser asíncronas, asegúrate que **todas las llamadas a `useStore()` aparezcan antes de cualquier `await`**. De lo contrario, esto puede llevar a usar una instancia incorrecta de pinia _en aplicaciones SSR_:
+
+```js{7-8,11-13}
+import { defineStore } from 'pinia'
+import { useUserStore } from './user'
+
+export const useCartStore = defineStore('cart', {
+  actions: {
+    async orderCart() {
+      // ✅ llamada en la parte superior de la acción antes de 
+      // cualquier `await`
+      const user = useUserStore()
+
+      try {
+        await apiOrderCart(user.token, this.items)
+        // ❌ llamada después de una sentencia `await`
+        const otherStore = useOtherStore()
+        // otra acción
+        this.emptyCart()
+      } catch (err) {
+        displayError(err)
+      }
+    },
+  },
+})
+```

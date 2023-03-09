@@ -99,6 +99,7 @@ y usarlos en un componente:
 
 ```vue
 <script>
+import { storeToRefs } from 'pinia'
 import { useUserListStore } from './store'
 
 const userList = useUserListStore()

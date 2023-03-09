@@ -147,7 +147,7 @@ Si estas usando **Vue 2**, Pinia esta sujeto a las [mismas advertencias de react
 ```js
 import { set, toRef } from '@vue/composition-api'
 pinia.use(({ store }) => {
-  if (!Object.prototype.hasOwnProperty(store.$state, 'hello')) {
+  if (!Object.prototype.hasOwnProperty(store.$state, 'secret')) {
     const secretRef = ref('secret')
     // Si los datos están pensado para ser usados durante SSR
     // deberás colocarlos en la propiedad `$state` para que
@@ -163,6 +163,31 @@ pinia.use(({ store }) => {
 ```
 
 :::
+
+#### Resetear el estado añadido en plugins %{#resetting-state-added-in-plugins}%
+
+Por defecto, `$reset()` no reseteará el estado añadido por los plugins pero puedes sobreescribirlo para resetear el estado que añades:
+
+```js
+import { toRef, ref } from 'vue'
+pinia.use(({ store }) => {
+  // esto es el mismo código que el ejemplo anterior para referencia
+  if (!Object.prototype.hasOwnProperty(store.$state, 'hasError')) {
+    const hasError = ref(false)
+    store.$state.hasError = hasError
+  }
+  store.hasError = toRef(store.$state, 'hasError')
+  // asegúrate de establecer el contexto (`this`) en el almacén
+  const originalReset = store.$reset.bind(store)
+  // sobreescribe la función $reset
+  return {
+    $reset() {
+      originalReset()
+      store.hasError = false
+    }
+  }
+})
+```
 
 ## Añadir nuevas propiedades externas %{#adding-new-external-properties}%
 

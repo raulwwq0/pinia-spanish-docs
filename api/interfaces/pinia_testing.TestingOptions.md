@@ -76,7 +76,7 @@ ___
 
 • `Opcional` **stubActions**: `boolean`
 
-Cuando se establece en false, las acciones sólo son espiadas, aún así se ejecutarán. Cuando 
+Cuando se establece en false, las acciones sólo son espiadas, pero aún así se ejecutarán. Cuando 
 se establece en true, las acciones serán reemplazadas por espías, en lo que resulta que tu código 
 no se ejecute. Por defecto es true. NOTA: al proveer `createSpy()`,
 este **solo** hará que el argumento `fn` sea `undefined`. Aún tienes que

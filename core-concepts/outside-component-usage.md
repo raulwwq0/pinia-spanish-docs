@@ -12,6 +12,7 @@ Si no estás haciendo nada de SSR (Renderizado del Lado del Servidor), cualquier
 
 ```js
 import { useUserStore } from '@/stores/user'
+import { createPinia } from 'pinia';
 import { createApp } from 'vue'
 import App from './App.vue'
 

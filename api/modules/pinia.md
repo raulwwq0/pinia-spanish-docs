@@ -1011,7 +1011,7 @@ added.
 
 [`_MapWritableStateObjectReturn`](pinia.md#_mapwritablestateobjectreturn)<`S`, `KeyMapper`\>
 
-▸ **mapWritableState**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapWritableStateReturn`](pinia.md#_mapwritablestatereturn)<`S`\>
+▸ **mapWritableState**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): { [K in Keys]: Object }
 
 Permite usar el estado y los getters de un almacén sin usar la API de composición (`setup()`) generando un objeto que será extendido en el campo `computed` de un componente.
 
@@ -1023,18 +1023,18 @@ Permite usar el estado y los getters de un almacén sin usar la API de composici
 | `S` | extiende [`StateTree`](pinia.md#statetree) |
 | `G` | extiende [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
 | `A` | `A` |
+| `Keys` | extends `string` \| `number` \| `symbol` |
 
 #### Parámetros %{#Functions-mapWritableState-Parameters_1}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
 | `useStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\> | almacén desde el que mapear |
-| `keys` | keyof `S`[] | array de propiedades del estado |
+| `keys` | readonly `Keys`[] | array of state properties |
 
 #### Retorna %{#Functions-mapWritableState-Returns_1}%
 
-[`_MapWritableStateReturn`](pinia.md#_mapwritablestatereturn)<`S`\>
-
+{ [K in Keys]: Object }
 ___
 
 ### setActivePinia %{#Functions-setActivePinia}%

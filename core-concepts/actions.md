@@ -157,7 +157,7 @@ export default {
   methods: {
     // da acceso a this.increment() dentro del componente
     // al igual que llamarlo desde store.increment()
-    ...mapActions(useCounterStore, ['increment'])
+    ...mapActions(useCounterStore, ['increment']),
     // lo mismo de arriba pero registrándolo como this.myOwnName()
     ...mapActions(useCounterStore, { myOwnName: 'increment' }),
   },

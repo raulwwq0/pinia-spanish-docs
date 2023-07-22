@@ -8,6 +8,8 @@ editLink: false
 
 [pinia](../modules/pinia.md).PiniaPlugin
 
+Plugin para extender cada almacén.
+
 ## Invocable %{#Callable}%
 
 ### PiniaPlugin %{#Callable-PiniaPlugin}%

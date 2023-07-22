@@ -43,7 +43,7 @@ ___
 
 • **$state**: `UnwrapRef`<`S`\> & [`PiniaCustomStateProperties`](pinia.PiniaCustomStateProperties.md)<`S`\>
 
-Estado del almacén. Establecerlo reemplazará todo el estado.
+Estado del almacén. Al establecerlo se llamará internamente a `$patch()` para actualizar el estado.
 
 ___
 

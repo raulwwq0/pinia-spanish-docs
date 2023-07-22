@@ -8,6 +8,8 @@ editLink: false
 
 [pinia](../modules/pinia.md).StoreDefinition
 
+Devuelve el tipo de `defineStore()`. Función que permite instanciar un almacén.
+
 ## Tipado de los parámetros %{#Type-parameters}%
 
 | Nombre | Tipo |

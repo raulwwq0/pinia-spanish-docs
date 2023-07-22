@@ -1,6 +1,6 @@
 # Nuxt.js %{#nuxt-js}%
 
-Usar Pinia con [Nuxt.js](https://nuxtjs.org/) es más fácil debido a que Nuxt tiene en cuenta muchas cosas cuando hablamos de _renderizado del lado del servidor_. Por ejemplo, **no necesitas preocuparte sobre serialización ni ataques XSS**. Pinia soporta Nuxt Bridge y Nuxt 3. Para soporte directo con Nuxt 2, [mira más abajo](#nuxt-2-without-bridge).
+Usar Pinia con [Nuxt](https://nuxt.com/) es más fácil debido a que Nuxt tiene en cuenta muchas cosas cuando hablamos de _renderizado del lado del servidor_. Por ejemplo, **no necesitas preocuparte sobre serialización ni ataques XSS**. Pinia soporta Nuxt Bridge y Nuxt 3. Para soporte directo con Nuxt 2, [mira más abajo](#nuxt-2-without-bridge).
 
 ## Instalación %{#installation}%
 

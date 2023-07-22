@@ -87,6 +87,7 @@ html.dark:root {
 
   --vp-c-bg: var(--vp-c-black);
   --vp-c-bg-soft: var(--vp-c-black-light);
+  --vp-c-bg-soft-up: var(--vp-c-black-lighter);
   --vp-c-bg-mute: var(--vp-c-black-light);
   --vp-c-bg-soft-mute: var(--vp-c-black-lighter);
   --vp-c-bg-alt: #0d121b;
@@ -193,28 +194,28 @@ html.dark .DocSearch-Logo svg .cls-2 {
 }
 
 .become-sponsor {
+  background-color: transparent;
+  border: 2px solid var(--c-yellow-dark);
+  border-radius: 2em;
+  box-sizing: border-box;
   font-size: 0.9em;
   font-weight: 700;
-  width: auto;
-  text-align: center;
-  background-color: transparent;
   padding: 0.75em 2em;
-  border-radius: 2em;
+  text-align: center;
   transition: all 0.15s ease;
-  box-sizing: border-box;
-  border: 2px solid var(--c-yellow-dark);
+  width: auto;
 }
 
 .become-sponsor:hover {
   background-color: var(--c-yellow);
-  text-decoration: none;
   border-color: var(--c-yellow);
   color: var(--c-text-light-1);
+  text-decoration: none;
 }
 
 .sponsors-top .become-sponsor {
   font-size: 0.75em;
+  max-width: 150px;
   padding: 0.2em;
   width: auto;
-  max-width: 150px;
 }

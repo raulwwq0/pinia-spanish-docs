@@ -71,6 +71,29 @@ En los _almacenes con setup_:
 
 Los almacenes con setup ofrecen mucha más flexibilidad que los [almacenes de opciones](#option-stores) dado que puedes crear observadores en un almacén y usar libremente cualquier [composable](https://vuejs.org/guide/reusability/composables.html#composables). Sin embargo, ten en mente que usar composables puede traer más complejidad cuando se usa [SSR](../cookbook/composables.md).
 
+Los almacenes con setup también pueden depender de propiedades _proporcionadas_ globalmente como el Router o la Ruta. Cualquier propiedad [proporcionada a nivel de App](https://vuejs.org/api/application.html#app-provide) puede ser accedida desde el almacén usando `inject()`, tal y como se hace en los componentes:
+
+```ts
+import { inject } from 'vue'
+import { useRoute } from 'vue-router'
+
+export const useSearchFilters = defineStore('search-filters', () => {
+  const route = useRoute()
+  // esto asume que `app.provide('appProvided', 'value')` fue llamado
+  const appProvided = inject('appProvided')
+
+  // ...
+
+  return {
+    // ...
+  }
+})
+```
+
+:::warning
+No devuelvas propiedades como `useRoute()` o `appProvided` (del ejemplo anterior) ya que no pertenecen al almacén y puedes acceder a ellas directamente desde los componentes con `useRoute()` e `inject('appProvided')`.
+:::
+
 ## ¿Qué sintaxis debería usar? %{#what-syntax-should-i-pick}%
 
 Al igual que con las [API de composición y API de opciones de Vue](https://vuejs.org/guide/introduction.html#which-to-choose), quédate con la que te sientas más cómodo. Si no estás seguro prueba primero los [almacenes de opciones](#option-stores).

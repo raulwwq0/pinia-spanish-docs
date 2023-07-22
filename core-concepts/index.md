@@ -141,6 +141,9 @@ const doubleValue = computed(() => store.doubleCount)
 </script>
 ```
 
+
+## Desestructurar desde un Almacén %{#destructuring-from-a-store}%
+
 Para poder extraer propiedades del almacén mientras mantenemos la reactividad es necesario usar `storeToRefs()`. Esto creará refs por cada propiedad reactiva. Esto es útil cuando solo usas el estado del almacén pero no llamas a ninguna acción. Cabe destacar que puedes desestructurar acciones directamente del almacén ya que también están vinculadas al propio almacén:
 
 ```vue

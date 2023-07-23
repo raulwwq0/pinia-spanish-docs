@@ -111,7 +111,6 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         },
         {
           text: 'Manual',
-          collapsible: true,
           collapsed: false,
           items: [
             {
@@ -137,6 +136,14 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             {
               text: 'Componiendo Almacenes',
               link: '/cookbook/composing-stores.html',
+            },
+            {
+              text: 'Snippets para VSCode',
+              link: '/cookbook/vscode-snippets.html',
+            },
+            {
+              text: 'Migración desde Vuex',
+              link: '/cookbook/migration-vuex.html',
             },
             {
               text: 'Migración desde v0/v1 a v2',

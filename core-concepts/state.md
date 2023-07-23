@@ -169,7 +169,7 @@ export default {
     // da acceso a this.count dentro del componente y permite modificarlo
     // this.count++
     // igual que leerlo desde store.count
-    ...mapWritableState(useCounterStore, ['count'])
+    ...mapWritableState(useCounterStore, ['count']),
     // lo mismo de arriba pero registrándolo como this.myOwnName
     ...mapWritableState(useCounterStore, {
       myOwnName: 'count',

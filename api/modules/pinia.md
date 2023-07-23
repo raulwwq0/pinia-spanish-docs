@@ -562,7 +562,7 @@ new Vue({
 
 ### acceptHMRUpdate %{#Functions-acceptHMRUpdate}%
 
-▸ **acceptHMRUpdate**(`initialUseStore`, `hot`): (`newModule`: `any`) => `any`
+▸ **acceptHMRUpdate**<`Id`, `S`, `G`, `A`\>(`initialUseStore`, `hot`): (`newModule`: `any`) => `any`
 
 Crea una función _accept_ para pasar a `import.meta.hot` en aplicaciones de Vite.
 
@@ -575,11 +575,19 @@ if (import.meta.hot) {
 }
 ```
 
+#### Tipado de los parámetros %{#Functions-acceptHMRUpdate-Type-parameters}%
+| Nombre | Tipo |
+| :------ | :------ |
+| `Id` | extiende `string` = `string` |
+| `S` | extiende [`StateTree`](pinia.md#statetree) = [`StateTree`](pinia.md#statetree) |
+| `G` | extiende [`_GettersTree`](pinia.md#_getterstree)<`S`\> = [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `A` | [`_ActionsTree`](pinia.md#_actionstree) |
+
 #### Parámetros %{#Functions-acceptHMRUpdate-Parameters}%
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `initialUseStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`string`, [`StateTree`](pinia.md#statetree), [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, [`_ActionsTree`](pinia.md#_actionstree)\> | retona el defineStore para actualización en caliente |
+| `initialUseStore` | [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\>| retorna el defineStore para actualización en caliente |
 | `hot` | `any` | `import.meta.hot` |
 
 #### Retorna %{#Functions-acceptHMRUpdate-Returns}%
@@ -1039,7 +1047,7 @@ ___
 
 ### setActivePinia %{#Functions-setActivePinia}%
 
-▸ **setActivePinia**(`pinia`): `undefined` \| [`Pinia`](../interfaces/pinia.Pinia.md)
+▸ **setActivePinia**(`pinia`): [`Pinia`](../interfaces/pinia.Pinia.md)
 
 Establece o desactiva la pinia activa. Usado en SSR e internamente cuando se llaman a acciones y getters.
 
@@ -1047,9 +1055,37 @@ Establece o desactiva la pinia activa. Usado en SSR e internamente cuando se lla
 
 | Nombre | Tipo | Descripción |
 | :------ | :------ | :------ |
-| `pinia` | `undefined` \| [`Pinia`](../interfaces/pinia.Pinia.md) | Instancia de Pinia |
+| `pinia` | [`Pinia`](../interfaces/pinia.Pinia.md) | Instancia de Pinia |
 
 #### Retorna %{#Functions-setActivePinia-Returns}%
+
+[`Pinia`](../interfaces/pinia.Pinia.md)
+
+▸ **setActivePinia**(`pinia`): `undefined`
+
+Establece o desactiva la pinia activa. Usado en SSR e internamente cuando se llaman a acciones y getters.
+
+#### Parámetros %{#Functions-setActivePinia-Parameters_1}%
+
+| Nombre | Tipo | Descripción |
+| :------ | :------ | :------ |
+| `pinia` | `undefined` | Instancia de Pinia |
+
+#### Retorna %{#Functions-setActivePinia-Returns_1}%
+
+`undefined`
+
+▸ **setActivePinia**(`pinia`): `undefined` \| [`Pinia`](../interfaces/pinia.Pinia.md)
+
+Establece o desactiva la pinia activa. Usado en SSR e internamente cuando se llaman a acciones y getters.
+
+#### Parámetros %{#Functions-setActivePinia-Parameters_2}%
+
+| Nombre | Tipo | Descripción |
+| :------ | :------ | :------ |
+| `pinia` | `undefined` \| [`Pinia`](../interfaces/pinia.Pinia.md) | Instancia de Pinia |
+
+#### Retorna %{#Functions-setActivePinia-Returns_2}%
 
 `undefined` \| [`Pinia`](../interfaces/pinia.Pinia.md)
 

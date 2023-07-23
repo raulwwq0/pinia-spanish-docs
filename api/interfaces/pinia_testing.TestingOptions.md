@@ -18,7 +18,7 @@ editLink: false
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
-Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos jest o `vi.fn()` en proyectos vitest. 
+Función utilizada para crear un espía para las acciones y `$patch()`. Pre-configurado con `jest.fn()` en proyectos con Jest o `vi.fn()` en proyectos con Vitest si `globals: true` está establecido.
 
 ##### Parámetros %{#Properties-createSpy-Type-declaration-Parameters}%
 
@@ -88,6 +88,14 @@ ___
 
 • `Opcional` **stubPatch**: `boolean`
 
-Cuando se establece en true, llamadas a `$patch`  no cambiarán el estado. Por defecto es
+Cuando se establece en true, las llamadas a `$patch` no cambiarán el estado. Por defecto es
 false. NOTA: al proveer `createSpy()`, este **solo** hará que el argumento `fn` 
 sea `undefined`. Aún tienes que manejar esto en `createSpy()`.
+
+___
+
+### stubReset %{#Properties-stubReset}%
+
+• `Opcional` **stubReset**: `boolean`
+
+Cuando se establece en true, las llamadas a `$reset` no cambiarán el estado. Por defecto es false.

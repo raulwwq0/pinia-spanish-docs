@@ -5,6 +5,7 @@
       target="_blank"
       rel="sponsored noopener"
       :title="title"
+      class="no-icon"
     >
     <slot>Mira un video gratis en Vue School</slot>
     </a>
